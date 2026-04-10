@@ -12,11 +12,11 @@ Dark cinematique, premium, immersive.
 
 ## Typographie
 
-| Usage | Font |
-|---|---|
-| Titres | Barlow Condensed |
-| Corps | Inter |
-| Accents | Bebas Neue |
+| Usage   | Font             |
+| ------- | ---------------- |
+| Titres  | Barlow Condensed |
+| Corps   | Inter            |
+| Accents | Bebas Neue       |
 
 ## Photo direction
 

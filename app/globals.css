@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   MOTHOME — Design Tokens (Tailwind v4 CSS-first config)
+   Direction artistique : Mécanique Premium & Passion
+   ============================================================ */
+
+@theme {
+  /* --- Palette principale --- */
+  --color-noir-profond: #0a0a0a;
+  --color-noir-mat: #111111;
+  --color-noir-doux: #1a1a1a;
+
+  --color-orange-brule: #c84b11;
+  --color-orange-vif: #e05a1a;
+  --color-orange-clair: #f07030;
+
+  --color-or-mat: #b8943a;
+  --color-or-chaud: #d4a843;
+  --color-or-clair: #e8c060;
+
+  --color-blanc-casse: #f5f0e8;
+  --color-gris-clair: #e0dbd0;
+  --color-gris-moyen: #8a8070;
+
+  /* --- Sémantique --- */
+  --color-background: var(--color-noir-profond);
+  --color-foreground: var(--color-blanc-casse);
+  --color-primary: var(--color-orange-brule);
+  --color-primary-foreground: var(--color-blanc-casse);
+  --color-secondary: var(--color-or-mat);
+  --color-secondary-foreground: var(--color-noir-profond);
+  --color-muted: var(--color-noir-doux);
+  --color-muted-foreground: var(--color-gris-moyen);
+  --color-accent: var(--color-or-mat);
+  --color-accent-foreground: var(--color-noir-profond);
+  --color-border: #2a2520;
+  --color-card: var(--color-noir-mat);
+  --color-card-foreground: var(--color-blanc-casse);
+
+  /* --- Typographie --- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-barlow-condensed), ui-sans-serif, sans-serif;
+  --font-accent: var(--font-bebas-neue), ui-sans-serif, sans-serif;
+
+  /* --- Espacements --- */
+  --spacing-section: 5rem;
+  --spacing-container: 1.5rem;
+
+  /* --- Border radius --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* --- Ombres --- */
+  --shadow-orange: 0 0 30px rgba(200, 75, 17, 0.3);
+  --shadow-or: 0 0 20px rgba(184, 148, 58, 0.2);
+
+  /* --- Transitions --- */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+}
+
+/* ============================================================
+   Base styles
+   ============================================================ */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

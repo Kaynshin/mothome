@@ -5,6 +5,7 @@
 ## Le business Mothome
 
 Mothome est un **garage moto artisanal** a Thonon-les-Bains (74), fonde par Mael Quere, qui propose :
+
 - Revision & entretien moto
 - Vente d'accessoires (HJC, Shark, Furigan...)
 - Service a domicile & depannage
@@ -15,14 +16,14 @@ Mothome est un **garage moto artisanal** a Thonon-les-Bains (74), fonde par Mael
 
 ## Diagnostic — Score global : 4.9/10
 
-| Domaine | Score | Verdict |
-|---|---|---|
-| Design/UX | 3/10 | Stack Joomla/YooTheme generique, carousel date, aucun CTA, pas de formulaire contact |
-| Contenu | 5/10 | Present mais basique, tarifs en PDF non indexable, pas de blog |
-| SEO | 3/10 | Pas de meta title/description, pas d'alt images, pas de sitemap |
-| Conversion | 3/10 | Aucun formulaire, pas de RDV en ligne, aucun CTA visible |
-| Technique | 4/10 | Joomla vieillissant, pas de CDN, images JPEG non optimisees, LCP 2.5-4s |
-| Differenciation | 8/10 | Concept hybride unique, avis clients forts, fondateur charismatique |
+| Domaine         | Score | Verdict                                                                              |
+| --------------- | ----- | ------------------------------------------------------------------------------------ |
+| Design/UX       | 3/10  | Stack Joomla/YooTheme generique, carousel date, aucun CTA, pas de formulaire contact |
+| Contenu         | 5/10  | Present mais basique, tarifs en PDF non indexable, pas de blog                       |
+| SEO             | 3/10  | Pas de meta title/description, pas d'alt images, pas de sitemap                      |
+| Conversion      | 3/10  | Aucun formulaire, pas de RDV en ligne, aucun CTA visible                             |
+| Technique       | 4/10  | Joomla vieillissant, pas de CDN, images JPEG non optimisees, LCP 2.5-4s              |
+| Differenciation | 8/10  | Concept hybride unique, avis clients forts, fondateur charismatique                  |
 
 ## Points forts a conserver
 
