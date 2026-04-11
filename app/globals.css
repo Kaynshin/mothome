@@ -42,6 +42,8 @@
   --color-border: #2a2520;
   --color-card: var(--color-noir-mat);
   --color-card-foreground: var(--color-blanc-casse);
+  /* Identité marque — couleur extraite du logo Mot'Home (bleu-vif pour contraste WCAG AA 3:1 sur fond sombre) */
+  --color-brand: var(--color-bleu-vif);
 
   /* --- Typographie --- */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -61,6 +63,7 @@
   /* --- Ombres --- */
   --shadow-orange: 0 0 30px rgba(200, 75, 17, 0.3);
   --shadow-or: 0 0 20px rgba(184, 148, 58, 0.2);
+  --shadow-bleu: 0 0 30px rgba(0, 80, 160, 0.3);
 
   /* --- Transitions --- */
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);

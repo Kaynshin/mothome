@@ -78,7 +78,7 @@ export default function Footer() {
               aria-label="Mothome — Accueil"
               className="inline-block mb-4"
             >
-              <span className="font-accent text-3xl text-[var(--color-orange-brule)] tracking-widest uppercase leading-none">
+              <span className="font-accent text-3xl text-[var(--color-brand)] tracking-widest uppercase leading-none">
                 Mothome
               </span>
             </Link>

@@ -43,7 +43,7 @@ export default function Header() {
           className="flex items-center gap-2 shrink-0"
           aria-label="Mothome — Accueil"
         >
-          <span className="font-accent text-2xl md:text-3xl text-[var(--color-orange-brule)] tracking-widest leading-none uppercase">
+          <span className="font-accent text-2xl md:text-3xl text-[var(--color-brand)] tracking-widest leading-none uppercase">
             Mothome
           </span>
         </Link>
@@ -98,7 +98,7 @@ export default function Header() {
           className="w-72 bg-[var(--color-noir-mat)] border-l border-[var(--color-border)] flex flex-col"
         >
           <SheetHeader className="flex flex-row items-center justify-between pb-4 border-b border-[var(--color-border)]">
-            <SheetTitle className="font-accent text-2xl text-[var(--color-orange-brule)] tracking-widest uppercase">
+            <SheetTitle className="font-accent text-2xl text-[var(--color-brand)] tracking-widest uppercase">
               Mothome
             </SheetTitle>
             <SheetClose asChild>
