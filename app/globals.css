@@ -23,6 +23,11 @@
   --color-gris-clair: #e0dbd0;
   --color-gris-moyen: #8a8070;
 
+  /* --- Bleu Mot'Home (couleur extraite du logo original) --- */
+  --color-bleu-logo: #0050a0;
+  --color-bleu-vif: #1060b0;
+  --color-bleu-clair: #2070b0;
+
   /* --- Sémantique --- */
   --color-background: var(--color-noir-profond);
   --color-foreground: var(--color-blanc-casse);

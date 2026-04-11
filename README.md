@@ -36,6 +36,9 @@ Définis dans `app/globals.css` via `@theme` :
 | `--color-orange-brule` | `#c84b11` (accent principal) |
 | `--color-noir-profond` | `#0a0a0a` (fond) |
 | `--color-or-mat` | `#b8943a` (accents secondaires) |
+| `--color-bleu-logo` | `#0050a0` (bleu extrait du logo Mot'Home) |
+| `--color-bleu-vif` | `#1060b0` (variante plus lumineuse) |
+| `--color-bleu-clair` | `#2070b0` (variante claire) |
 | `--font-heading` | Barlow Condensed |
 | `--font-sans` | Inter |
 | `--font-accent` | Bebas Neue |
