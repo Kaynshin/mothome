@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Wrench, CheckCircle, ArrowRight, Home } from "lucide-react";
 import DevisForm from "./DevisForm";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildAtelierSchema, buildBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "L'Atelier — Révision & Entretien Moto | Mothome Thonon",
+  title: "L'Atelier — Réparation & Entretien Moto à Thonon | Mothome",
   description:
-    "Révision, entretien, contrôle technique, kit éthanol eFlexMoto à Thonon-les-Bains. Tarifs transparents affichés en clair. Demandez un devis gratuit.",
+    "Révision, réparation, contrôle technique et kit éthanol eFlexMoto. Tarifs transparents, travail artisanal. Garage moto toutes marques en Haute-Savoie.",
   keywords: [
     "réparation moto Haute-Savoie",
     "entretien moto Thonon",
@@ -14,6 +16,13 @@ export const metadata: Metadata = {
     "révision moto 74",
     "kit éthanol moto eFlexMoto",
   ],
+  alternates: { canonical: "/atelier" },
+  openGraph: {
+    title: "L'Atelier — Réparation & Entretien Moto à Thonon | Mothome",
+    description:
+      "Révision, réparation, contrôle technique et kit éthanol eFlexMoto. Tarifs transparents, travail artisanal. Garage moto toutes marques en Haute-Savoie.",
+    url: "/atelier",
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -107,6 +116,13 @@ const SERVICES = [
 export default function AtelierPage() {
   return (
     <>
+      <JsonLd data={buildAtelierSchema()} />
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: "Accueil", url: "https://www.mothome.fr" },
+          { name: "L'Atelier", url: "https://www.mothome.fr/atelier" },
+        ])}
+      />
       {/* ================================================================
           HERO
           ================================================================ */}

@@ -3,6 +3,8 @@ import { Barlow_Condensed, Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildMotorcycleRepairSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,18 +26,59 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
+const SITE_URL = "https://www.mothome.fr";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Mothome — Garage Moto Premium",
+    default: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
     template: "%s | Mothome",
   },
   description:
-    "Mothome, votre garage moto premium. Préparation, entretien, customisation sur mesure.",
-  keywords: ["garage moto", "préparation moto", "customisation", "entretien moto"],
+    "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial. Prenez rendez-vous avec Maël et son équipe.",
+  keywords: [
+    "garage moto Thonon-les-Bains",
+    "mécanicien moto Thonon",
+    "garage moto Chablais",
+    "entretien moto 74",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
+    url: SITE_URL,
     siteName: "Mothome",
+    title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
+    description:
+      "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial. Prenez rendez-vous avec Maël et son équipe.",
+    images: [
+      {
+        url: "/images/og-mothome.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mothome — Garage Moto & Bar à Thonon-les-Bains",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
+    description:
+      "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial.",
+    images: ["/images/og-mothome.jpg"],
   },
 };
 
@@ -50,10 +93,11 @@ export default function RootLayout({
       className={`${inter.variable} ${barlowCondensed.variable} ${bebasNeue.variable}`}
     >
       <body className="antialiased flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-1 pt-16 md:pt-20">{children}</main>
-          <Footer />
-        </body>
+        <JsonLd data={buildMotorcycleRepairSchema()} />
+        <Header />
+        <main className="flex-1 pt-16 md:pt-20">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

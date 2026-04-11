@@ -2,16 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Calendar } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildContactPageSchema, buildBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact & RDV — Mothome Garage Moto Thonon-les-Bains",
+  title: "Contact & Rendez-vous — Garage Moto Mothome à Thonon-les-Bains",
   description:
-    "Contactez Mothome pour prendre rendez-vous, demander un devis ou poser une question. Garage moto à Thonon-les-Bains — réponse sous 24h.",
+    "Prenez rendez-vous en ligne, appelez-nous ou passez au garage. Mothome, 74200 Thonon-les-Bains. Horaires, plan d'accès et formulaire de contact.",
   keywords: [
     "rendez-vous garage moto Thonon",
     "horaires garage moto Thonon",
     "contact Mothome",
   ],
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact & Rendez-vous — Garage Moto Mothome à Thonon-les-Bains",
+    description:
+      "Prenez rendez-vous en ligne, appelez-nous ou passez au garage. Mothome, 74200 Thonon-les-Bains.",
+    url: "/contact",
+  },
 };
 
 const CONTACT = {
@@ -30,6 +39,13 @@ const HORAIRES = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={buildContactPageSchema()} />
+      <JsonLd
+        data={buildBreadcrumbSchema([
+          { name: "Accueil", url: "https://www.mothome.fr" },
+          { name: "Contact", url: "https://www.mothome.fr/contact" },
+        ])}
+      />
       {/* ================================================================
           HERO
           ================================================================ */}
