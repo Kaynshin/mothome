@@ -43,7 +43,7 @@ const devisSchema = z.object({
     .optional()
     .or(z.literal("")),
   typeIntervention: z.enum(TYPES_INTERVENTION, {
-    errorMap: () => ({ message: "Type d'intervention invalide" }),
+    error: "Type d'intervention invalide",
   }),
   message: z
     .string()

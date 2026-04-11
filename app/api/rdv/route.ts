@@ -3,6 +3,7 @@ import { Resend } from "resend";
 import { z } from "zod";
 
 import { checkRateLimit } from "@/lib/rate-limit";
+import { checkSlotAvailability } from "@/lib/slot-availability";
 
 // ---------------------------------------------------------------------------
 // Validation schema
@@ -34,7 +35,7 @@ const rdvSchema = z.object({
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Format de date invalide (YYYY-MM-DD attendu)"),
   typeIntervention: z.enum(TYPES_INTERVENTION, {
-    errorMap: () => ({ message: "Type d'intervention invalide" }),
+    error: "Type d'intervention invalide",
   }),
   message: z
     .string()
@@ -55,9 +56,6 @@ const RATE_LIMIT_CONFIG = {
   windowMs: 60 * 60 * 1000, // 3 demandes par heure par IP
 } as const;
 
-/** Jours ouvrables : 0=Dim, 1=Lun, ..., 6=Sam. Fermé le dimanche. */
-const CLOSED_DAYS = new Set([0]); // Dimanche
-
 const OPENING_HOURS = { open: 8, close: 18 }; // 8h–18h (Lun-Ven), 9h–16h Sam géré en message
 
 // ---------------------------------------------------------------------------
@@ -72,37 +70,6 @@ function getClientIp(request: NextRequest): string {
   );
 }
 
-/**
- * Vérifie la disponibilité simplifiée du créneau (V1).
- * - La date doit être dans le futur
- * - Le garage doit être ouvert ce jour-là (pas le dimanche)
- */
-export function checkSlotAvailability(dateStr: string): {
-  available: boolean;
-  reason?: string;
-} {
-  const date = new Date(dateStr);
-  if (isNaN(date.getTime())) {
-    return { available: false, reason: "Date invalide." };
-  }
-
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  if (date < today) {
-    return { available: false, reason: "La date choisie est dans le passé." };
-  }
-
-  const dayOfWeek = date.getDay();
-  if (CLOSED_DAYS.has(dayOfWeek)) {
-    return {
-      available: false,
-      reason: "Le garage est fermé ce jour. Veuillez choisir un jour du lundi au samedi.",
-    };
-  }
-
-  return { available: true };
-}
 
 function buildNotificationEmail(data: RdvFormData): string {
   const message = data.message
@@ -284,5 +251,3 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   );
 }
 
-// Exporter OPENING_HOURS pour les tests
-export { OPENING_HOURS };

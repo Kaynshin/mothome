@@ -328,8 +328,8 @@ export default function HeroParallax3D() {
         window.removeEventListener("resize", handleResize);
         renderer.dispose();
         partMeshes.forEach((m) => {
-          (m.geometry as THREE.BufferGeometry).dispose();
-          ((m.material as THREE.MeshStandardMaterial)).dispose();
+          (m.geometry as import("three").BufferGeometry).dispose();
+          ((m.material as import("three").MeshStandardMaterial)).dispose();
         });
       };
     }

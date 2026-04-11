@@ -21,6 +21,12 @@ export const metadata: Metadata = {
       "Prenez rendez-vous en ligne, appelez-nous ou passez au garage. Mothome, 74200 Thonon-les-Bains.",
     url: "/contact",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact & Rendez-vous — Garage Moto Mothome à Thonon-les-Bains",
+    description:
+      "Prenez rendez-vous en ligne, appelez-nous ou passez au garage. Mothome, 74200 Thonon-les-Bains.",
+  },
 };
 
 const CONTACT = {

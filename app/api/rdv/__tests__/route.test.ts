@@ -68,20 +68,20 @@ beforeEach(() => {
 
 describe("checkSlotAvailability", () => {
   it("accepte une date future en semaine", async () => {
-    const { checkSlotAvailability } = await import("../route");
+    const { checkSlotAvailability } = await import("@/lib/slot-availability");
     const result = checkSlotAvailability(nextMonday());
     expect(result.available).toBe(true);
   });
 
   it("refuse une date dans le passé", async () => {
-    const { checkSlotAvailability } = await import("../route");
+    const { checkSlotAvailability } = await import("@/lib/slot-availability");
     const result = checkSlotAvailability("2020-01-01");
     expect(result.available).toBe(false);
     expect(result.reason).toContain("passé");
   });
 
   it("refuse un dimanche", async () => {
-    const { checkSlotAvailability } = await import("../route");
+    const { checkSlotAvailability } = await import("@/lib/slot-availability");
     // Trouver le prochain dimanche
     const d = new Date();
     d.setDate(d.getDate() + ((0 + 7 - d.getDay()) % 7 || 7));
@@ -92,7 +92,7 @@ describe("checkSlotAvailability", () => {
   });
 
   it("refuse une date invalide", async () => {
-    const { checkSlotAvailability } = await import("../route");
+    const { checkSlotAvailability } = await import("@/lib/slot-availability");
     const result = checkSlotAvailability("not-a-date");
     expect(result.available).toBe(false);
   });

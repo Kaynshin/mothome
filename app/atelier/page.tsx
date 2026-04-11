@@ -23,6 +23,12 @@ export const metadata: Metadata = {
       "Révision, réparation, contrôle technique et kit éthanol eFlexMoto. Tarifs transparents, travail artisanal. Garage moto toutes marques en Haute-Savoie.",
     url: "/atelier",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "L'Atelier — Réparation & Entretien Moto à Thonon | Mothome",
+    description:
+      "Révision, réparation, contrôle technique et kit éthanol eFlexMoto. Tarifs transparents, travail artisanal. Garage moto toutes marques en Haute-Savoie.",
+  },
 };
 
 // ---------------------------------------------------------------------------

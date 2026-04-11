@@ -30,8 +30,8 @@ function YoutubeIcon({ size = 18 }: { size?: number }) {
 }
 
 const CONTACT = {
-  address: "12 Rue de la Mécanique, 75011 Paris",
-  phone: "+33 1 23 45 67 89",
+  address: "Thonon-les-Bains, Haute-Savoie (74200)",
+  phone: "+33 4 50 00 00 00",
   email: "contact@mothome.fr",
 } as const;
 
