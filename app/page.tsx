@@ -6,10 +6,10 @@ import {
   ShoppingBag,
   RefreshCw,
   Coffee,
-  Star,
   ArrowRight,
   ChevronDown,
 } from "lucide-react";
+import GoogleReviews from "@/components/google-reviews/GoogleReviews";
 
 export const metadata: Metadata = {
   title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
@@ -70,61 +70,9 @@ const SERVICES = [
   },
 ] as const;
 
-const TESTIMONIALS = [
-  {
-    name: "Thomas R.",
-    rating: 5,
-    text: "Mael a diagnostiqué en 20 minutes ce que 2 autres garages n'avaient pas trouvé en 3 semaines. Sérieux, compétent et honnête. Je n'irai plus nulle part ailleurs.",
-  },
-  {
-    name: "Julien M.",
-    rating: 5,
-    text: "Super ambiance, Mael est passionné et ça se voit dans son travail. Le bar en plus c'est un concept vraiment unique. On passe un bon moment pendant que la moto est révisée.",
-  },
-  {
-    name: "Sarah L.",
-    rating: 5,
-    text: "Première expérience dans un garage moto et franchement c'était top. Mael a tout expliqué clairement, sans jargon inutile. Tarifs transparents et travail soigné.",
-  },
-  {
-    name: "Romain B.",
-    rating: 5,
-    text: "Service à domicile impeccable — Mael est venu changer ma courroie directement dans ma résidence. Rapide, propre et au prix annoncé. Très recommandé.",
-  },
-  {
-    name: "Cédric V.",
-    rating: 5,
-    text: "J'ai acheté ma moto en dépôt-vente chez Mothome. Mael l'avait vérifiée de fond en comble et m'a été totalement transparent sur l'état de la machine. Confiance totale.",
-  },
-  {
-    name: "Marine D.",
-    rating: 5,
-    text: "Le concept garage + bar c'est génial. On attend que notre moto soit prête en regardant le GP sur grand écran, en mangeant un truc fait maison. Bravo Mael pour l'idée !",
-  },
-] as const;
-
 // ---------------------------------------------------------------------------
 // Sub-components
 // ---------------------------------------------------------------------------
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5" aria-label={`${rating} étoiles sur 5`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          size={14}
-          className={
-            i < rating
-              ? "fill-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)]"
-              : "text-[var(--color-gris-moyen)]"
-          }
-          aria-hidden="true"
-        />
-      ))}
-    </div>
-  );
-}
 
 // ---------------------------------------------------------------------------
 // Page
@@ -340,7 +288,7 @@ export default function HomePage() {
       </section>
 
       {/* ================================================================
-          TESTIMONIALS — 6 avis clients
+          TESTIMONIALS — Google Reviews
           ================================================================ */}
       <section
         className="py-[var(--spacing-section)] bg-[var(--color-noir-mat)]"
@@ -358,29 +306,12 @@ export default function HomePage() {
             >
               Avis Clients
             </h2>
+            <p className="mt-3 font-sans text-sm text-[var(--color-gris-moyen)]">
+              Avis vérifiés sur Google
+            </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TESTIMONIALS.map(({ name, rating, text }) => (
-              <figure
-                key={name}
-                className="flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg"
-              >
-                <StarRating rating={rating} />
-                <blockquote className="mt-4 flex-1">
-                  <p className="font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed italic">
-                    "{text}"
-                  </p>
-                </blockquote>
-                <figcaption className="mt-4 pt-4 border-t border-[var(--color-border)]">
-                  <span className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-wide">
-                    {name}
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <GoogleReviews />
         </div>
       </section>
 
