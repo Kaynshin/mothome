@@ -5,6 +5,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMotorcycleRepairSchema } from "@/lib/schema";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -97,6 +99,8 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 pt-16 md:pt-20">{children}</main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
