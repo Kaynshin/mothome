@@ -136,7 +136,7 @@ export default function HomePage() {
       {/* ================================================================
           HERO — 3D Anatomy of Speed (Three.js + GSAP ScrollTrigger)
           ================================================================ */}
-      <HeroParallax3D />
+      <HeroParallax3DWrapper />
 
       {/* hidden h1 for SEO when 3D hero is loaded client-side */}
       <h1 className="sr-only">Mothome — Garage Moto & Bar à Thonon-les-Bains</h1>
