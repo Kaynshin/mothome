@@ -45,13 +45,14 @@ export default function ContactForm() {
     setState("submitting");
 
     try {
+      const rawPhone = (data.get("phone") as string) ?? "";
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: data.get("name"),
           email: data.get("email"),
-          phone: data.get("phone"),
+          phone: rawPhone.replace(/\s/g, ""),
           subject: data.get("type") || "Contact Mothome",
           message: data.get("message"),
         }),

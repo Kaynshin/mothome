@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const CONTACT = {
   address: "Thonon-les-Bains, Haute-Savoie (74)",
-  phone: "+33 X XX XX XX XX",
+  phone: "+33 4 50 00 00 00",
   email: "contact@mothome.fr",
   mapsUrl: "https://maps.google.com/?q=Mothome+Thonon-les-Bains",
 } as const;

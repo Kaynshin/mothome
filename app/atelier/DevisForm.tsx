@@ -52,7 +52,7 @@ export default function DevisForm() {
       const payload = {
         name: data.get("name") as string,
         email: data.get("email") as string,
-        phone: data.get("phone") as string,
+        phone: ((data.get("phone") as string) ?? "").replace(/\s/g, ""),
         marque: marque ?? motoStr,
         modele: modeleParts.join(" ") || undefined,
         typeIntervention: (data.get("service") as string) || "Autre",
