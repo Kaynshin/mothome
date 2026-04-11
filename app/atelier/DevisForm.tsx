@@ -47,15 +47,19 @@ export default function DevisForm() {
     setState("submitting");
 
     try {
+      const motoStr = data.get("moto") as string;
+      const [marque, ...modeleParts] = motoStr.trim().split(" ");
       const payload = {
         name: data.get("name") as string,
         email: data.get("email") as string,
         phone: data.get("phone") as string,
-        subject: `Demande de devis — ${data.get("service") || "Atelier"}`,
-        message: `Moto : ${data.get("moto")}\nService : ${data.get("service")}\n\n${data.get("message")}`,
+        marque: marque ?? motoStr,
+        modele: modeleParts.join(" ") || undefined,
+        typeIntervention: (data.get("service") as string) || "Autre",
+        message: data.get("message") as string,
       };
 
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/devis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
