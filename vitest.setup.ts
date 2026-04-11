@@ -1,14 +1,7 @@
 import "@testing-library/jest-dom";
+import React from "react";
 import { afterEach, vi } from "vitest";
 import { cleanup } from "@testing-library/react";
-import React from "react";
-
-// Polyfill React.act for React 19 + React Testing Library
-if (!React.act) {
-  React.act = (callback: () => void | Promise<void> | PromiseLike<void>) => {
-    return Promise.resolve().then(() => callback());
-  };
-}
 
 // Cleanup after each test
 afterEach(() => {
@@ -32,6 +25,13 @@ vi.mock("next/image", () => ({
 // Mock Next.js Link component
 vi.mock("next/link", () => ({
   __esModule: true,
-  default: ({ children, href, ...props }: unknown) =>
-    React.createElement("a", { href: href as string, ...props }, children),
+  default: ({
+    children,
+    href,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string;
+    [key: string]: unknown;
+  }) => React.createElement("a", { href, ...props }, children),
 }));
