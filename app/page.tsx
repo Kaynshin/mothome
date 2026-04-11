@@ -8,8 +8,8 @@ import {
   Coffee,
   Star,
   ArrowRight,
+  ChevronDown,
 } from "lucide-react";
-import HeroParallax3DWrapper from "@/components/hero/HeroParallax3DWrapper";
 
 export const metadata: Metadata = {
   title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
@@ -134,39 +134,36 @@ export default function HomePage() {
   return (
     <>
       {/* ================================================================
-          HERO — 3D Anatomy of Speed (Three.js + GSAP ScrollTrigger)
+          HERO — Static (parallax 3D désactivé temporairement — UNIA-57)
           ================================================================ */}
-      <HeroParallax3DWrapper />
-
-      {/* hidden h1 for SEO when 3D hero is loaded client-side */}
-      <h1 className="sr-only">Mothome — Garage Moto & Bar à Thonon-les-Bains</h1>
-
-      {/* ================================================================
-          OLD HERO (kept as fallback reference — remove after 3D validated)
-          ================================================================ */}
-      {false && <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-noir-profond)]"
         aria-label="Hero — Mothome"
       >
+        {/* Static cinematic background */}
+        <div className="absolute inset-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,rgba(200,75,17,0.15),transparent)]" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-noir-profond)] to-transparent" />
+        </div>
+
         <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
           <p className="font-heading text-sm md:text-base text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-6">
             Garage moto artisanal · Thonon-les-Bains
           </p>
-          <h1 className="font-accent text-[clamp(4rem,15vw,12rem)] leading-none text-[var(--color-blanc-casse)] uppercase tracking-wider mb-4">
+          <h1
+            className="font-accent uppercase tracking-wider text-[var(--color-blanc-casse)] leading-none mb-4"
+            style={{ fontSize: "clamp(4rem, 15vw, 12rem)" }}
+          >
             Mothome
           </h1>
           <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
             La Mécanique comme{" "}
             <span className="text-[var(--color-bleu-logo)]">Passion</span>
           </p>
-
-          {/* Sub-description */}
           <p className="font-sans text-base md:text-lg text-[var(--color-gris-moyen)] max-w-xl mx-auto mb-10 leading-relaxed">
             Atelier, service à domicile, accessoires, dépôt-vente — et un bar
             où les passionnés se retrouvent. Un concept unique dans le Chablais.
           </p>
-
-          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact#rdv"
@@ -184,7 +181,14 @@ export default function HomePage() {
           </div>
         </div>
 
-      </section>}
+        {/* Scroll hint */}
+        <div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-gris-moyen)] animate-bounce"
+          aria-hidden="true"
+        >
+          <ChevronDown size={20} />
+        </div>
+      </section>
 
       {/* ================================================================
           SERVICES — 4 cards
