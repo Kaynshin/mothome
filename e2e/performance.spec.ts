@@ -1,5 +1,13 @@
 import { test, expect } from '@playwright/test';
 
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+}
+
+interface FirstInput extends PerformanceEntry {
+  processingDuration: number;
+}
+
 /**
  * Performance Audit Tests
  * Measures Core Web Vitals and performance metrics
@@ -40,7 +48,7 @@ test.describe('Performance & Core Web Vitals Audit', () => {
     let totalSize = 0;
 
     page.on('response', (response) => {
-      const size = response.headersBuffer().length;
+      const size = parseInt(response.headers()['content-length'] || '0', 10);
       const contentType = response.headers()['content-type'] || '';
       resources.push({
         size,
@@ -209,7 +217,7 @@ test.describe('Performance & Core Web Vitals Audit', () => {
     const handleResponse = (response: any) => {
       const headers = response.headers();
       const contentType = headers['content-type'] || '';
-      const size = response.headersBuffer().length;
+      const size = parseInt(response.headers()['content-length'] || '0', 10);
 
       if (contentType.includes('text/css')) {
         bundleMetrics.css.count++;
