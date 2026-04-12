@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -31,7 +32,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[var(--color-noir-mat)]/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-[var(--shadow-orange)]"
+          ? "bg-[var(--color-noir-mat)]/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-[var(--shadow-bleu)]"
           : "bg-gradient-to-b from-[var(--color-noir-profond)]/80 to-transparent"
       )}
       role="banner"
@@ -43,9 +44,14 @@ export default function Header() {
           className="flex items-center gap-2 shrink-0"
           aria-label="Mothome — Accueil"
         >
-          <span className="font-accent text-2xl md:text-3xl text-[var(--color-brand)] tracking-widest leading-none uppercase">
-            Mothome
-          </span>
+          <Image
+            src="/mothome-logo.png"
+            alt="Mot'Home"
+            width={180}
+            height={50}
+            className="h-10 md:h-12 w-auto"
+            priority
+          />
         </Link>
 
         {/* Navigation desktop */}
@@ -57,7 +63,7 @@ export default function Header() {
               className={cn(
                 "px-3 py-2 text-sm font-sans font-medium rounded-md transition-colors duration-200 uppercase tracking-wide whitespace-nowrap",
                 pathname === link.href
-                  ? "text-[var(--color-orange-brule)] bg-[var(--color-orange-brule)]/10"
+                  ? "text-[var(--color-bleu-logo)] bg-[var(--color-bleu-logo)]/10"
                   : "text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] hover:bg-white/5"
               )}
               aria-current={pathname === link.href ? "page" : undefined}
@@ -71,7 +77,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Button
             asChild
-            className="hidden sm:inline-flex bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm px-5 h-9 transition-colors duration-200"
+            className="hidden sm:inline-flex bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm px-5 h-9 transition-colors duration-200"
           >
             <Link href={CTA.href}>{CTA.label}</Link>
           </Button>
@@ -98,8 +104,14 @@ export default function Header() {
           className="w-72 bg-[var(--color-noir-mat)] border-l border-[var(--color-border)] flex flex-col"
         >
           <SheetHeader className="flex flex-row items-center justify-between pb-4 border-b border-[var(--color-border)]">
-            <SheetTitle className="font-accent text-2xl text-[var(--color-brand)] tracking-widest uppercase">
-              Mothome
+            <SheetTitle className="flex items-center">
+              <Image
+                src="/mothome-logo.png"
+                alt="Mot'Home"
+                width={150}
+                height={42}
+                className="h-9 w-auto"
+              />
             </SheetTitle>
             <SheetClose asChild>
               <button
@@ -124,7 +136,7 @@ export default function Header() {
                 className={cn(
                   "px-4 py-3 text-base font-sans font-medium rounded-md transition-colors duration-200 uppercase tracking-wide",
                   pathname === link.href
-                    ? "text-[var(--color-orange-brule)] bg-[var(--color-orange-brule)]/10"
+                    ? "text-[var(--color-bleu-logo)] bg-[var(--color-bleu-logo)]/10"
                     : "text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] hover:bg-white/5"
                 )}
                 aria-current={pathname === link.href ? "page" : undefined}
@@ -137,7 +149,7 @@ export default function Header() {
           <div className="pt-4 border-t border-[var(--color-border)]">
             <Button
               asChild
-              className="w-full bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest"
+              className="w-full bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest"
             >
               <Link href={CTA.href} onClick={() => setMobileOpen(false)}>
                 {CTA.label}
