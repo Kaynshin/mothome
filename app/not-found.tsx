@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center">
       <div className="text-center space-y-6">
-        <p className="font-accent text-8xl text-[var(--color-orange-brule)]">404</p>
+        <p className="font-accent text-8xl text-[var(--color-bleu-logo)]">404</p>
         <h1 className="font-heading text-3xl text-[var(--color-blanc-casse)] uppercase">
           Page introuvable
         </h1>

@@ -161,7 +161,7 @@ export default function DepotVentePage() {
           </nav>
 
           <div className="max-w-3xl">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
               Garage Mothome · Occasion
             </p>
             <h1
@@ -170,7 +170,7 @@ export default function DepotVentePage() {
             >
               Dépôt-
               <br />
-              <span className="text-[var(--color-orange-brule)]">Vente</span>
+              <span className="text-[var(--color-bleu-logo)]">Vente</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
               Vous vendez votre moto ou vous cherchez une occasion fiable ?
@@ -180,14 +180,14 @@ export default function DepotVentePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#deposer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Déposer ma moto
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
               <a
                 href="#motos"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-orange-brule)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir les motos dispo
               </a>
@@ -206,7 +206,7 @@ export default function DepotVentePage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Stock actuel
             </p>
             <h2
@@ -233,7 +233,7 @@ export default function DepotVentePage() {
                   </div>
                 )}
                 {moto.disponible && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-orange-brule)]/15 rounded text-xs font-heading font-semibold text-[var(--color-orange-brule)] uppercase tracking-wide">
+                  <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-bleu-logo)]/15 rounded text-xs font-heading font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide">
                     Disponible
                   </div>
                 )}
@@ -252,14 +252,14 @@ export default function DepotVentePage() {
                     <span className="block font-sans text-xs text-[var(--color-gris-moyen)] mb-1">
                       {moto.etat}
                     </span>
-                    <span className="font-heading text-2xl text-[var(--color-orange-brule)]">
+                    <span className="font-heading text-2xl text-[var(--color-bleu-logo)]">
                       {moto.prix}
                     </span>
                   </div>
                   {moto.disponible && (
                     <Link
                       href="/contact"
-                      className="text-xs font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+                      className="text-xs font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
                     >
                       Me renseigner →
                     </Link>
@@ -273,7 +273,7 @@ export default function DepotVentePage() {
             Stock mis à jour régulièrement.{" "}
             <Link
               href="/contact"
-              className="text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] transition-colors"
+              className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
             >
               Contactez-nous
             </Link>{" "}
@@ -292,7 +292,7 @@ export default function DepotVentePage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Vous vendez ?
             </p>
             <h2
@@ -306,7 +306,7 @@ export default function DepotVentePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {ETAPES_VENDEUR.map(({ num, titre, description }) => (
               <div key={num} className="relative">
-                <span className="block font-heading text-5xl text-[var(--color-orange-brule)]/15 mb-4 leading-none">
+                <span className="block font-heading text-5xl text-[var(--color-bleu-logo)]/15 mb-4 leading-none">
                   {num}
                 </span>
                 <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
@@ -327,25 +327,25 @@ export default function DepotVentePage() {
               </h3>
               <ul className="space-y-2 font-sans text-sm text-[var(--color-gris-moyen)]">
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--color-orange-brule)] shrink-0 mt-0.5">·</span>
+                  <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
                   Commission uniquement en cas de vente réussie (tarif communiqué lors de l'estimation)
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--color-orange-brule)] shrink-0 mt-0.5">·</span>
+                  <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
                   Durée de dépôt : 1 à 3 mois renouvelables
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--color-orange-brule)] shrink-0 mt-0.5">·</span>
+                  <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
                   Vous gardez votre moto jusqu'au dépôt effectif au garage
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[var(--color-orange-brule)] shrink-0 mt-0.5">·</span>
+                  <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
                   Toutes marques acceptées — deux-roues de 50cc à 1200cc
                 </li>
               </ul>
             </div>
 
-            <div className="p-6 bg-[var(--color-orange-brule)]/5 border border-[var(--color-orange-brule)]/20 rounded-lg flex flex-col justify-between gap-4">
+            <div className="p-6 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg flex flex-col justify-between gap-4">
               <div>
                 <h3 className="font-heading text-sm font-semibold text-[var(--color-blanc-casse)] uppercase tracking-widest mb-2">
                   Estimation gratuite
@@ -357,7 +357,7 @@ export default function DepotVentePage() {
               <div className="flex flex-col gap-2">
                 <a
                   href="tel:+33XXXXXXXXX"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
                 >
                   <Phone size={14} aria-hidden="true" />
                   Appeler Mael →
@@ -383,7 +383,7 @@ export default function DepotVentePage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Vous achetez ?
             </p>
             <h2
@@ -400,7 +400,7 @@ export default function DepotVentePage() {
                 key={titre}
                 className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
               >
-                <div className="w-11 h-11 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] mb-4">
+                <div className="w-11 h-11 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-4">
                   <Icon size={20} aria-hidden="true" />
                 </div>
                 <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
@@ -416,7 +416,7 @@ export default function DepotVentePage() {
           <div className="mt-10 text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
             >
               Me renseigner sur une moto
               <ChevronRight size={16} aria-hidden="true" />

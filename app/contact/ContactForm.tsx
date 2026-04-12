@@ -71,7 +71,7 @@ export default function ContactForm() {
   if (state === "success") {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-        <CheckCircle size={44} className="text-[var(--color-orange-brule)]" aria-hidden="true" />
+        <CheckCircle size={44} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
         <h3 className="font-heading text-2xl text-[var(--color-blanc-casse)] uppercase">
           Message envoyé !
         </h3>
@@ -81,7 +81,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setState("idle")}
-          className="mt-2 text-sm font-heading text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+          className="mt-2 text-sm font-heading text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
         >
           Envoyer un autre message
         </button>
@@ -103,7 +103,7 @@ export default function ContactForm() {
             htmlFor="contact-name"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Nom <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Nom <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="contact-name"
@@ -114,7 +114,7 @@ export default function ContactForm() {
             placeholder="Votre nom"
             aria-describedby={errors.name ? "contact-name-error" : undefined}
             aria-invalid={!!errors.name}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.name && (
             <p id="contact-name-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -128,7 +128,7 @@ export default function ContactForm() {
             htmlFor="contact-email"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Email <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Email <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="contact-email"
@@ -139,7 +139,7 @@ export default function ContactForm() {
             placeholder="votre@email.fr"
             aria-describedby={errors.email ? "contact-email-error" : undefined}
             aria-invalid={!!errors.email}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.email && (
             <p id="contact-email-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -167,7 +167,7 @@ export default function ContactForm() {
             type="tel"
             autoComplete="tel"
             placeholder="06 12 34 56 78"
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
         </div>
 
@@ -181,7 +181,7 @@ export default function ContactForm() {
           <select
             id="contact-type"
             name="type"
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors appearance-none"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors appearance-none"
           >
             {DEMANDE_TYPES.map((t) => (
               <option key={t} value={t}>
@@ -198,7 +198,7 @@ export default function ContactForm() {
           htmlFor="contact-message"
           className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
         >
-          Message <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+          Message <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
         </label>
         <textarea
           id="contact-message"
@@ -208,7 +208,7 @@ export default function ContactForm() {
           placeholder="Votre message..."
           aria-describedby={errors.message ? "contact-message-error" : undefined}
           aria-invalid={!!errors.message}
-          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors resize-y"
+          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors resize-y"
         />
         {errors.message && (
           <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -234,7 +234,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
         aria-label={state === "submitting" ? "Envoi en cours..." : "Envoyer le message"}
       >
         {state === "submitting" ? (

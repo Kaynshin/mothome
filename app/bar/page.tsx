@@ -139,7 +139,7 @@ export default function BarPage() {
           </nav>
 
           <div className="max-w-3xl">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
               Garage Mothome · Bar & Communauté
             </p>
             <h1
@@ -147,7 +147,7 @@ export default function BarPage() {
               className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6 leading-none"
             >
               Le{" "}
-              <span className="text-[var(--color-orange-brule)]">Bar</span>
+              <span className="text-[var(--color-bleu-logo)]">Bar</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
               Derrière l'atelier, il y a le bar. Le QG des motards du Chablais —
@@ -157,14 +157,14 @@ export default function BarPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#programme"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir le programme
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
               <a
                 href="#menu"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-orange-brule)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 La carte
               </a>
@@ -182,7 +182,7 @@ export default function BarPage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Le concept
             </p>
             <h2
@@ -197,9 +197,9 @@ export default function BarPage() {
             {AMBIANCES.map(({ icon: Icon, titre, description }) => (
               <div
                 key={titre}
-                className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-orange-brule)]/40 transition-colors"
+                className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-colors"
               >
-                <div className="w-11 h-11 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] mb-4">
+                <div className="w-11 h-11 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-4">
                   <Icon size={20} aria-hidden="true" />
                 </div>
                 <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase mb-3">
@@ -225,7 +225,7 @@ export default function BarPage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+              <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
                 À manger & à boire
               </p>
               <h2
@@ -258,7 +258,7 @@ export default function BarPage() {
                         <span className="font-sans text-sm text-[var(--color-gris-clair)]">
                           {nom}
                         </span>
-                        <span className="font-heading text-sm font-semibold text-[var(--color-orange-brule)] shrink-0 ml-4">
+                        <span className="font-heading text-sm font-semibold text-[var(--color-bleu-logo)] shrink-0 ml-4">
                           {prix}
                         </span>
                       </li>
@@ -281,7 +281,7 @@ export default function BarPage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Au programme
             </p>
             <h2
@@ -298,7 +298,7 @@ export default function BarPage() {
                 key={titre}
                 className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
               >
-                <span className="inline-block px-2 py-0.5 bg-[var(--color-orange-brule)]/10 rounded text-xs font-heading font-semibold text-[var(--color-orange-brule)] uppercase tracking-wide mb-3">
+                <span className="inline-block px-2 py-0.5 bg-[var(--color-bleu-logo)]/10 rounded text-xs font-heading font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide mb-3">
                   {type}
                 </span>
                 <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase mb-2">
@@ -311,7 +311,7 @@ export default function BarPage() {
             ))}
           </div>
 
-          <div className="p-5 bg-[var(--color-orange-brule)]/5 border border-[var(--color-orange-brule)]/20 rounded-lg flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+          <div className="p-5 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
             <p className="font-sans text-sm text-[var(--color-gris-clair)]">
               Programme complet et dates des prochains événements sur Instagram.
             </p>
@@ -319,7 +319,7 @@ export default function BarPage() {
               href="https://instagram.com/mothome"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors shrink-0"
+              className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors shrink-0"
             >
               @mothome sur Instagram →
             </a>
@@ -334,7 +334,7 @@ export default function BarPage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+              <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
                 Quand venir ?
               </p>
               <h2
@@ -359,7 +359,7 @@ export default function BarPage() {
                     <span className="font-sans text-sm text-[var(--color-blanc-casse)]">
                       {jours}
                     </span>
-                    <span className="font-heading text-sm font-semibold text-[var(--color-orange-brule)]">
+                    <span className="font-heading text-sm font-semibold text-[var(--color-bleu-logo)]">
                       {heures}
                     </span>
                   </li>
@@ -389,7 +389,7 @@ export default function BarPage() {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
                 >
                   Contacter le bar →
                 </Link>

@@ -116,7 +116,7 @@ function StarRating({ rating }: { rating: number }) {
           size={14}
           className={
             i < rating
-              ? "fill-[var(--color-orange-brule)] text-[var(--color-orange-brule)]"
+              ? "fill-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)]"
               : "text-[var(--color-gris-moyen)]"
           }
           aria-hidden="true"
@@ -149,7 +149,7 @@ export default function HomePage() {
         aria-label="Hero — Mothome"
       >
         <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
-          <p className="font-heading text-sm md:text-base text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-6">
+          <p className="font-heading text-sm md:text-base text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-6">
             Garage moto artisanal · Thonon-les-Bains
           </p>
           <h1 className="font-accent text-[clamp(4rem,15vw,12rem)] leading-none text-[var(--color-blanc-casse)] uppercase tracking-wider mb-4">
@@ -157,7 +157,7 @@ export default function HomePage() {
           </h1>
           <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
             La Mécanique comme{" "}
-            <span className="text-[var(--color-orange-brule)]">Passion</span>
+            <span className="text-[var(--color-bleu-logo)]">Passion</span>
           </p>
 
           {/* Sub-description */}
@@ -170,7 +170,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact#rdv"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-orange)]"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
             >
               Prendre rendez-vous
               <ArrowRight size={16} aria-hidden="true" />
@@ -196,7 +196,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           {/* Section header */}
           <div className="text-center mb-14">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Ce qu'on fait
             </p>
             <h2
@@ -212,10 +212,10 @@ export default function HomePage() {
             {SERVICES.map(({ icon: Icon, title, description, href, cta }) => (
               <article
                 key={title}
-                className="group relative flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-orange-brule)]/40 transition-all duration-300 hover:shadow-[var(--shadow-orange)]"
+                className="group relative flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-all duration-300 hover:shadow-[var(--shadow-bleu)]"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] mb-5 group-hover:bg-[var(--color-orange-brule)]/20 transition-colors duration-300">
+                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-5 group-hover:bg-[var(--color-bleu-logo)]/20 transition-colors duration-300">
                   <Icon size={22} aria-hidden="true" />
                 </div>
 
@@ -230,7 +230,7 @@ export default function HomePage() {
                 {/* CTA */}
                 <Link
                   href={href}
-                  className="inline-flex items-center gap-1.5 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors duration-200"
+                  className="inline-flex items-center gap-1.5 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors duration-200"
                   aria-label={`${cta} — ${title}`}
                 >
                   {cta}
@@ -345,7 +345,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           {/* Section header */}
           <div className="text-center mb-14">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Ils nous font confiance
             </p>
             <h2
@@ -389,12 +389,12 @@ export default function HomePage() {
       >
         {/* Background */}
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(200,75,17,0.12),transparent)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(0,80,160,0.12),transparent)]"
           aria-hidden="true"
         />
 
         <div className="relative max-w-3xl mx-auto px-[var(--spacing-container)] text-center">
-          <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
+          <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
             Prêt à passer à l'action ?
           </p>
           <h2
@@ -409,7 +409,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-orange)]"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
             Prendre rendez-vous
             <ArrowRight size={18} aria-hidden="true" />

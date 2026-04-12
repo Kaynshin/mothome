@@ -75,7 +75,7 @@ export default function ContactPage() {
           </nav>
 
           <div className="max-w-2xl">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
               Garage Mothome · Thonon-les-Bains
             </p>
             <h1
@@ -127,7 +127,7 @@ export default function ContactPage() {
                     className="flex items-start gap-4 group"
                     aria-label="Voir l'adresse sur Google Maps"
                   >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] shrink-0 group-hover:bg-[var(--color-orange-brule)]/20 transition-colors">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] shrink-0 group-hover:bg-[var(--color-bleu-logo)]/20 transition-colors">
                       <MapPin size={18} aria-hidden="true" />
                     </div>
                     <div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       <span className="font-sans text-sm text-[var(--color-gris-clair)] group-hover:text-[var(--color-blanc-casse)] transition-colors">
                         {CONTACT.address}
                       </span>
-                      <span className="block font-sans text-xs text-[var(--color-orange-brule)] mt-1">
+                      <span className="block font-sans text-xs text-[var(--color-bleu-logo)] mt-1">
                         Voir sur Google Maps →
                       </span>
                     </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
                     className="flex items-center gap-4 group"
                   >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] shrink-0 group-hover:bg-[var(--color-orange-brule)]/20 transition-colors">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] shrink-0 group-hover:bg-[var(--color-bleu-logo)]/20 transition-colors">
                       <Phone size={18} aria-hidden="true" />
                     </div>
                     <div>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     href={`mailto:${CONTACT.email}`}
                     className="flex items-center gap-4 group"
                   >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] shrink-0 group-hover:bg-[var(--color-orange-brule)]/20 transition-colors">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] shrink-0 group-hover:bg-[var(--color-bleu-logo)]/20 transition-colors">
                       <Mail size={18} aria-hidden="true" />
                     </div>
                     <div>
@@ -184,7 +184,7 @@ export default function ContactPage() {
               {/* Horaires */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <Clock size={18} className="text-[var(--color-orange-brule)]" aria-hidden="true" />
+                  <Clock size={18} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
                   <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
                     Horaires d'ouverture
                   </h3>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                       <span
                         className={`font-heading text-sm font-semibold ${
                           ouvert
-                            ? "text-[var(--color-orange-brule)]"
+                            ? "text-[var(--color-bleu-logo)]"
                             : "text-[var(--color-gris-moyen)]"
                         }`}
                       >
@@ -226,7 +226,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href="#rdv"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
                 >
                   Accéder au formulaire →
                 </a>
@@ -270,7 +270,7 @@ export default function ContactPage() {
               href={CONTACT.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
             >
               <MapPin size={14} aria-hidden="true" />
               Ouvrir dans Google Maps

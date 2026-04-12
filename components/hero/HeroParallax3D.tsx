@@ -29,7 +29,7 @@ const MOTO_PARTS: MotoPart[] = [
     label: "Moteur",
     service: "Révision & Entretien",
     serviceHref: "/atelier#revision",
-    color: 0xc84b11,
+    color: 0x0050a0,
     position: [0, 0, 0],
     size: [1.2, 0.8, 0.6],
   },
@@ -89,12 +89,12 @@ function PartLabel({ label, service, serviceHref, visible, index }: PartLabelPro
       <div className="relative">
         {/* Connector line */}
         <div
-          className="absolute -bottom-4 left-1/2 w-px h-4 bg-[var(--color-orange-brule)]/60"
+          className="absolute -bottom-4 left-1/2 w-px h-4 bg-[var(--color-bleu-logo)]/60"
           aria-hidden="true"
         />
         {/* Label card */}
-        <div className="bg-[var(--color-noir-mat)]/90 border border-[var(--color-orange-brule)]/30 rounded-md px-3 py-2 backdrop-blur-sm pointer-events-auto">
-          <p className="font-heading text-xs font-semibold text-[var(--color-orange-brule)] uppercase tracking-wide">
+        <div className="bg-[var(--color-noir-mat)]/90 border border-[var(--color-bleu-logo)]/30 rounded-md px-3 py-2 backdrop-blur-sm pointer-events-auto">
+          <p className="font-heading text-xs font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide">
             {label}
           </p>
           <Link
@@ -180,7 +180,7 @@ export default function HeroParallax3D() {
       keyLight.position.set(2, 3, 2);
       scene.add(keyLight);
 
-      const rimLight = new THREE.DirectionalLight(0xc84b11, 0.5);
+      const rimLight = new THREE.DirectionalLight(0x0050a0, 0.5);
       rimLight.position.set(-3, 0, -2);
       scene.add(rimLight);
 
@@ -367,7 +367,7 @@ export default function HeroParallax3D() {
         <div
           className="absolute inset-0 transition-opacity duration-700"
           style={{
-            background: `radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200,75,17,${
+            background: `radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,80,160,${
               0.05 + scrollProgress * 0.15
             }), transparent)`,
           }}
@@ -400,7 +400,7 @@ export default function HeroParallax3D() {
         }}
       >
         {/* Eyebrow */}
-        <p className="font-heading text-sm md:text-base text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-6">
+        <p className="font-heading text-sm md:text-base text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-6">
           Garage moto artisanal · Thonon-les-Bains
         </p>
 
@@ -415,7 +415,7 @@ export default function HeroParallax3D() {
         {/* Tagline */}
         <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
           La Mécanique comme{" "}
-          <span className="text-[var(--color-orange-brule)]">Passion</span>
+          <span className="text-[var(--color-bleu-logo)]">Passion</span>
         </p>
 
         {/* Description */}
@@ -428,7 +428,7 @@ export default function HeroParallax3D() {
         <div className="flex flex-col sm:flex-row items-center gap-4 pointer-events-auto">
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-orange)]"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
             Prendre rendez-vous
             <ArrowRight size={16} aria-hidden="true" />
@@ -456,7 +456,7 @@ export default function HeroParallax3D() {
 
       {/* Progress bar */}
       <div
-        className="absolute bottom-0 left-0 h-0.5 bg-[var(--color-orange-brule)] transition-all duration-100"
+        className="absolute bottom-0 left-0 h-0.5 bg-[var(--color-bleu-logo)] transition-all duration-100"
         style={{ width: `${scrollProgress * 100}%` }}
         aria-hidden="true"
       />
@@ -476,12 +476,12 @@ function HeroFallback() {
     >
       {/* Static cinematic background */}
       <div className="absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,rgba(200,75,17,0.15),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,rgba(0,80,160,0.15),transparent)]" />
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-noir-profond)] to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
-        <p className="font-heading text-sm md:text-base text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-6">
+        <p className="font-heading text-sm md:text-base text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-6">
           Garage moto artisanal · Thonon-les-Bains
         </p>
         <h1
@@ -492,7 +492,7 @@ function HeroFallback() {
         </h1>
         <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
           La Mécanique comme{" "}
-          <span className="text-[var(--color-orange-brule)]">Passion</span>
+          <span className="text-[var(--color-bleu-logo)]">Passion</span>
         </p>
         <p className="font-sans text-base md:text-lg text-[var(--color-gris-moyen)] max-w-xl mx-auto mb-10 leading-relaxed">
           Atelier, service à domicile, accessoires, dépôt-vente — et un bar
@@ -501,7 +501,7 @@ function HeroFallback() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
             Prendre rendez-vous
             <ArrowRight size={16} aria-hidden="true" />
