@@ -11,10 +11,6 @@
   --color-noir-mat: #111111;
   --color-noir-doux: #1a1a1a;
 
-  --color-orange-brule: #c84b11;
-  --color-orange-vif: #e05a1a;
-  --color-orange-clair: #f07030;
-
   --color-or-mat: #b8943a;
   --color-or-chaud: #d4a843;
   --color-or-clair: #e8c060;
@@ -31,7 +27,7 @@
   /* --- Sémantique --- */
   --color-background: var(--color-noir-profond);
   --color-foreground: var(--color-blanc-casse);
-  --color-primary: var(--color-orange-brule);
+  --color-primary: var(--color-bleu-logo);
   --color-primary-foreground: var(--color-blanc-casse);
   --color-secondary: var(--color-or-mat);
   --color-secondary-foreground: var(--color-noir-profond);
@@ -61,9 +57,8 @@
   --radius-xl: 1rem;
 
   /* --- Ombres --- */
-  --shadow-orange: 0 0 30px rgba(200, 75, 17, 0.3);
-  --shadow-or: 0 0 20px rgba(184, 148, 58, 0.2);
   --shadow-bleu: 0 0 30px rgba(0, 80, 160, 0.3);
+  --shadow-or: 0 0 20px rgba(184, 148, 58, 0.2);
 
   /* --- Transitions --- */
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
