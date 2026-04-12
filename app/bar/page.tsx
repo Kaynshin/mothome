@@ -150,7 +150,7 @@ export default function BarPage() {
               <span className="text-[var(--color-orange-brule)]">Bar</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
-              Derrière l'atelier, il y a le bar. Le QG des motards du Chablais —
+              Derrière l&apos;atelier, il y a le bar. Le QG des motards du Chablais —
               billard, retransmissions GP, cuisine maison et une bonne ambiance
               garantie pour parler moto entre passionnés.
             </p>
@@ -189,7 +189,7 @@ export default function BarPage() {
               id="concept-title"
               className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
             >
-              Plus qu'un bar
+              Plus qu&apos;un bar
             </h2>
           </div>
 
@@ -236,7 +236,7 @@ export default function BarPage() {
               </h2>
               <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
                 Menu simple, fait maison. Pas de fioriture — de la bonne bouffe
-                pour accompagner la soirée. Prix indicatifs, susceptibles d'évoluer.
+                pour accompagner la soirée. Prix indicatifs, susceptibles d&apos;évoluer.
               </p>
             </div>
 
@@ -373,7 +373,7 @@ export default function BarPage() {
                   Accès
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
-                  Le bar est dans l'espace attenant à l'atelier. Entrée accessible
+                  Le bar est dans l&apos;espace attenant à l&apos;atelier. Entrée accessible
                   directement depuis le parking — cherchez la lumière et les motos.
                 </p>
               </div>
@@ -384,8 +384,8 @@ export default function BarPage() {
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-4">
                   Vous venez en club ou en groupe &gt; 10 personnes ? Contactez-nous
-                  à l'avance pour s'assurer d'avoir la place — et parfois une bière
-                  offerte à l'arrivée.
+                  à l&apos;avance pour s&apos;assurer d&apos;avoir la place — et parfois une bière
+                  offerte à l&apos;arrivée.
                 </p>
                 <Link
                   href="/contact"

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import type { BufferGeometry, MeshStandardMaterial } from "three";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -147,8 +148,9 @@ export default function HeroParallax3D() {
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       gsap.registerPlugin(ScrollTrigger);
 
-      const canvas = canvasRef.current!;
-      const section = sectionRef.current!;
+      const canvas = canvasRef.current;
+      const section = sectionRef.current;
+      if (!canvas || !section) return;
 
       // Renderer
       const renderer = new THREE.WebGLRenderer({
@@ -301,6 +303,7 @@ export default function HeroParallax3D() {
 
       // Resize handler
       function handleResize() {
+        if (!canvas) return;
         const w = canvas.clientWidth;
         const h = canvas.clientHeight;
         camera.aspect = w / h;
@@ -328,8 +331,8 @@ export default function HeroParallax3D() {
         window.removeEventListener("resize", handleResize);
         renderer.dispose();
         partMeshes.forEach((m) => {
-          (m.geometry as import("three").BufferGeometry).dispose();
-          ((m.material as import("three").MeshStandardMaterial)).dispose();
+          (m.geometry as BufferGeometry).dispose();
+          (m.material as MeshStandardMaterial).dispose();
         });
       };
     }
@@ -437,7 +440,7 @@ export default function HeroParallax3D() {
             href="/atelier"
             className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-gris-moyen)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
-            Découvrir l'atelier
+            Découvrir l&apos;atelier
           </Link>
         </div>
       </div>
@@ -510,7 +513,7 @@ function HeroFallback() {
             href="/atelier"
             className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-gris-moyen)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
-            Découvrir l'atelier
+            Découvrir l&apos;atelier
           </Link>
         </div>
       </div>

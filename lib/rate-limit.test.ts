@@ -3,7 +3,7 @@
  * Tests the rate limiting functionality
  */
 
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { checkRateLimit } from "./rate-limit";
 
 // Note: The rate-limit implementation uses a module-level Map store
