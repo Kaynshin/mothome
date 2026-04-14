@@ -63,7 +63,7 @@ function StarRating({ rating }: { rating: number }) {
           size={14}
           className={
             i < rating
-              ? "fill-[var(--color-orange-brule)] text-[var(--color-orange-brule)]"
+              ? "fill-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)]"
               : "text-[var(--color-gris-moyen)]"
           }
           aria-hidden="true"
@@ -123,7 +123,7 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
               size={12}
               className={
                 i < Math.round(avg)
-                  ? "fill-[var(--color-orange-brule)] text-[var(--color-orange-brule)]"
+                  ? "fill-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)]"
                   : "text-[var(--color-gris-moyen)]"
               }
               aria-hidden="true"
@@ -191,7 +191,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
         {isLong && (
           <button
             onClick={() => setExpanded((v) => !v)}
-            className="mt-2 font-sans text-xs text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] transition-colors underline-offset-2 hover:underline"
+            className="mt-2 font-sans text-xs text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors underline-offset-2 hover:underline"
             aria-expanded={expanded}
           >
             {expanded ? "Réduire" : "Lire plus"}
