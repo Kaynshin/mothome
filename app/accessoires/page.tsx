@@ -199,7 +199,7 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Demander un produit
                 <ChevronRight size={16} aria-hidden="true" />
@@ -333,7 +333,7 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Contacter Mael
                 <ChevronRight size={16} aria-hidden="true" />
