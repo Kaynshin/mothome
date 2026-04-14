@@ -37,7 +37,6 @@ export const BUSINESS = {
   sameAs: [
     "https://www.instagram.com/mothome",
     "https://www.facebook.com/mothome",
-    "https://www.youtube.com/@mothome",
   ],
 } as const;
 
