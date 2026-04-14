@@ -207,7 +207,7 @@ test.describe('Contact Form API', () => {
   });
 
   test('should have proper CORS headers if needed', async ({ page }) => {
-    const response = await page.request.options('/api/contact');
+    const response = await page.request.fetch('/api/contact', { method: 'OPTIONS' });
 
     // Check if CORS headers are present (if enabled)
     const headers = response.headers();
