@@ -193,7 +193,7 @@ export default function AccessoiresPage() {
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
               Casques, équipements, pièces et accessoires — les grandes marques
-              au juste prix, avec le conseil d'un passionné. Sur commande ou en
+              au juste prix, avec le conseil d&apos;un passionné. Sur commande ou en
               stock selon les références.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
@@ -326,7 +326,7 @@ export default function AccessoiresPage() {
               <span className="text-[var(--color-bleu-logo)]">que vous cherchez ?</span>
             </h2>
             <p className="font-sans text-[var(--color-gris-moyen)] mb-8 leading-relaxed">
-              Le catalogue affiché n'est pas exhaustif. Contactez Mael directement
+              Le catalogue affiché n&apos;est pas exhaustif. Contactez Mael directement
               avec la référence ou la description du produit — il vous trouve le
               meilleur prix et le délai le plus court.
             </p>
@@ -342,7 +342,7 @@ export default function AccessoiresPage() {
                 href="/atelier"
                 className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
-                Voir l'atelier
+                Voir l&apos;atelier
               </Link>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
@@ -55,8 +55,6 @@ const RATE_LIMIT_CONFIG = {
   limit: 3,
   windowMs: 60 * 60 * 1000, // 3 demandes par heure par IP
 } as const;
-
-const OPENING_HOURS = { open: 8, close: 18 }; // 8h–18h (Lun-Ven), 9h–16h Sam géré en message
 
 // ---------------------------------------------------------------------------
 // Helpers

@@ -111,7 +111,7 @@ export default function ReservationForm() {
           Demande envoyée !
         </h3>
         <p className="font-sans text-[var(--color-gris-moyen)] max-w-sm">
-          Mael vous recontacte sous 24h pour confirmer l'intervention. À très vite !
+          Mael vous recontacte sous 24h pour confirmer l&apos;intervention. À très vite !
         </p>
         <button
           type="button"
@@ -243,7 +243,7 @@ export default function ReservationForm() {
           htmlFor="rdv-type"
           className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
         >
-          Type d'intervention
+          Type d&apos;intervention
         </label>
         <select
           id="rdv-type"
@@ -264,7 +264,7 @@ export default function ReservationForm() {
           htmlFor="rdv-message"
           className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
         >
-          Détails de l'intervention{" "}
+          Détails de l&apos;intervention{" "}
           <span className="text-[var(--color-gris-moyen)] font-sans normal-case tracking-normal text-xs font-normal">
             (optionnel)
           </span>

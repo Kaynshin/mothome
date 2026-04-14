@@ -186,7 +186,7 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3 mb-4">
                   <Clock size={18} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
                   <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
-                    Horaires d'ouverture
+                    Horaires d&apos;ouverture
                   </h3>
                 </div>
                 <ul className="space-y-3 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg overflow-hidden" aria-label="Horaires d'ouverture">
@@ -222,7 +222,7 @@ export default function ContactPage() {
                 </div>
                 <p className="font-sans text-sm text-[var(--color-gris-moyen)] mb-4 leading-relaxed">
                   Remplis le formulaire ci-contre avec tes disponibilités et le
-                  type d'intervention souhaitée. Mael confirme sous 24h.
+                  type d&apos;intervention souhaitée. Mael confirme sous 24h.
                 </p>
                 <a
                   href="#rdv"

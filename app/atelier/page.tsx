@@ -145,7 +145,7 @@ export default function AtelierPage() {
                 </li>
                 <li aria-hidden="true">/</li>
                 <li className="text-[var(--color-gris-clair)]" aria-current="page">
-                  L'Atelier
+                  L&apos;Atelier
                 </li>
               </ol>
             </nav>
@@ -160,7 +160,7 @@ export default function AtelierPage() {
             </div>
 
             <h1 className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6">
-              L'Atelier
+              L&apos;Atelier
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed mb-8 max-w-2xl">
               Mécanique artisanale à Thonon-les-Bains. Toutes marques, du scooter à

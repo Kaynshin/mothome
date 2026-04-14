@@ -328,7 +328,7 @@ export default function DepotVentePage() {
               <ul className="space-y-2 font-sans text-sm text-[var(--color-gris-moyen)]">
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
-                  Commission uniquement en cas de vente réussie (tarif communiqué lors de l'estimation)
+                  Commission uniquement en cas de vente réussie (tarif communiqué lors de l&apos;estimation)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
@@ -336,7 +336,7 @@ export default function DepotVentePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
-                  Vous gardez votre moto jusqu'au dépôt effectif au garage
+                  Vous gardez votre moto jusqu&apos;au dépôt effectif au garage
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
@@ -390,7 +390,7 @@ export default function DepotVentePage() {
               id="acheteur-title"
               className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
             >
-              L'occasion certifiée
+              L&apos;occasion certifiée
             </h2>
           </div>
 

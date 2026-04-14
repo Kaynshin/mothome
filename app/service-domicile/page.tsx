@@ -160,13 +160,13 @@ export default function ServiceDomicilePage() {
                 <span className="text-[var(--color-bleu-logo)]">vient à vous</span>
               </h2>
               <p className="font-sans text-[var(--color-gris-clair)] leading-relaxed mb-4">
-                Plus besoin d'amener votre moto au garage. Mael se déplace avec
+                Plus besoin d&apos;amener votre moto au garage. Mael se déplace avec
                 un fourgon équipé — outillage professionnel, huiles, filtres et
-                consommables courants embarqués. L'essentiel de l'entretien
+                consommables courants embarqués. L&apos;essentiel de l&apos;entretien
                 courant se fait sur place, en 1 à 3h.
               </p>
               <p className="font-sans text-[var(--color-gris-clair)] leading-relaxed">
-                Pour les réparations nécessitant l'atelier, Mael récupère la
+                Pour les réparations nécessitant l&apos;atelier, Mael récupère la
                 moto, effectue le travail à Thonon et vous la rapporte. Un seul
                 interlocuteur, du début à la fin.
               </p>
@@ -209,13 +209,13 @@ export default function ServiceDomicilePage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
-              Ce qu'on peut faire
+              Ce qu&apos;on peut faire
             </p>
             <h2
               id="interventions-title"
               className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
             >
-              Types d'interventions
+              Types d&apos;interventions
             </h2>
           </div>
 
@@ -264,9 +264,9 @@ export default function ServiceDomicilePage() {
                 Zones couvertes
               </h2>
               <p className="font-sans text-[var(--color-gris-moyen)] leading-relaxed mb-8">
-                Basé à Thonon-les-Bains, Mael couvre l'ensemble du Chablais et la
-                Haute-Savoie jusqu'à environ 60 km. Pour les distances supérieures,
-                contactez-nous — on s'adapte.
+                Basé à Thonon-les-Bains, Mael couvre l&apos;ensemble du Chablais et la
+                Haute-Savoie jusqu&apos;à environ 60 km. Pour les distances supérieures,
+                contactez-nous — on s&apos;adapte.
               </p>
 
               <ul
@@ -315,7 +315,7 @@ export default function ServiceDomicilePage() {
                 <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
                   Les frais de déplacement sont inclus dans le devis — pas de
                   mauvaise surprise. Pour les zones &gt; 40 km, un forfait kilométrique
-                  peut s'appliquer, précisé avant toute intervention.
+                  peut s&apos;appliquer, précisé avant toute intervention.
                 </p>
               </div>
 

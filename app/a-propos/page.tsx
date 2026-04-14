@@ -150,9 +150,9 @@ export default function AProposPage() {
               <span className="text-[var(--color-bleu-logo)]">propos</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
-              Mothome, c'est l'histoire d'un mécanicien passionné qui a décidé
-              de créer le garage qu'il aurait voulu trouver quand il cherchait
-              quelqu'un à qui confier sa moto.
+              Mothome, c&apos;est l&apos;histoire d&apos;un mécanicien passionné qui a décidé
+              de créer le garage qu&apos;il aurait voulu trouver quand il cherchait
+              quelqu&apos;un à qui confier sa moto.
             </p>
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function AProposPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
-                L'histoire
+                L&apos;histoire
               </p>
               <h2
                 id="histoire-title"
@@ -188,11 +188,11 @@ export default function AProposPage() {
                 <p>
                   Après une formation en alternance et quelques années passées dans
                   différents garages de la région, dont une expérience en compétition,
-                  Maël décide de s'installer à son compte à Thonon-les-Bains en 2022.
+                  Maël décide de s&apos;installer à son compte à Thonon-les-Bains en 2022.
                 </p>
                 <p>
-                  L'idée ? Un atelier artisanal où chaque client peut parler directement
-                  au mécanicien. Pas d'intermédiaire, pas de devis gonflé, pas de
+                  L&apos;idée ? Un atelier artisanal où chaque client peut parler directement
+                  au mécanicien. Pas d&apos;intermédiaire, pas de devis gonflé, pas de
                   pièces inutiles. Juste du bon travail, à un prix honnête.
                 </p>
                 <p>
@@ -255,7 +255,7 @@ export default function AProposPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 mt-3 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
                 >
-                  Rejoindre l'aventure →
+                  Rejoindre l&apos;aventure →
                 </Link>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default function AProposPage() {
               id="timeline-title"
               className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
             >
-              La route jusqu'ici
+              La route jusqu&apos;ici
             </h2>
           </div>
 
@@ -354,7 +354,7 @@ export default function AProposPage() {
               <span className="text-[var(--color-bleu-logo)]">rendre visite</span>
             </h2>
             <p className="font-sans text-[var(--color-gris-moyen)] mb-8 leading-relaxed">
-              L'atelier est ouvert du lundi au samedi. Passez sans rendez-vous pour
+              L&apos;atelier est ouvert du lundi au samedi. Passez sans rendez-vous pour
               poser une question, voir le lieu ou juste boire un café avec Maël.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -369,7 +369,7 @@ export default function AProposPage() {
                 href="/atelier"
                 className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
-                Voir l'atelier
+                Voir l&apos;atelier
               </Link>
             </div>
           </div>

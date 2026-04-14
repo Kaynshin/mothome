@@ -4,8 +4,6 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { POST } from "./route";
-import { type NextRequest } from "next/server";
 
 // Mock Resend
 vi.mock("resend", () => ({
@@ -26,18 +24,18 @@ beforeEach(() => {
 describe("POST /api/contact", () => {
   describe("Request Validation", () => {
     it("should reject invalid JSON", async () => {
-      const request = new Request("http://localhost:3000/api/contact", {
+      const _request = new Request("http://localhost:3000/api/contact", {
         method: "POST",
         body: "invalid json",
       });
 
       // The route handler expects NextRequest
-      const mockRequest = {
+      const _mockRequest = {
         json: async () => {
           throw new Error("Invalid JSON");
         },
         headers: new Map(),
-      } as any;
+      } as unknown;
 
       // In real test, would call POST(mockRequest)
       // Response would be 400
@@ -45,7 +43,7 @@ describe("POST /api/contact", () => {
 
     it("should validate required fields", async () => {
       // Test data without required fields
-      const incompleteData = {
+      const _incompleteData = {
         name: "John",
         // missing email, subject, message
       };
@@ -54,7 +52,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should validate email format", async () => {
-      const invalidData = {
+      const _invalidData = {
         name: "John Doe",
         email: "not-an-email",
         subject: "Test",
@@ -65,7 +63,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should validate name length (minimum 2)", async () => {
-      const invalidData = {
+      const _invalidData = {
         name: "J",
         email: "test@example.com",
         subject: "Test",
@@ -76,7 +74,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should validate subject length (minimum 3)", async () => {
-      const invalidData = {
+      const _invalidData = {
         name: "John Doe",
         email: "test@example.com",
         subject: "Hi",
@@ -87,7 +85,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should validate message length (minimum 10)", async () => {
-      const invalidData = {
+      const _invalidData = {
         name: "John Doe",
         email: "test@example.com",
         subject: "Test",
@@ -98,7 +96,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should validate phone number format if provided", async () => {
-      const invalidData = {
+      const _invalidData = {
         name: "John Doe",
         email: "test@example.com",
         subject: "Test",
@@ -110,15 +108,15 @@ describe("POST /api/contact", () => {
     });
 
     it("should accept valid French phone numbers", async () => {
-      const validPhones = [
+      const _validPhones = [
         "+33123456789",
         "+33612345678",
         "0123456789",
         "0612345678",
       ];
 
-      validPhones.forEach((phone) => {
-        const data = {
+      _validPhones.forEach((phone) => {
+        const _data = {
           name: "John Doe",
           email: "test@example.com",
           subject: "Test",
@@ -133,7 +131,7 @@ describe("POST /api/contact", () => {
 
   describe("Rate Limiting", () => {
     it("should enforce rate limit of 5 requests per hour per IP", async () => {
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "test@example.com",
         subject: "Test",
@@ -157,7 +155,7 @@ describe("POST /api/contact", () => {
     it("should return 500 if CONTACT_EMAIL_TO is not configured", async () => {
       delete process.env.CONTACT_EMAIL_TO;
 
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "test@example.com",
         subject: "Test",
@@ -170,7 +168,7 @@ describe("POST /api/contact", () => {
     it("should return 500 if RESEND_API_KEY is not configured", async () => {
       delete process.env.RESEND_API_KEY;
 
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "test@example.com",
         subject: "Test",
@@ -183,7 +181,7 @@ describe("POST /api/contact", () => {
 
   describe("Success Scenarios", () => {
     it("should send email with valid data", async () => {
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "john@example.com",
         subject: "Website Inquiry",
@@ -195,7 +193,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should include phone in email if provided", async () => {
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "john@example.com",
         subject: "Website Inquiry",
@@ -207,7 +205,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should set proper reply-to address", async () => {
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "john@example.com",
         subject: "Website Inquiry",
@@ -218,7 +216,7 @@ describe("POST /api/contact", () => {
     });
 
     it("should include subject in email subject line", async () => {
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "john@example.com",
         subject: "Custom Subject",
@@ -232,7 +230,7 @@ describe("POST /api/contact", () => {
   describe("Error Handling", () => {
     it("should handle Resend API errors", async () => {
       // Mock Resend error
-      const validData = {
+      const _validData = {
         name: "John Doe",
         email: "john@example.com",
         subject: "Test",
@@ -260,7 +258,7 @@ describe("Contact Form Data Validation", () => {
   });
 
   it("should handle whitespace trimming", async () => {
-    const data = {
+    const _data = {
       name: "  John Doe  ",
       email: "test@example.com  ",
       subject: "  Test Subject  ",
@@ -271,7 +269,7 @@ describe("Contact Form Data Validation", () => {
   });
 
   it("should preserve special characters in message", async () => {
-    const data = {
+    const _data = {
       name: "John Doe",
       email: "test@example.com",
       subject: "Test",
