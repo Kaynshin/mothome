@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMotorcycleRepairSchema } from "@/lib/schema";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -98,14 +99,22 @@ export default function RootLayout({
     <html
       lang="fr"
       className={`${inter.variable} ${barlowCondensed.variable} ${bebasNeue.variable}`}
+      suppressHydrationWarning
     >
       <body className="antialiased flex flex-col min-h-screen">
-        <JsonLd data={buildMotorcycleRepairSchema()} />
-        <Header />
-        <main className="flex-1 pt-16 md:pt-20">{children}</main>
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <JsonLd data={buildMotorcycleRepairSchema()} />
+          <Header />
+          <main className="flex-1 pt-16 md:pt-20">{children}</main>
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

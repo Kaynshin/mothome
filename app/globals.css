@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* Class-based dark mode (next-themes adds .dark to <html>) */
+@variant dark (&:is(.dark, .dark *));
+
 /* ============================================================
    MOTHOME — Design Tokens (Tailwind v4 CSS-first config)
    Direction artistique : Mécanique Premium & Passion
@@ -23,23 +26,6 @@
   --color-bleu-logo: #0050a0;
   --color-bleu-vif: #1060b0;
   --color-bleu-clair: #2070b0;
-
-  /* --- Sémantique --- */
-  --color-background: var(--color-noir-profond);
-  --color-foreground: var(--color-blanc-casse);
-  --color-primary: var(--color-bleu-logo);
-  --color-primary-foreground: var(--color-blanc-casse);
-  --color-secondary: var(--color-or-mat);
-  --color-secondary-foreground: var(--color-noir-profond);
-  --color-muted: var(--color-noir-doux);
-  --color-muted-foreground: var(--color-gris-moyen);
-  --color-accent: var(--color-or-mat);
-  --color-accent-foreground: var(--color-noir-profond);
-  --color-border: #2a2520;
-  --color-card: var(--color-noir-mat);
-  --color-card-foreground: var(--color-blanc-casse);
-  /* Identité marque — couleur extraite du logo Mot'Home (bleu-vif pour contraste WCAG AA 3:1 sur fond sombre) */
-  --color-brand: var(--color-bleu-vif);
 
   /* --- Typographie --- */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -65,6 +51,48 @@
   --duration-fast: 150ms;
   --duration-normal: 300ms;
   --duration-slow: 500ms;
+}
+
+/* ============================================================
+   Semantic color tokens — Light mode (default)
+   ============================================================ */
+
+:root {
+  --color-background: #f8f7f5;
+  --color-foreground: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+  --color-muted: #eeeae4;
+  --color-muted-foreground: #6b6055;
+  --color-border: #d5cfc4;
+  --color-primary: #0050a0;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #b8943a;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #b8943a;
+  --color-accent-foreground: #ffffff;
+  --color-brand: #0050a0;
+}
+
+/* ============================================================
+   Semantic color tokens — Dark mode
+   ============================================================ */
+
+.dark {
+  --color-background: #0a0a0a;
+  --color-foreground: #f5f0e8;
+  --color-card: #111111;
+  --color-card-foreground: #f5f0e8;
+  --color-muted: #1a1a1a;
+  --color-muted-foreground: #8a8070;
+  --color-border: #2a2520;
+  --color-primary: #0050a0;
+  --color-primary-foreground: #f5f0e8;
+  --color-secondary: #b8943a;
+  --color-secondary-foreground: #0a0a0a;
+  --color-accent: #b8943a;
+  --color-accent-foreground: #0a0a0a;
+  --color-brand: #1060b0;
 }
 
 /* ============================================================
