@@ -180,7 +180,7 @@ export default function AccessoiresPage() {
           </nav>
 
           <div className="max-w-3xl">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
               Garage Mothome · Équipement
             </p>
             <h1
@@ -189,7 +189,7 @@ export default function AccessoiresPage() {
             >
               Acces-
               <br />
-              <span className="text-[var(--color-orange-brule)]">soires</span>
+              <span className="text-[var(--color-bleu-logo)]">soires</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
               Casques, équipements, pièces et accessoires — les grandes marques
@@ -199,7 +199,7 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Demander un produit
                 <ChevronRight size={16} aria-hidden="true" />
@@ -217,7 +217,7 @@ export default function AccessoiresPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {GARANTIES.map(({ icon: Icon, titre, description }) => (
               <div key={titre} className="flex flex-col gap-3">
-                <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)]">
+                <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
                   <Icon size={18} aria-hidden="true" />
                 </div>
                 <h3 className="font-heading text-sm font-semibold text-[var(--color-blanc-casse)] uppercase tracking-wide">
@@ -238,7 +238,7 @@ export default function AccessoiresPage() {
       <section className="py-[var(--spacing-section)]" aria-labelledby="categories-title">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Notre sélection
             </p>
             <h2
@@ -274,7 +274,7 @@ export default function AccessoiresPage() {
                     {cat.marques.map((marque) => (
                       <span
                         key={marque}
-                        className="px-3 py-1 bg-[var(--color-orange-brule)]/10 border border-[var(--color-orange-brule)]/20 rounded text-xs font-heading font-semibold text-[var(--color-orange-brule)] uppercase tracking-wide"
+                        className="px-3 py-1 bg-[var(--color-bleu-logo)]/10 border border-[var(--color-bleu-logo)]/20 rounded text-xs font-heading font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide"
                       >
                         {marque}
                       </span>
@@ -288,7 +288,7 @@ export default function AccessoiresPage() {
                     {cat.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span
-                          className="w-4 h-4 flex items-center justify-center rounded-full bg-[var(--color-orange-brule)]/15 text-[var(--color-orange-brule)] shrink-0 mt-0.5"
+                          className="w-4 h-4 flex items-center justify-center rounded-full bg-[var(--color-bleu-logo)]/15 text-[var(--color-bleu-logo)] shrink-0 mt-0.5"
                           aria-hidden="true"
                         >
                           <svg width="8" height="7" viewBox="0 0 8 7" fill="none">
@@ -323,7 +323,7 @@ export default function AccessoiresPage() {
             <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-blanc-casse)] uppercase mb-4">
               Vous ne trouvez pas ce
               <br />
-              <span className="text-[var(--color-orange-brule)]">que vous cherchez ?</span>
+              <span className="text-[var(--color-bleu-logo)]">que vous cherchez ?</span>
             </h2>
             <p className="font-sans text-[var(--color-gris-moyen)] mb-8 leading-relaxed">
               Le catalogue affiché n&apos;est pas exhaustif. Contactez Mael directement
@@ -333,14 +333,14 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Contacter Mael
                 <ChevronRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href="/atelier"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-orange-brule)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir l&apos;atelier
               </Link>

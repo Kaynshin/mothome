@@ -9,6 +9,7 @@ Dark cinematique, premium, immersive.
 - Orange brule (accent principal)
 - Noir profond (fond)
 - Or mat (accents secondaires)
+- Bleu Mot'Home `#0050a0` — extrait du logo original (badge circulaire), utilisable pour contrastes ou éléments de référence à l'identité existante
 
 ## Typographie
 

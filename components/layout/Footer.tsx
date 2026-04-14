@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Clock, Mail } from "lucide-react";
 import { NAV_LINKS, CTA } from "./nav-config";
 
@@ -78,9 +79,13 @@ export default function Footer() {
               aria-label="Mothome — Accueil"
               className="inline-block mb-4"
             >
-              <span className="font-accent text-3xl text-[var(--color-orange-brule)] tracking-widest uppercase leading-none">
-                Mothome
-              </span>
+              <Image
+                src="/mothome-logo.png"
+                alt="Mot'Home"
+                width={180}
+                height={50}
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-6">
               Votre garage moto premium. Préparation, entretien et customisation
@@ -95,7 +100,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-2 rounded-md text-[var(--color-gris-moyen)] hover:text-[var(--color-orange-brule)] hover:bg-[var(--color-orange-brule)]/10 transition-colors duration-200"
+                  className="p-2 rounded-md text-[var(--color-gris-moyen)] hover:text-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-logo)]/10 transition-colors duration-200"
                 >
                   <Icon size={18} />
                 </a>
@@ -132,7 +137,7 @@ export default function Footer() {
                 <li key={jours} className="flex items-start gap-2">
                   <Clock
                     size={14}
-                    className="text-[var(--color-orange-brule)] mt-0.5 shrink-0"
+                    className="text-[var(--color-bleu-logo)] mt-0.5 shrink-0"
                     aria-hidden="true"
                   />
                   <div>
@@ -162,7 +167,7 @@ export default function Footer() {
               >
                 <MapPin
                   size={14}
-                  className="text-[var(--color-orange-brule)] mt-0.5 shrink-0"
+                  className="text-[var(--color-bleu-logo)] mt-0.5 shrink-0"
                   aria-hidden="true"
                 />
                 {CONTACT.address}
@@ -173,7 +178,7 @@ export default function Footer() {
               >
                 <Phone
                   size={14}
-                  className="text-[var(--color-orange-brule)] shrink-0"
+                  className="text-[var(--color-bleu-logo)] shrink-0"
                   aria-hidden="true"
                 />
                 {CONTACT.phone}
@@ -184,7 +189,7 @@ export default function Footer() {
               >
                 <Mail
                   size={14}
-                  className="text-[var(--color-orange-brule)] shrink-0"
+                  className="text-[var(--color-bleu-logo)] shrink-0"
                   aria-hidden="true"
                 />
                 {CONTACT.email}
@@ -194,7 +199,7 @@ export default function Footer() {
             {/* CTA RDV */}
             <Link
               href={CTA.href}
-              className="inline-flex mt-6 items-center gap-2 px-5 py-2.5 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+              className="inline-flex mt-6 items-center gap-2 px-5 py-2.5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
             >
               {CTA.label}
             </Link>

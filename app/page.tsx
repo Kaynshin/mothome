@@ -6,10 +6,10 @@ import {
   ShoppingBag,
   RefreshCw,
   Coffee,
-  Star,
   ArrowRight,
+  ChevronDown,
 } from "lucide-react";
-import HeroParallax3DWrapper from "@/components/hero/HeroParallax3DWrapper";
+import GoogleReviews from "@/components/google-reviews/GoogleReviews";
 
 export const metadata: Metadata = {
   title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
@@ -70,61 +70,9 @@ const SERVICES = [
   },
 ] as const;
 
-const TESTIMONIALS = [
-  {
-    name: "Thomas R.",
-    rating: 5,
-    text: "Mael a diagnostiqué en 20 minutes ce que 2 autres garages n'avaient pas trouvé en 3 semaines. Sérieux, compétent et honnête. Je n'irai plus nulle part ailleurs.",
-  },
-  {
-    name: "Julien M.",
-    rating: 5,
-    text: "Super ambiance, Mael est passionné et ça se voit dans son travail. Le bar en plus c'est un concept vraiment unique. On passe un bon moment pendant que la moto est révisée.",
-  },
-  {
-    name: "Sarah L.",
-    rating: 5,
-    text: "Première expérience dans un garage moto et franchement c'était top. Mael a tout expliqué clairement, sans jargon inutile. Tarifs transparents et travail soigné.",
-  },
-  {
-    name: "Romain B.",
-    rating: 5,
-    text: "Service à domicile impeccable — Mael est venu changer ma courroie directement dans ma résidence. Rapide, propre et au prix annoncé. Très recommandé.",
-  },
-  {
-    name: "Cédric V.",
-    rating: 5,
-    text: "J'ai acheté ma moto en dépôt-vente chez Mothome. Mael l'avait vérifiée de fond en comble et m'a été totalement transparent sur l'état de la machine. Confiance totale.",
-  },
-  {
-    name: "Marine D.",
-    rating: 5,
-    text: "Le concept garage + bar c'est génial. On attend que notre moto soit prête en regardant le GP sur grand écran, en mangeant un truc fait maison. Bravo Mael pour l'idée !",
-  },
-] as const;
-
 // ---------------------------------------------------------------------------
 // Sub-components
 // ---------------------------------------------------------------------------
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5" aria-label={`${rating} étoiles sur 5`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          size={14}
-          className={
-            i < rating
-              ? "fill-[var(--color-orange-brule)] text-[var(--color-orange-brule)]"
-              : "text-[var(--color-gris-moyen)]"
-          }
-          aria-hidden="true"
-        />
-      ))}
-    </div>
-  );
-}
 
 // ---------------------------------------------------------------------------
 // Page
@@ -134,43 +82,40 @@ export default function HomePage() {
   return (
     <>
       {/* ================================================================
-          HERO — 3D Anatomy of Speed (Three.js + GSAP ScrollTrigger)
+          HERO — Static (parallax 3D désactivé temporairement — UNIA-57)
           ================================================================ */}
-      <HeroParallax3DWrapper />
-
-      {/* hidden h1 for SEO when 3D hero is loaded client-side */}
-      <h1 className="sr-only">Mothome — Garage Moto & Bar à Thonon-les-Bains</h1>
-
-      {/* ================================================================
-          OLD HERO (kept as fallback reference — remove after 3D validated)
-          ================================================================ */}
-      {false && <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      <section
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-noir-profond)]"
         aria-label="Hero — Mothome"
       >
+        {/* Static cinematic background */}
+        <div className="absolute inset-0" aria-hidden="true">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,rgba(200,75,17,0.15),transparent)]" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-noir-profond)] to-transparent" />
+        </div>
+
         <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
-          <p className="font-heading text-sm md:text-base text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-6">
+          <p className="font-heading text-sm md:text-base text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-6">
             Garage moto artisanal · Thonon-les-Bains
           </p>
-          <h1 className="font-accent text-[clamp(4rem,15vw,12rem)] leading-none text-[var(--color-blanc-casse)] uppercase tracking-wider mb-4">
+          <h1
+            className="font-accent uppercase tracking-wider text-[var(--color-blanc-casse)] leading-none mb-4"
+            style={{ fontSize: "clamp(4rem, 15vw, 12rem)" }}
+          >
             Mothome
           </h1>
           <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
             La Mécanique comme{" "}
-            <span className="text-[var(--color-orange-brule)]">Passion</span>
+            <span className="text-[var(--color-bleu-logo)]">Passion</span>
           </p>
-
-          {/* Sub-description */}
           <p className="font-sans text-base md:text-lg text-[var(--color-gris-moyen)] max-w-xl mx-auto mb-10 leading-relaxed">
             Atelier, service à domicile, accessoires, dépôt-vente — et un bar
             où les passionnés se retrouvent. Un concept unique dans le Chablais.
           </p>
-
-          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact#rdv"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-orange)]"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
             >
               Prendre rendez-vous
               <ArrowRight size={16} aria-hidden="true" />
@@ -184,7 +129,14 @@ export default function HomePage() {
           </div>
         </div>
 
-      </section>}
+        {/* Scroll hint */}
+        <div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-gris-moyen)] animate-bounce"
+          aria-hidden="true"
+        >
+          <ChevronDown size={20} />
+        </div>
+      </section>
 
       {/* ================================================================
           SERVICES — 4 cards
@@ -196,7 +148,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           {/* Section header */}
           <div className="text-center mb-14">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Ce qu&apos;on fait
             </p>
             <h2
@@ -212,10 +164,10 @@ export default function HomePage() {
             {SERVICES.map(({ icon: Icon, title, description, href, cta }) => (
               <article
                 key={title}
-                className="group relative flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-orange-brule)]/40 transition-all duration-300 hover:shadow-[var(--shadow-orange)]"
+                className="group relative flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-all duration-300 hover:shadow-[var(--shadow-bleu)]"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] mb-5 group-hover:bg-[var(--color-orange-brule)]/20 transition-colors duration-300">
+                <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-5 group-hover:bg-[var(--color-bleu-logo)]/20 transition-colors duration-300">
                   <Icon size={22} aria-hidden="true" />
                 </div>
 
@@ -230,7 +182,7 @@ export default function HomePage() {
                 {/* CTA */}
                 <Link
                   href={href}
-                  className="inline-flex items-center gap-1.5 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors duration-200"
+                  className="inline-flex items-center gap-1.5 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors duration-200"
                   aria-label={`${cta} — ${title}`}
                 >
                   {cta}
@@ -336,7 +288,7 @@ export default function HomePage() {
       </section>
 
       {/* ================================================================
-          TESTIMONIALS — 6 avis clients
+          TESTIMONIALS — Google Reviews
           ================================================================ */}
       <section
         className="py-[var(--spacing-section)] bg-[var(--color-noir-mat)]"
@@ -345,7 +297,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           {/* Section header */}
           <div className="text-center mb-14">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Ils nous font confiance
             </p>
             <h2
@@ -354,29 +306,12 @@ export default function HomePage() {
             >
               Avis Clients
             </h2>
+            <p className="mt-3 font-sans text-sm text-[var(--color-gris-moyen)]">
+              Avis vérifiés sur Google
+            </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TESTIMONIALS.map(({ name, rating, text }) => (
-              <figure
-                key={name}
-                className="flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg"
-              >
-                <StarRating rating={rating} />
-                <blockquote className="mt-4 flex-1">
-                  <p className="font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed italic">
-                    &quot;{text}&quot;
-                  </p>
-                </blockquote>
-                <figcaption className="mt-4 pt-4 border-t border-[var(--color-border)]">
-                  <span className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-wide">
-                    {name}
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <GoogleReviews />
         </div>
       </section>
 
@@ -389,12 +324,12 @@ export default function HomePage() {
       >
         {/* Background */}
         <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(200,75,17,0.12),transparent)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(0,80,160,0.12),transparent)]"
           aria-hidden="true"
         />
 
         <div className="relative max-w-3xl mx-auto px-[var(--spacing-container)] text-center">
-          <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
+          <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
             Prêt à passer à l&apos;action ?
           </p>
           <h2
@@ -409,7 +344,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-orange)]"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
             Prendre rendez-vous
             <ArrowRight size={18} aria-hidden="true" />

@@ -47,6 +47,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/mothome-ecusson.jpg",
+    shortcut: "/mothome-ecusson.jpg",
+    apple: "/mothome-ecusson.jpg",
+  },
   robots: {
     index: true,
     follow: true,

@@ -151,10 +151,10 @@ export default function AtelierPage() {
             </nav>
 
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)]">
+              <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
                 <Wrench size={20} aria-hidden="true" />
               </div>
-              <span className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-widest">
+              <span className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-widest">
                 Révision · Réparation · Entretien
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function AtelierPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#devis"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
               >
                 Demander un devis
                 <ArrowRight size={15} aria-hidden="true" />
@@ -214,7 +214,7 @@ export default function AtelierPage() {
                     <li key={feature} className="flex items-start gap-3 text-sm text-[var(--color-gris-clair)]">
                       <CheckCircle
                         size={16}
-                        className="text-[var(--color-orange-brule)] mt-0.5 shrink-0"
+                        className="text-[var(--color-bleu-logo)] mt-0.5 shrink-0"
                         aria-hidden="true"
                       />
                       {feature}
@@ -224,7 +224,7 @@ export default function AtelierPage() {
 
                 <a
                   href="#devis"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors duration-200"
                 >
                   Demander un devis {title.toLowerCase()}
                   <ArrowRight size={13} aria-hidden="true" />
@@ -247,7 +247,7 @@ export default function AtelierPage() {
                           <td className="px-6 py-4 text-sm text-[var(--color-gris-clair)] font-sans">
                             {label}
                           </td>
-                          <td className="px-6 py-4 text-sm font-heading font-semibold text-[var(--color-orange-brule)] text-right whitespace-nowrap">
+                          <td className="px-6 py-4 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] text-right whitespace-nowrap">
                             {prix}
                           </td>
                         </tr>
@@ -276,7 +276,7 @@ export default function AtelierPage() {
       >
         <div className="max-w-3xl mx-auto px-[var(--spacing-container)]">
           <div className="text-center mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Gratuit & sans engagement
             </p>
             <h2
@@ -310,7 +310,7 @@ export default function AtelierPage() {
             </div>
             <Link
               href="/service-domicile"
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-orange-brule)]/40 hover:border-[var(--color-orange-brule)] text-[var(--color-orange-brule)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 whitespace-nowrap"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-bleu-logo)]/40 hover:border-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 whitespace-nowrap"
             >
               <Home size={15} aria-hidden="true" />
               Service à domicile

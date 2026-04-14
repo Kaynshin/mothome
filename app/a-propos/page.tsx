@@ -139,7 +139,7 @@ export default function AProposPage() {
           </nav>
 
           <div className="max-w-3xl">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
               Garage Mothome · Thonon-les-Bains
             </p>
             <h1
@@ -147,7 +147,7 @@ export default function AProposPage() {
               className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6 leading-none"
             >
               À{" "}
-              <span className="text-[var(--color-orange-brule)]">propos</span>
+              <span className="text-[var(--color-bleu-logo)]">propos</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
               Mothome, c&apos;est l&apos;histoire d&apos;un mécanicien passionné qui a décidé
@@ -168,7 +168,7 @@ export default function AProposPage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+              <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
                 L&apos;histoire
               </p>
               <h2
@@ -177,7 +177,7 @@ export default function AProposPage() {
               >
                 Maël &
                 <br />
-                <span className="text-[var(--color-orange-brule)]">Mothome</span>
+                <span className="text-[var(--color-bleu-logo)]">Mothome</span>
               </h2>
               <div className="space-y-4 font-sans text-[var(--color-gris-clair)] leading-relaxed">
                 <p>
@@ -212,8 +212,8 @@ export default function AProposPage() {
                   className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
                 >
                   {/* Avatar placeholder */}
-                  <div className="w-16 h-16 rounded-full bg-[var(--color-orange-brule)]/15 flex items-center justify-center mb-4">
-                    <span className="font-heading text-2xl text-[var(--color-orange-brule)] uppercase">
+                  <div className="w-16 h-16 rounded-full bg-[var(--color-bleu-logo)]/15 flex items-center justify-center mb-4">
+                    <span className="font-heading text-2xl text-[var(--color-bleu-logo)] uppercase">
                       {nom.charAt(0)}
                     </span>
                   </div>
@@ -221,7 +221,7 @@ export default function AProposPage() {
                   <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase mb-1">
                     {nom}
                   </h3>
-                  <p className="font-sans text-xs text-[var(--color-orange-brule)] uppercase tracking-widest mb-3">
+                  <p className="font-sans text-xs text-[var(--color-bleu-logo)] uppercase tracking-widest mb-3">
                     {role}
                   </p>
                   <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-4">
@@ -236,7 +236,7 @@ export default function AProposPage() {
                       {marques.map((m) => (
                         <span
                           key={m}
-                          className="px-2 py-0.5 bg-[var(--color-orange-brule)]/10 rounded text-xs font-heading font-semibold text-[var(--color-orange-brule)] uppercase tracking-wide"
+                          className="px-2 py-0.5 bg-[var(--color-bleu-logo)]/10 rounded text-xs font-heading font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide"
                         >
                           {m}
                         </span>
@@ -246,14 +246,14 @@ export default function AProposPage() {
                 </div>
               ))}
 
-              <div className="p-5 bg-[var(--color-orange-brule)]/5 border border-[var(--color-orange-brule)]/20 rounded-lg">
+              <div className="p-5 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg">
                 <p className="font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed">
                   Mothome grandit. Si tu es mécanicien passionné et que le projet
                   te parle, contacte Maël directement.
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 mt-3 text-sm font-heading font-semibold text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+                  className="inline-flex items-center gap-2 mt-3 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
                 >
                   Rejoindre l&apos;aventure →
                 </Link>
@@ -272,7 +272,7 @@ export default function AProposPage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Le parcours
             </p>
             <h2
@@ -286,8 +286,8 @@ export default function AProposPage() {
           <ol className="relative border-l border-[var(--color-border)] space-y-10 pl-8 ml-4">
             {TIMELINE.map(({ annee, titre, description }) => (
               <li key={annee} className="relative">
-                <div className="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full bg-[var(--color-noir-mat)] border-2 border-[var(--color-orange-brule)]" aria-hidden="true" />
-                <span className="block font-heading text-xs text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-1">
+                <div className="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full bg-[var(--color-noir-mat)] border-2 border-[var(--color-bleu-logo)]" aria-hidden="true" />
+                <span className="block font-heading text-xs text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-1">
                   {annee}
                 </span>
                 <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
@@ -311,7 +311,7 @@ export default function AProposPage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="mb-12">
-            <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
+            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Ce qui guide le travail
             </p>
             <h2
@@ -328,7 +328,7 @@ export default function AProposPage() {
                 key={titre}
                 className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
               >
-                <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-orange-brule)]/10 text-[var(--color-orange-brule)] mb-4">
+                <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-4">
                   <Icon size={18} aria-hidden="true" />
                 </div>
                 <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
@@ -351,7 +351,7 @@ export default function AProposPage() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-blanc-casse)] uppercase mb-4">
               Venez nous{" "}
-              <span className="text-[var(--color-orange-brule)]">rendre visite</span>
+              <span className="text-[var(--color-bleu-logo)]">rendre visite</span>
             </h2>
             <p className="font-sans text-[var(--color-gris-moyen)] mb-8 leading-relaxed">
               L&apos;atelier est ouvert du lundi au samedi. Passez sans rendez-vous pour
@@ -360,14 +360,14 @@ export default function AProposPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Prendre contact
                 <ChevronRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href="/atelier"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-orange-brule)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir l&apos;atelier
               </Link>

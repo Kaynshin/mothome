@@ -106,7 +106,7 @@ export default function ReservationForm() {
   if (state === "success") {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
-        <CheckCircle size={48} className="text-[var(--color-orange-brule)]" aria-hidden="true" />
+        <CheckCircle size={48} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
         <h3 className="font-heading text-2xl text-[var(--color-blanc-casse)] uppercase">
           Demande envoyée !
         </h3>
@@ -116,7 +116,7 @@ export default function ReservationForm() {
         <button
           type="button"
           onClick={() => setState("idle")}
-          className="mt-4 text-sm font-heading text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+          className="mt-4 text-sm font-heading text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
         >
           Nouvelle demande
         </button>
@@ -138,7 +138,7 @@ export default function ReservationForm() {
             htmlFor="rdv-name"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Nom <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Nom <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="rdv-name"
@@ -149,7 +149,7 @@ export default function ReservationForm() {
             placeholder="Votre nom"
             aria-describedby={errors.name ? "rdv-name-error" : undefined}
             aria-invalid={!!errors.name}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.name && (
             <p id="rdv-name-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -163,7 +163,7 @@ export default function ReservationForm() {
             htmlFor="rdv-email"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Email <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Email <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="rdv-email"
@@ -174,7 +174,7 @@ export default function ReservationForm() {
             placeholder="votre@email.fr"
             aria-describedby={errors.email ? "rdv-email-error" : undefined}
             aria-invalid={!!errors.email}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.email && (
             <p id="rdv-email-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -191,7 +191,7 @@ export default function ReservationForm() {
             htmlFor="rdv-phone"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Téléphone <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Téléphone <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="rdv-phone"
@@ -202,7 +202,7 @@ export default function ReservationForm() {
             placeholder="06 12 34 56 78"
             aria-describedby={errors.phone ? "rdv-phone-error" : undefined}
             aria-invalid={!!errors.phone}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.phone && (
             <p id="rdv-phone-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -216,7 +216,7 @@ export default function ReservationForm() {
             htmlFor="rdv-date"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Date souhaitée <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Date souhaitée <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="rdv-date"
@@ -227,7 +227,7 @@ export default function ReservationForm() {
             max={getMaxDate()}
             aria-describedby={errors.dateSouhaitee ? "rdv-date-error" : undefined}
             aria-invalid={!!errors.dateSouhaitee}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors [color-scheme:dark]"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors [color-scheme:dark]"
           />
           {errors.dateSouhaitee && (
             <p id="rdv-date-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -248,7 +248,7 @@ export default function ReservationForm() {
         <select
           id="rdv-type"
           name="typeIntervention"
-          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors appearance-none"
+          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors appearance-none"
         >
           {TYPES_INTERVENTION.map((t) => (
             <option key={t} value={t}>
@@ -274,7 +274,7 @@ export default function ReservationForm() {
           name="message"
           rows={4}
           placeholder="Décris le problème, ton adresse d'intervention, la marque et le modèle de ta moto..."
-          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors resize-y"
+          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors resize-y"
         />
       </div>
 
@@ -295,7 +295,7 @@ export default function ReservationForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
         aria-label={state === "submitting" ? "Envoi en cours..." : "Réserver une intervention"}
       >
         {state === "submitting" ? (

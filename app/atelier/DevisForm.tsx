@@ -52,7 +52,7 @@ export default function DevisForm() {
       const payload = {
         name: data.get("name") as string,
         email: data.get("email") as string,
-        phone: data.get("phone") as string,
+        phone: ((data.get("phone") as string) ?? "").replace(/\s/g, ""),
         marque: marque ?? motoStr,
         modele: modeleParts.join(" ") || undefined,
         typeIntervention: (data.get("service") as string) || "Autre",
@@ -79,7 +79,7 @@ export default function DevisForm() {
   if (state === "success") {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
-        <CheckCircle size={48} className="text-[var(--color-orange-brule)]" aria-hidden="true" />
+        <CheckCircle size={48} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
         <h3 className="font-heading text-2xl text-[var(--color-blanc-casse)] uppercase">
           Demande envoyée !
         </h3>
@@ -89,7 +89,7 @@ export default function DevisForm() {
         <button
           type="button"
           onClick={() => setState("idle")}
-          className="mt-4 text-sm font-heading text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] uppercase tracking-wide transition-colors"
+          className="mt-4 text-sm font-heading text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
         >
           Envoyer une autre demande
         </button>
@@ -111,7 +111,7 @@ export default function DevisForm() {
             htmlFor="devis-name"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Nom <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Nom <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="devis-name"
@@ -122,7 +122,7 @@ export default function DevisForm() {
             placeholder="Votre nom"
             aria-describedby={errors.name ? "devis-name-error" : undefined}
             aria-invalid={!!errors.name}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.name && (
             <p id="devis-name-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -136,7 +136,7 @@ export default function DevisForm() {
             htmlFor="devis-email"
             className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
           >
-            Email <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+            Email <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
           <input
             id="devis-email"
@@ -147,7 +147,7 @@ export default function DevisForm() {
             placeholder="votre@email.fr"
             aria-describedby={errors.email ? "devis-email-error" : undefined}
             aria-invalid={!!errors.email}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.email && (
             <p id="devis-email-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -175,7 +175,7 @@ export default function DevisForm() {
             type="tel"
             autoComplete="tel"
             placeholder="06 12 34 56 78"
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
         </div>
 
@@ -189,7 +189,7 @@ export default function DevisForm() {
           <select
             id="devis-service"
             name="service"
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors appearance-none"
+            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors appearance-none"
           >
             {SERVICES_OPTIONS.map((opt) => (
               <option key={opt} value={opt}>
@@ -207,7 +207,7 @@ export default function DevisForm() {
           className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
         >
           Votre moto{" "}
-          <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+          <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
         </label>
         <input
           id="devis-moto"
@@ -217,7 +217,7 @@ export default function DevisForm() {
           placeholder="Ex. : Honda CB650R 2021"
           aria-describedby={errors.moto ? "devis-moto-error" : undefined}
           aria-invalid={!!errors.moto}
-          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors"
+          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
         />
         {errors.moto && (
           <p id="devis-moto-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -233,7 +233,7 @@ export default function DevisForm() {
           className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
         >
           Description de la demande{" "}
-          <span className="text-[var(--color-orange-brule)]" aria-hidden="true">*</span>
+          <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
         </label>
         <textarea
           id="devis-message"
@@ -243,7 +243,7 @@ export default function DevisForm() {
           placeholder="Décris ce que tu as besoin : symptômes, kilométrage, dernier entretien..."
           aria-describedby={errors.message ? "devis-message-error" : undefined}
           aria-invalid={!!errors.message}
-          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-orange-brule)] transition-colors resize-y"
+          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors resize-y"
         />
         {errors.message && (
           <p id="devis-message-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -269,7 +269,7 @@ export default function DevisForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-orange-brule)] hover:bg-[var(--color-orange-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
         aria-label={state === "submitting" ? "Envoi en cours..." : "Envoyer la demande de devis"}
       >
         {state === "submitting" ? (
