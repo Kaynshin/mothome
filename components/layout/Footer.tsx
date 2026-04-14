@@ -65,7 +65,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="bg-[var(--color-noir-mat)] border-t border-[var(--color-border)] mt-auto"
+      className="bg-[var(--color-card)] border-t border-[var(--color-border)] mt-auto"
       role="contentinfo"
       aria-label="Pied de page"
     >
@@ -87,7 +87,7 @@ export default function Footer() {
                 className="h-11 w-auto"
               />
             </Link>
-            <p className="text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-6">
+            <p className="text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-6">
               Votre garage moto premium. Préparation, entretien et customisation
               sur mesure par des passionnés.
             </p>
@@ -100,7 +100,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-2 rounded-md text-[var(--color-gris-moyen)] hover:text-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-logo)]/10 transition-colors duration-200"
+                  className="p-2 rounded-md text-[var(--color-muted-foreground)] hover:text-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-logo)]/10 transition-colors duration-200"
                 >
                   <Icon size={18} />
                 </a>
@@ -118,7 +118,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors duration-200"
+                    className="text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -141,10 +141,10 @@ export default function Footer() {
                     aria-hidden="true"
                   />
                   <div>
-                    <span className="text-sm text-[var(--color-blanc-casse)] block">
+                    <span className="text-sm text-[var(--color-foreground)] block">
                       {jours}
                     </span>
-                    <span className="text-xs text-[var(--color-gris-moyen)]">
+                    <span className="text-xs text-[var(--color-muted-foreground)]">
                       {heures}
                     </span>
                   </div>
@@ -163,7 +163,7 @@ export default function Footer() {
                 href={`https://maps.google.com/?q=${encodeURIComponent(CONTACT.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-2 text-sm text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors duration-200"
+                className="flex items-start gap-2 text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors duration-200"
               >
                 <MapPin
                   size={14}
@@ -174,7 +174,7 @@ export default function Footer() {
               </a>
               <a
                 href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
-                className="flex items-center gap-2 text-sm text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors duration-200"
+                className="flex items-center gap-2 text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors duration-200"
               >
                 <Phone
                   size={14}
@@ -185,7 +185,7 @@ export default function Footer() {
               </a>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="flex items-center gap-2 text-sm text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors duration-200"
+                className="flex items-center gap-2 text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors duration-200"
               >
                 <Mail
                   size={14}
@@ -199,7 +199,7 @@ export default function Footer() {
             {/* CTA RDV */}
             <Link
               href={CTA.href}
-              className="inline-flex mt-6 items-center gap-2 px-5 py-2.5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+              className="inline-flex mt-6 items-center gap-2 px-5 py-2.5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
             >
               {CTA.label}
             </Link>
@@ -210,19 +210,19 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)] py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-[var(--color-gris-moyen)]">
+          <p className="text-xs text-[var(--color-muted-foreground)]">
             © {currentYear} Mothome. Tous droits réservés.
           </p>
           <div className="flex gap-4">
             <Link
               href="/mentions-legales"
-              className="text-xs text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors"
+              className="text-xs text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors"
             >
               Mentions légales
             </Link>
             <Link
               href="/politique-confidentialite"
-              className="text-xs text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors"
+              className="text-xs text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors"
             >
               Confidentialité
             </Link>

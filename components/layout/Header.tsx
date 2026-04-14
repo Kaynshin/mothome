@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, CTA } from "./nav-config";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -32,8 +33,8 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[var(--color-noir-mat)]/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-[var(--shadow-bleu)]"
-          : "bg-gradient-to-b from-[var(--color-noir-profond)]/80 to-transparent"
+          ? "bg-[var(--color-card)]/95 backdrop-blur-md border-b border-[var(--color-border)] shadow-[var(--shadow-bleu)]"
+          : "bg-gradient-to-b from-[var(--color-background)]/80 to-transparent"
       )}
       role="banner"
     >
@@ -64,7 +65,7 @@ export default function Header() {
                 "px-3 py-2 text-sm font-sans font-medium rounded-md transition-colors duration-200 uppercase tracking-wide whitespace-nowrap",
                 pathname === link.href
                   ? "text-[var(--color-bleu-logo)] bg-[var(--color-bleu-logo)]/10"
-                  : "text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] hover:bg-white/5"
+                  : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/5"
               )}
               aria-current={pathname === link.href ? "page" : undefined}
             >
@@ -73,11 +74,13 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA desktop + burger mobile */}
-        <div className="flex items-center gap-3">
+        {/* CTA desktop + theme toggle + burger mobile */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+
           <Button
             asChild
-            className="hidden sm:inline-flex bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm px-5 h-9 transition-colors duration-200"
+            className="hidden sm:inline-flex bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest text-sm px-5 h-9 transition-colors duration-200"
           >
             <Link href={CTA.href}>{CTA.label}</Link>
           </Button>
@@ -85,7 +88,7 @@ export default function Header() {
           {/* Hamburger mobile */}
           <button
             type="button"
-            className="lg:hidden p-2 rounded-md text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] hover:bg-white/10 transition-colors"
+            className="lg:hidden p-2 rounded-md text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/10 transition-colors"
             onClick={() => setMobileOpen(true)}
             aria-label="Ouvrir le menu"
             aria-expanded={mobileOpen}
@@ -101,7 +104,7 @@ export default function Header() {
         <SheetContent
           id="mobile-menu"
           side="right"
-          className="w-72 bg-[var(--color-noir-mat)] border-l border-[var(--color-border)] flex flex-col"
+          className="w-72 bg-[var(--color-card)] border-l border-[var(--color-border)] flex flex-col"
         >
           <SheetHeader className="flex flex-row items-center justify-between pb-4 border-b border-[var(--color-border)]">
             <SheetTitle className="flex items-center">
@@ -116,7 +119,7 @@ export default function Header() {
             <SheetClose asChild>
               <button
                 type="button"
-                className="p-1 rounded text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors"
+                className="p-1 rounded text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors"
                 aria-label="Fermer le menu"
               >
                 <X size={20} aria-hidden="true" />
@@ -137,7 +140,7 @@ export default function Header() {
                   "px-4 py-3 text-base font-sans font-medium rounded-md transition-colors duration-200 uppercase tracking-wide",
                   pathname === link.href
                     ? "text-[var(--color-bleu-logo)] bg-[var(--color-bleu-logo)]/10"
-                    : "text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] hover:bg-white/5"
+                    : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/5"
                 )}
                 aria-current={pathname === link.href ? "page" : undefined}
               >
@@ -149,7 +152,7 @@ export default function Header() {
           <div className="pt-4 border-t border-[var(--color-border)]">
             <Button
               asChild
-              className="w-full bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest"
+              className="w-full bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest"
             >
               <Link href={CTA.href} onClick={() => setMobileOpen(false)}>
                 {CTA.label}
