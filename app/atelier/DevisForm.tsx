@@ -260,7 +260,7 @@ export default function DevisForm() {
         >
           <AlertCircle size={16} className="text-red-400 shrink-0" aria-hidden="true" />
           <p className="text-sm text-red-300">
-            Une erreur s'est produite. Réessayez ou contactez Mael directement.
+            Une erreur s&apos;est produite. Réessayez ou contactez Mael directement.
           </p>
         </div>
       )}

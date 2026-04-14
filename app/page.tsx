@@ -179,7 +179,7 @@ export default function HomePage() {
               href="/atelier"
               className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-gris-moyen)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
             >
-              Découvrir l'atelier
+              Découvrir l&apos;atelier
             </Link>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function HomePage() {
           {/* Section header */}
           <div className="text-center mb-14">
             <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-3">
-              Ce qu'on fait
+              Ce qu&apos;on fait
             </p>
             <h2
               id="services-title"
@@ -273,9 +273,9 @@ export default function HomePage() {
                 Garage <span className="text-[var(--color-or-mat)]">&</span> Bar
               </h2>
               <p className="font-sans text-base text-[var(--color-gris-clair)] leading-relaxed mb-4">
-                Chez Mothome, pendant que Mael s'occupe de ta moto, toi tu
-                t'installes. Billard, PS5, écrans GP — et une vraie cuisine
-                maison pour patienter sans s'ennuyer.
+                Chez Mothome, pendant que Mael s&apos;occupe de ta moto, toi tu
+                t&apos;installes. Billard, PS5, écrans GP — et une vraie cuisine
+                maison pour patienter sans s&apos;ennuyer.
               </p>
               <p className="font-sans text-base text-[var(--color-gris-moyen)] leading-relaxed mb-8">
                 Un endroit où les passionnés de moto se retrouvent. Pas juste un
@@ -366,7 +366,7 @@ export default function HomePage() {
                 <StarRating rating={rating} />
                 <blockquote className="mt-4 flex-1">
                   <p className="font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed italic">
-                    "{text}"
+                    &quot;{text}&quot;
                   </p>
                 </blockquote>
                 <figcaption className="mt-4 pt-4 border-t border-[var(--color-border)]">
@@ -395,7 +395,7 @@ export default function HomePage() {
 
         <div className="relative max-w-3xl mx-auto px-[var(--spacing-container)] text-center">
           <p className="font-heading text-sm text-[var(--color-orange-brule)] uppercase tracking-[0.3em] mb-4">
-            Prêt à passer à l'action ?
+            Prêt à passer à l&apos;action ?
           </p>
           <h2
             id="cta-title"
