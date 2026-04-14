@@ -431,7 +431,7 @@ export default function HeroParallax3D() {
         <div className="flex flex-col sm:flex-row items-center gap-4 pointer-events-auto">
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
             Prendre rendez-vous
             <ArrowRight size={16} aria-hidden="true" />
@@ -504,7 +504,7 @@ function HeroFallback() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
             Prendre rendez-vous
             <ArrowRight size={16} aria-hidden="true" />

@@ -115,7 +115,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact#rdv"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
             >
               Prendre rendez-vous
               <ArrowRight size={16} aria-hidden="true" />
@@ -344,7 +344,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
             Prendre rendez-vous
             <ArrowRight size={18} aria-hidden="true" />

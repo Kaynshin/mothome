@@ -130,7 +130,7 @@ export default function ServiceDomicilePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#reservation"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Réserver une intervention
                 <ChevronRight size={16} aria-hidden="true" />

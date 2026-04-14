@@ -171,7 +171,7 @@ export default function AtelierPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#devis"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
               >
                 Demander un devis
                 <ArrowRight size={15} aria-hidden="true" />
