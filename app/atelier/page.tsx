@@ -235,7 +235,7 @@ export default function AtelierPage() {
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg overflow-hidden">
                   <div className="px-6 py-4 border-b border-[var(--color-border)] bg-[var(--color-muted)]">
-                    <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
+                    <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest">
                       Tarifs indicatifs
                     </h3>
                   </div>

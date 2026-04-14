@@ -243,7 +243,7 @@ export default function BarPage() {
             <div className="space-y-8">
               {MENU.map(({ categorie, items }) => (
                 <div key={categorie}>
-                  <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                  <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-3">
                     {categorie}
                   </h3>
                   <ul
@@ -369,7 +369,7 @@ export default function BarPage() {
 
             <div className="space-y-6">
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-3">
                   Accès
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
@@ -379,7 +379,7 @@ export default function BarPage() {
               </div>
 
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-3">
                   Réservation groupe
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-4">

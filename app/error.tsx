@@ -22,7 +22,7 @@ export default function Error({
         </h2>
         <button
           onClick={reset}
-          className="font-sans text-sm text-[var(--color-or-mat)] underline underline-offset-4 hover:text-[var(--color-or-chaud)] transition-colors"
+          className="font-sans text-sm text-[var(--color-accent-text)] underline underline-offset-4 hover:text-[var(--color-accent-text-hover)] transition-colors"
         >
           Réessayer
         </button>

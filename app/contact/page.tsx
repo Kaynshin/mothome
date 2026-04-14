@@ -131,7 +131,7 @@ export default function ContactPage() {
                       <MapPin size={18} aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
+                      <span className="block font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-1">
                         Adresse
                       </span>
                       <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
@@ -152,7 +152,7 @@ export default function ContactPage() {
                       <Phone size={18} aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
+                      <span className="block font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-1">
                         Téléphone
                       </span>
                       <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
@@ -170,7 +170,7 @@ export default function ContactPage() {
                       <Mail size={18} aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
+                      <span className="block font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-1">
                         Email
                       </span>
                       <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
@@ -185,7 +185,7 @@ export default function ContactPage() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <Clock size={18} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
-                  <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
+                  <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest">
                     Horaires d&apos;ouverture
                   </h3>
                 </div>
@@ -215,8 +215,8 @@ export default function ContactPage() {
               {/* RDV en ligne */}
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Calendar size={18} className="text-[var(--color-or-mat)]" aria-hidden="true" />
-                  <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
+                  <Calendar size={18} className="text-[var(--color-accent-text)]" aria-hidden="true" />
+                  <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest">
                     RDV en ligne
                   </h3>
                 </div>

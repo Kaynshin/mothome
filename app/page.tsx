@@ -215,14 +215,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
-              <p className="font-heading text-sm text-[var(--color-or-mat)] uppercase tracking-[0.3em] mb-4">
+              <p className="font-heading text-sm text-[var(--color-accent-text)] uppercase tracking-[0.3em] mb-4">
                 Le concept unique
               </p>
               <h2
                 id="bar-title"
                 className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase mb-6"
               >
-                Garage <span className="text-[var(--color-or-mat)]">&</span> Bar
+                Garage <span className="text-[var(--color-accent-text)]">&</span> Bar
               </h2>
               <p className="font-sans text-base text-[var(--color-muted-foreground)] leading-relaxed mb-4">
                 Chez Mothome, pendant que Mael s&apos;occupe de ta moto, toi tu
@@ -257,7 +257,7 @@ export default function HomePage() {
 
               <Link
                 href="/bar"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-or-mat)]/40 hover:border-[var(--color-or-mat)] text-[var(--color-or-mat)] hover:text-[var(--color-or-chaud)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-or-mat)]/40 hover:border-[var(--color-or-mat)] text-[var(--color-accent-text)] hover:text-[var(--color-accent-text-hover)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
               >
                 <Coffee size={15} aria-hidden="true" />
                 Passer au bar
@@ -273,9 +273,9 @@ export default function HomePage() {
               <div className="text-center space-y-3 relative z-10">
                 <Coffee
                   size={48}
-                  className="text-[var(--color-or-mat)]/40 mx-auto"
+                  className="text-[var(--color-accent-text)]/40 mx-auto"
                 />
-                <p className="font-accent text-2xl text-[var(--color-or-mat)]/40 tracking-widest uppercase">
+                <p className="font-accent text-2xl text-[var(--color-accent-text)]/40 tracking-widest uppercase">
                   Le Bar
                 </p>
                 <p className="font-sans text-xs text-[var(--color-muted-foreground)]/60">

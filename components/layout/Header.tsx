@@ -50,7 +50,7 @@ export default function Header() {
             alt="Mot'Home"
             width={180}
             height={50}
-            className="h-10 md:h-12 w-auto"
+            className="h-10 md:h-12 w-auto dark:invert"
             priority
           />
         </Link>
@@ -113,7 +113,7 @@ export default function Header() {
                 alt="Mot'Home"
                 width={150}
                 height={42}
-                className="h-9 w-auto"
+                className="h-9 w-auto dark:invert"
               />
             </SheetTitle>
             <SheetClose asChild>

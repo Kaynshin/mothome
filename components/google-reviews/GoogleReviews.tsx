@@ -113,7 +113,7 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
       </svg>
 
       <div className="flex items-baseline gap-1.5">
-        <span className="font-heading text-lg font-semibold text-[var(--color-or-mat)]">
+        <span className="font-heading text-lg font-semibold text-[var(--color-accent-text)]">
           {avg.toFixed(1)}
         </span>
         <div className="flex gap-0.5">
@@ -173,7 +173,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
           </div>
         )}
         <div className="min-w-0">
-          <figcaption className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-wide truncate">
+          <figcaption className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-wide truncate">
             {review.authorName}
           </figcaption>
           <p className="font-sans text-xs text-[var(--color-muted-foreground)]">

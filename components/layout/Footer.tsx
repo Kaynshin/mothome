@@ -84,7 +84,7 @@ export default function Footer() {
                 alt="Mot'Home"
                 width={180}
                 height={50}
-                className="h-11 w-auto"
+                className="h-11 w-auto dark:invert"
               />
             </Link>
             <p className="text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-6">
@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <nav aria-label="Navigation secondaire">
-            <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-4">
+            <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-4">
               Navigation
             </h3>
             <ul className="space-y-2">
@@ -129,7 +129,7 @@ export default function Footer() {
 
           {/* Horaires */}
           <div>
-            <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-4">
+            <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-4">
               Horaires
             </h3>
             <ul className="space-y-3" aria-label="Horaires d'ouverture">
@@ -155,7 +155,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-4">
+            <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-4">
               Contact
             </h3>
             <address className="not-italic space-y-3">

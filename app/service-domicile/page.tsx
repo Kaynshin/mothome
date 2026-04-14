@@ -309,7 +309,7 @@ export default function ServiceDomicilePage() {
             {/* Info complementary */}
             <div className="space-y-6">
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-3">
                   Tarif déplacement
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
@@ -320,7 +320,7 @@ export default function ServiceDomicilePage() {
               </div>
 
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-3">
                   Disponibilités
                 </h3>
                 <ul className="space-y-2">

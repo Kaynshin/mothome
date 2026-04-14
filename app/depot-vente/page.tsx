@@ -322,7 +322,7 @@ export default function DepotVentePage() {
           {/* Commission info */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-              <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+              <h3 className="font-heading text-sm font-semibold text-[var(--color-accent-text)] uppercase tracking-widest mb-3">
                 Commission & conditions
               </h3>
               <ul className="space-y-2 font-sans text-sm text-[var(--color-muted-foreground)]">

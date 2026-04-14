@@ -27,6 +27,32 @@
   --color-bleu-vif: #1060b0;
   --color-bleu-clair: #2070b0;
 
+  /* --- Semantic color tokens — light mode defaults --- */
+  /* These generate Tailwind utilities (bg-background, text-foreground, etc.)  */
+  /* Dark mode overrides live in the .dark block below                          */
+  --color-background: #f8f7f5;
+  --color-foreground: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a1a;
+  --color-muted: #eeeae4;
+  --color-muted-foreground: #6b6055;
+  --color-border: #d5cfc4;
+  --color-input: #d5cfc4;
+  --color-ring: #0050a0;
+  --color-primary: #0050a0;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #b8943a;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #b8943a;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+  --color-brand: #0050a0;
+  /* Gold text — darker in light mode for WCAG AA contrast on white (#7a6029 = 9:1) */
+  --color-accent-text: #7a6029;
+  /* Gold text hover — even darker for clear hover affordance on light bg */
+  --color-accent-text-hover: #5c481e;
+
   /* --- Typographie --- */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-barlow-condensed), ui-sans-serif, sans-serif;
@@ -54,28 +80,9 @@
 }
 
 /* ============================================================
-   Semantic color tokens — Light mode (default)
-   ============================================================ */
-
-:root {
-  --color-background: #f8f7f5;
-  --color-foreground: #1a1a1a;
-  --color-card: #ffffff;
-  --color-card-foreground: #1a1a1a;
-  --color-muted: #eeeae4;
-  --color-muted-foreground: #6b6055;
-  --color-border: #d5cfc4;
-  --color-primary: #0050a0;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #b8943a;
-  --color-secondary-foreground: #ffffff;
-  --color-accent: #b8943a;
-  --color-accent-foreground: #ffffff;
-  --color-brand: #0050a0;
-}
-
-/* ============================================================
-   Semantic color tokens — Dark mode
+   Dark mode overrides
+   next-themes adds class="dark" to <html>; .dark has same
+   specificity as :root but appears later → wins in cascade.
    ============================================================ */
 
 .dark {
@@ -86,13 +93,21 @@
   --color-muted: #1a1a1a;
   --color-muted-foreground: #8a8070;
   --color-border: #2a2520;
+  --color-input: #2a2520;
+  --color-ring: #1060b0;
   --color-primary: #0050a0;
   --color-primary-foreground: #f5f0e8;
   --color-secondary: #b8943a;
   --color-secondary-foreground: #0a0a0a;
   --color-accent: #b8943a;
   --color-accent-foreground: #0a0a0a;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
   --color-brand: #1060b0;
+  /* Gold text — regular gold works on dark backgrounds (#b8943a = 7.8:1 on #111) */
+  --color-accent-text: #b8943a;
+  /* Gold text hover — brighter gold for clear hover effect on dark backgrounds */
+  --color-accent-text-hover: #d4a843;
 }
 
 /* ============================================================

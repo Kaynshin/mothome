@@ -10,7 +10,7 @@ export default function NotFound() {
         </h1>
         <Link
           href="/"
-          className="inline-block font-sans text-sm text-[var(--color-or-mat)] underline underline-offset-4 hover:text-[var(--color-or-chaud)] transition-colors"
+          className="inline-block font-sans text-sm text-[var(--color-accent-text)] underline underline-offset-4 hover:text-[var(--color-accent-text-hover)] transition-colors"
         >
           Retour à l&apos;accueil
         </Link>
