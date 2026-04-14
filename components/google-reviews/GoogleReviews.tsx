@@ -64,7 +64,7 @@ function StarRating({ rating }: { rating: number }) {
           className={
             i < rating
               ? "fill-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)]"
-              : "text-[var(--color-gris-moyen)]"
+              : "text-[var(--color-muted-foreground)]"
           }
           aria-hidden="true"
         />
@@ -83,7 +83,7 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
       href={GOOGLE_MAPS_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-3 mb-10 px-5 py-3 border border-[var(--color-border)] rounded-lg hover:border-[var(--color-gris-moyen)] transition-colors duration-200 group"
+      className="inline-flex items-center gap-3 mb-10 px-5 py-3 border border-[var(--color-border)] rounded-lg hover:border-[var(--color-muted-foreground)] transition-colors duration-200 group"
       aria-label={`Note Google : ${avg.toFixed(1)} sur 5 — ${reviews.length} avis. Voir sur Google Maps`}
     >
       {/* Google G logo (SVG inline, minimal) */}
@@ -124,20 +124,20 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
               className={
                 i < Math.round(avg)
                   ? "fill-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)]"
-                  : "text-[var(--color-gris-moyen)]"
+                  : "text-[var(--color-muted-foreground)]"
               }
               aria-hidden="true"
             />
           ))}
         </div>
-        <span className="font-sans text-sm text-[var(--color-gris-moyen)]">
+        <span className="font-sans text-sm text-[var(--color-muted-foreground)]">
           ({reviews.length} avis)
         </span>
       </div>
 
       <ExternalLink
         size={14}
-        className="text-[var(--color-gris-moyen)] group-hover:text-[var(--color-gris-clair)] transition-colors ml-1 shrink-0"
+        className="text-[var(--color-muted-foreground)] group-hover:text-[var(--color-muted-foreground)] transition-colors ml-1 shrink-0"
         aria-hidden="true"
       />
     </a>
@@ -153,7 +153,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
       : review.text.slice(0, MAX_TEXT_LENGTH).trimEnd() + "…";
 
   return (
-    <figure className="flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg">
+    <figure className="flex flex-col p-6 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-lg">
       {/* Header: avatar + name + time */}
       <div className="flex items-center gap-3 mb-4">
         {review.profilePhotoUrl ? (
@@ -166,17 +166,17 @@ function ReviewCard({ review }: { review: GoogleReview }) {
           />
         ) : (
           <div
-            className="w-9 h-9 rounded-full bg-[var(--color-noir-mat)] border border-[var(--color-border)] flex items-center justify-center shrink-0"
+            className="w-9 h-9 rounded-full bg-[var(--color-card)] border border-[var(--color-border)] flex items-center justify-center shrink-0"
             aria-hidden="true"
           >
-            <User size={16} className="text-[var(--color-gris-moyen)]" />
+            <User size={16} className="text-[var(--color-muted-foreground)]" />
           </div>
         )}
         <div className="min-w-0">
           <figcaption className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-wide truncate">
             {review.authorName}
           </figcaption>
-          <p className="font-sans text-xs text-[var(--color-gris-moyen)]">
+          <p className="font-sans text-xs text-[var(--color-muted-foreground)]">
             {review.relativeTimeDescription}
           </p>
         </div>
@@ -185,7 +185,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
       <StarRating rating={review.rating} />
 
       <blockquote className="mt-4 flex-1">
-        <p className="font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed italic">
+        <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed italic">
           &ldquo;{displayText}&rdquo;
         </p>
         {isLong && (
@@ -205,28 +205,28 @@ function ReviewCard({ review }: { review: GoogleReview }) {
 function SkeletonCard() {
   return (
     <div
-      className="flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg animate-pulse"
+      className="flex flex-col p-6 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-lg animate-pulse"
       aria-hidden="true"
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-9 h-9 rounded-full bg-[var(--color-noir-mat)]" />
+        <div className="w-9 h-9 rounded-full bg-[var(--color-card)]" />
         <div className="flex-1 space-y-1.5">
-          <div className="h-3 bg-[var(--color-noir-mat)] rounded w-1/3" />
-          <div className="h-2.5 bg-[var(--color-noir-mat)] rounded w-1/4" />
+          <div className="h-3 bg-[var(--color-card)] rounded w-1/3" />
+          <div className="h-2.5 bg-[var(--color-card)] rounded w-1/4" />
         </div>
       </div>
       <div className="flex gap-0.5 mb-4">
         {Array.from({ length: 5 }).map((_, i) => (
           <div
             key={i}
-            className="w-3.5 h-3.5 rounded bg-[var(--color-noir-mat)]"
+            className="w-3.5 h-3.5 rounded bg-[var(--color-card)]"
           />
         ))}
       </div>
       <div className="space-y-2 flex-1">
-        <div className="h-3 bg-[var(--color-noir-mat)] rounded" />
-        <div className="h-3 bg-[var(--color-noir-mat)] rounded w-5/6" />
-        <div className="h-3 bg-[var(--color-noir-mat)] rounded w-4/6" />
+        <div className="h-3 bg-[var(--color-card)] rounded" />
+        <div className="h-3 bg-[var(--color-card)] rounded w-5/6" />
+        <div className="h-3 bg-[var(--color-card)] rounded w-4/6" />
       </div>
     </div>
   );
@@ -256,7 +256,7 @@ export default function GoogleReviews() {
       {/* Google badge */}
       <div className="flex justify-center">
         {loading ? (
-          <div className="mb-10 h-12 w-56 rounded-lg bg-[var(--color-noir-doux)] border border-[var(--color-border)] animate-pulse" />
+          <div className="mb-10 h-12 w-56 rounded-lg bg-[var(--color-muted)] border border-[var(--color-border)] animate-pulse" />
         ) : (
           <AverageRating reviews={reviews} />
         )}
@@ -280,7 +280,7 @@ export default function GoogleReviews() {
           href={GOOGLE_MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-heading text-sm text-[var(--color-gris-moyen)] hover:text-[var(--color-gris-clair)] uppercase tracking-widest transition-colors duration-200"
+          className="inline-flex items-center gap-2 font-heading text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-muted-foreground)] uppercase tracking-widest transition-colors duration-200"
         >
           Laisser un avis sur Google
           <ExternalLink size={13} aria-hidden="true" />

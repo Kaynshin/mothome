@@ -142,19 +142,19 @@ export default function DepotVentePage() {
           HERO
           ================================================================ */}
       <section
-        className="py-20 md:py-28 bg-[var(--color-noir-mat)] border-b border-[var(--color-border)]"
+        className="py-20 md:py-28 bg-[var(--color-card)] border-b border-[var(--color-border)]"
         aria-labelledby="depot-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <nav aria-label="Fil d'Ariane" className="mb-8">
-            <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+            <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
-                <Link href="/" className="hover:text-[var(--color-blanc-casse)] transition-colors">
+                <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
                   Accueil
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-[var(--color-gris-clair)]" aria-current="page">
+              <li className="text-[var(--color-muted-foreground)]" aria-current="page">
                 Dépôt-Vente
               </li>
             </ol>
@@ -166,13 +166,13 @@ export default function DepotVentePage() {
             </p>
             <h1
               id="depot-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6 leading-none"
+              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none"
             >
               Dépôt-
               <br />
               <span className="text-[var(--color-bleu-logo)]">Vente</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
+            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
               Vous vendez votre moto ou vous cherchez une occasion fiable ?
               Mothome gère la vente de A à Z et certifie chaque moto mécaniquement.
               Commission seulement si vente réussie.
@@ -180,14 +180,14 @@ export default function DepotVentePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#deposer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Déposer ma moto
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
               <a
                 href="#motos"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir les motos dispo
               </a>
@@ -211,7 +211,7 @@ export default function DepotVentePage() {
             </p>
             <h2
               id="motos-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               Motos disponibles
             </h2>
@@ -221,14 +221,14 @@ export default function DepotVentePage() {
             {MOTOS_EXEMPLE.map((moto) => (
               <article
                 key={`${moto.marque}-${moto.modele}-${moto.annee}`}
-                className={`relative p-6 bg-[var(--color-noir-mat)] border rounded-lg ${
+                className={`relative p-6 bg-[var(--color-card)] border rounded-lg ${
                   moto.disponible
                     ? "border-[var(--color-border)]"
                     : "border-[var(--color-border)] opacity-50"
                 }`}
               >
                 {!moto.disponible && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-gris-moyen)]/20 rounded text-xs font-heading font-semibold text-[var(--color-gris-moyen)] uppercase tracking-wide">
+                  <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-muted-foreground)]/20 rounded text-xs font-heading font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wide">
                     Vendue
                   </div>
                 )}
@@ -239,17 +239,17 @@ export default function DepotVentePage() {
                 )}
 
                 <div className="mb-4 pt-2">
-                  <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase">
+                  <h3 className="font-heading text-xl text-[var(--color-foreground)] uppercase">
                     {moto.marque} {moto.modele}
                   </h3>
-                  <p className="font-sans text-sm text-[var(--color-gris-moyen)]">
+                  <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
                     {moto.annee} · {moto.km}
                   </p>
                 </div>
 
                 <div className="flex items-end justify-between">
                   <div>
-                    <span className="block font-sans text-xs text-[var(--color-gris-moyen)] mb-1">
+                    <span className="block font-sans text-xs text-[var(--color-muted-foreground)] mb-1">
                       {moto.etat}
                     </span>
                     <span className="font-heading text-2xl text-[var(--color-bleu-logo)]">
@@ -269,7 +269,7 @@ export default function DepotVentePage() {
             ))}
           </div>
 
-          <p className="font-sans text-sm text-[var(--color-gris-moyen)] text-center">
+          <p className="font-sans text-sm text-[var(--color-muted-foreground)] text-center">
             Stock mis à jour régulièrement.{" "}
             <Link
               href="/contact"
@@ -297,7 +297,7 @@ export default function DepotVentePage() {
             </p>
             <h2
               id="vendeur-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               Comment ça marche
             </h2>
@@ -309,10 +309,10 @@ export default function DepotVentePage() {
                 <span className="block font-heading text-5xl text-[var(--color-bleu-logo)]/15 mb-4 leading-none">
                   {num}
                 </span>
-                <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
+                <h3 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-2">
                   {titre}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -321,11 +321,11 @@ export default function DepotVentePage() {
 
           {/* Commission info */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg">
+            <div className="lg:col-span-2 p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
               <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
                 Commission & conditions
               </h3>
-              <ul className="space-y-2 font-sans text-sm text-[var(--color-gris-moyen)]">
+              <ul className="space-y-2 font-sans text-sm text-[var(--color-muted-foreground)]">
                 <li className="flex items-start gap-2">
                   <span className="text-[var(--color-bleu-logo)] shrink-0 mt-0.5">·</span>
                   Commission uniquement en cas de vente réussie (tarif communiqué lors de l&apos;estimation)
@@ -347,10 +347,10 @@ export default function DepotVentePage() {
 
             <div className="p-6 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg flex flex-col justify-between gap-4">
               <div>
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-blanc-casse)] uppercase tracking-widest mb-2">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-foreground)] uppercase tracking-widest mb-2">
                   Estimation gratuite
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)]">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
                   Appelez Mael ou passez au garage avec votre moto pour une estimation sans engagement.
                 </p>
               </div>
@@ -364,7 +364,7 @@ export default function DepotVentePage() {
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] uppercase tracking-wide transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] uppercase tracking-wide transition-colors"
                 >
                   Formulaire de contact →
                 </Link>
@@ -388,7 +388,7 @@ export default function DepotVentePage() {
             </p>
             <h2
               id="acheteur-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               L&apos;occasion certifiée
             </h2>
@@ -398,15 +398,15 @@ export default function DepotVentePage() {
             {AVANTAGES_ACHETEUR.map(({ icon: Icon, titre, description }) => (
               <div
                 key={titre}
-                className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
+                className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg"
               >
                 <div className="w-11 h-11 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-4">
                   <Icon size={20} aria-hidden="true" />
                 </div>
-                <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
+                <h3 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-2">
                   {titre}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -416,7 +416,7 @@ export default function DepotVentePage() {
           <div className="mt-10 text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
             >
               Me renseigner sur une moto
               <ChevronRight size={16} aria-hidden="true" />

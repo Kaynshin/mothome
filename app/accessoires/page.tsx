@@ -161,19 +161,19 @@ export default function AccessoiresPage() {
           HERO
           ================================================================ */}
       <section
-        className="py-20 md:py-28 bg-[var(--color-noir-mat)] border-b border-[var(--color-border)]"
+        className="py-20 md:py-28 bg-[var(--color-card)] border-b border-[var(--color-border)]"
         aria-labelledby="accessoires-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <nav aria-label="Fil d'Ariane" className="mb-8">
-            <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+            <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
-                <Link href="/" className="hover:text-[var(--color-blanc-casse)] transition-colors">
+                <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
                   Accueil
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-[var(--color-gris-clair)]" aria-current="page">
+              <li className="text-[var(--color-muted-foreground)]" aria-current="page">
                 Accessoires
               </li>
             </ol>
@@ -185,13 +185,13 @@ export default function AccessoiresPage() {
             </p>
             <h1
               id="accessoires-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6 leading-none"
+              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none"
             >
               Acces-
               <br />
               <span className="text-[var(--color-bleu-logo)]">soires</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
+            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
               Casques, équipements, pièces et accessoires — les grandes marques
               au juste prix, avec le conseil d&apos;un passionné. Sur commande ou en
               stock selon les références.
@@ -199,7 +199,7 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Demander un produit
                 <ChevronRight size={16} aria-hidden="true" />
@@ -220,10 +220,10 @@ export default function AccessoiresPage() {
                 <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
                   <Icon size={18} aria-hidden="true" />
                 </div>
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-blanc-casse)] uppercase tracking-wide">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-foreground)] uppercase tracking-wide">
                   {titre}
                 </h3>
-                <p className="font-sans text-xs text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-xs text-[var(--color-muted-foreground)] leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -243,7 +243,7 @@ export default function AccessoiresPage() {
             </p>
             <h2
               id="categories-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               Catégories
             </h2>
@@ -256,16 +256,16 @@ export default function AccessoiresPage() {
                 id={cat.slug}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${
                   idx % 2 === 0
-                    ? "bg-[var(--color-noir-mat)]"
-                    : "bg-[var(--color-noir-doux)]"
+                    ? "bg-[var(--color-card)]"
+                    : "bg-[var(--color-muted)]"
                 }`}
               >
                 {/* Content */}
                 <div className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-[var(--color-border)]">
-                  <h3 className="font-heading text-2xl text-[var(--color-blanc-casse)] uppercase mb-4">
+                  <h3 className="font-heading text-2xl text-[var(--color-foreground)] uppercase mb-4">
                     {cat.titre}
                   </h3>
-                  <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-6">
+                  <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-6">
                     {cat.description}
                   </p>
 
@@ -301,7 +301,7 @@ export default function AccessoiresPage() {
                             />
                           </svg>
                         </span>
-                        <span className="font-sans text-sm text-[var(--color-gris-clair)]">
+                        <span className="font-sans text-sm text-[var(--color-muted-foreground)]">
                           {item}
                         </span>
                       </li>
@@ -317,15 +317,15 @@ export default function AccessoiresPage() {
       {/* ================================================================
           CTA COMMANDE
           ================================================================ */}
-      <section className="py-16 bg-[var(--color-noir-mat)] border-t border-[var(--color-border)]">
+      <section className="py-16 bg-[var(--color-card)] border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-blanc-casse)] uppercase mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-foreground)] uppercase mb-4">
               Vous ne trouvez pas ce
               <br />
               <span className="text-[var(--color-bleu-logo)]">que vous cherchez ?</span>
             </h2>
-            <p className="font-sans text-[var(--color-gris-moyen)] mb-8 leading-relaxed">
+            <p className="font-sans text-[var(--color-muted-foreground)] mb-8 leading-relaxed">
               Le catalogue affiché n&apos;est pas exhaustif. Contactez Mael directement
               avec la référence ou la description du produit — il vous trouve le
               meilleur prix et le délai le plus court.
@@ -333,14 +333,14 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Contacter Mael
                 <ChevronRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href="/atelier"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir l&apos;atelier
               </Link>

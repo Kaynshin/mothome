@@ -120,19 +120,19 @@ export default function AProposPage() {
           HERO
           ================================================================ */}
       <section
-        className="py-20 md:py-28 bg-[var(--color-noir-mat)] border-b border-[var(--color-border)]"
+        className="py-20 md:py-28 bg-[var(--color-card)] border-b border-[var(--color-border)]"
         aria-labelledby="apropos-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <nav aria-label="Fil d'Ariane" className="mb-8">
-            <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+            <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
-                <Link href="/" className="hover:text-[var(--color-blanc-casse)] transition-colors">
+                <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
                   Accueil
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-[var(--color-gris-clair)]" aria-current="page">
+              <li className="text-[var(--color-muted-foreground)]" aria-current="page">
                 À propos
               </li>
             </ol>
@@ -144,12 +144,12 @@ export default function AProposPage() {
             </p>
             <h1
               id="apropos-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6 leading-none"
+              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none"
             >
               À{" "}
               <span className="text-[var(--color-bleu-logo)]">propos</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
+            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
               Mothome, c&apos;est l&apos;histoire d&apos;un mécanicien passionné qui a décidé
               de créer le garage qu&apos;il aurait voulu trouver quand il cherchait
               quelqu&apos;un à qui confier sa moto.
@@ -173,13 +173,13 @@ export default function AProposPage() {
               </p>
               <h2
                 id="histoire-title"
-                className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase mb-6"
+                className="font-heading text-4xl text-[var(--color-foreground)] uppercase mb-6"
               >
                 Maël &
                 <br />
                 <span className="text-[var(--color-bleu-logo)]">Mothome</span>
               </h2>
-              <div className="space-y-4 font-sans text-[var(--color-gris-clair)] leading-relaxed">
+              <div className="space-y-4 font-sans text-[var(--color-muted-foreground)] leading-relaxed">
                 <p>
                   Tout a commencé dans un garage de campagne, avec une moto qui ne
                   démarrait plus et un gamin de 16 ans décidé à comprendre pourquoi.
@@ -209,7 +209,7 @@ export default function AProposPage() {
               {EQUIPE.map(({ nom, role, description, marques }) => (
                 <div
                   key={nom}
-                  className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
+                  className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg"
                 >
                   {/* Avatar placeholder */}
                   <div className="w-16 h-16 rounded-full bg-[var(--color-bleu-logo)]/15 flex items-center justify-center mb-4">
@@ -218,18 +218,18 @@ export default function AProposPage() {
                     </span>
                   </div>
 
-                  <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase mb-1">
+                  <h3 className="font-heading text-xl text-[var(--color-foreground)] uppercase mb-1">
                     {nom}
                   </h3>
                   <p className="font-sans text-xs text-[var(--color-bleu-logo)] uppercase tracking-widest mb-3">
                     {role}
                   </p>
-                  <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-4">
+                  <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-4">
                     {description}
                   </p>
 
                   <div>
-                    <p className="font-sans text-xs text-[var(--color-gris-moyen)] mb-2">
+                    <p className="font-sans text-xs text-[var(--color-muted-foreground)] mb-2">
                       Marques de cœur :
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -247,7 +247,7 @@ export default function AProposPage() {
               ))}
 
               <div className="p-5 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg">
-                <p className="font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   Mothome grandit. Si tu es mécanicien passionné et que le projet
                   te parle, contacte Maël directement.
                 </p>
@@ -277,7 +277,7 @@ export default function AProposPage() {
             </p>
             <h2
               id="timeline-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               La route jusqu&apos;ici
             </h2>
@@ -286,14 +286,14 @@ export default function AProposPage() {
           <ol className="relative border-l border-[var(--color-border)] space-y-10 pl-8 ml-4">
             {TIMELINE.map(({ annee, titre, description }) => (
               <li key={annee} className="relative">
-                <div className="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full bg-[var(--color-noir-mat)] border-2 border-[var(--color-bleu-logo)]" aria-hidden="true" />
+                <div className="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full bg-[var(--color-card)] border-2 border-[var(--color-bleu-logo)]" aria-hidden="true" />
                 <span className="block font-heading text-xs text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-1">
                   {annee}
                 </span>
-                <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
+                <h3 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-2">
                   {titre}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed max-w-xl">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
                   {description}
                 </p>
               </li>
@@ -316,7 +316,7 @@ export default function AProposPage() {
             </p>
             <h2
               id="valeurs-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               Valeurs
             </h2>
@@ -326,15 +326,15 @@ export default function AProposPage() {
             {VALEURS.map(({ icon: Icon, titre, description }) => (
               <div
                 key={titre}
-                className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
+                className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg"
               >
                 <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-4">
                   <Icon size={18} aria-hidden="true" />
                 </div>
-                <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
+                <h3 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-2">
                   {titre}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -349,25 +349,25 @@ export default function AProposPage() {
       <section className="py-[var(--spacing-section)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-blanc-casse)] uppercase mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-foreground)] uppercase mb-4">
               Venez nous{" "}
               <span className="text-[var(--color-bleu-logo)]">rendre visite</span>
             </h2>
-            <p className="font-sans text-[var(--color-gris-moyen)] mb-8 leading-relaxed">
+            <p className="font-sans text-[var(--color-muted-foreground)] mb-8 leading-relaxed">
               L&apos;atelier est ouvert du lundi au samedi. Passez sans rendez-vous pour
               poser une question, voir le lieu ou juste boire un café avec Maël.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Prendre contact
                 <ChevronRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href="/atelier"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir l&apos;atelier
               </Link>

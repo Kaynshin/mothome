@@ -132,19 +132,19 @@ export default function AtelierPage() {
       {/* ================================================================
           HERO
           ================================================================ */}
-      <section className="py-20 md:py-28 bg-[var(--color-noir-mat)] border-b border-[var(--color-border)]">
+      <section className="py-20 md:py-28 bg-[var(--color-card)] border-b border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="max-w-3xl">
             {/* Breadcrumb */}
             <nav aria-label="Fil d'Ariane" className="mb-8">
-              <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+              <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
                 <li>
-                  <Link href="/" className="hover:text-[var(--color-blanc-casse)] transition-colors">
+                  <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
                     Accueil
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
-                <li className="text-[var(--color-gris-clair)]" aria-current="page">
+                <li className="text-[var(--color-muted-foreground)]" aria-current="page">
                   L&apos;Atelier
                 </li>
               </ol>
@@ -159,10 +159,10 @@ export default function AtelierPage() {
               </span>
             </div>
 
-            <h1 className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6">
+            <h1 className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6">
               L&apos;Atelier
             </h1>
-            <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed mb-8 max-w-2xl">
+            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed mb-8 max-w-2xl">
               Mécanique artisanale à Thonon-les-Bains. Toutes marques, du scooter à
               la sportive. Tarifs transparents affichés en clair — fini le PDF
               introuvable.
@@ -171,14 +171,14 @@ export default function AtelierPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#devis"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
               >
                 Demander un devis
                 <ArrowRight size={15} aria-hidden="true" />
               </a>
               <Link
                 href="/service-domicile"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-gris-moyen)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-muted-foreground)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
               >
                 <Home size={15} aria-hidden="true" />
                 Aussi à domicile
@@ -201,17 +201,17 @@ export default function AtelierPage() {
             >
               {/* Content */}
               <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-blanc-casse)] uppercase mb-4">
+                <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-foreground)] uppercase mb-4">
                   {title}
                 </h2>
-                <p className="font-sans text-base text-[var(--color-gris-clair)] leading-relaxed mb-6">
+                <p className="font-sans text-base text-[var(--color-muted-foreground)] leading-relaxed mb-6">
                   {description}
                 </p>
 
                 {/* Features list */}
                 <ul className="space-y-2 mb-8" aria-label={`Inclus dans ${title}`}>
                   {features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm text-[var(--color-gris-clair)]">
+                    <li key={feature} className="flex items-start gap-3 text-sm text-[var(--color-muted-foreground)]">
                       <CheckCircle
                         size={16}
                         className="text-[var(--color-bleu-logo)] mt-0.5 shrink-0"
@@ -233,8 +233,8 @@ export default function AtelierPage() {
 
               {/* Tarifs table */}
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg overflow-hidden">
-                  <div className="px-6 py-4 border-b border-[var(--color-border)] bg-[var(--color-noir-doux)]">
+                <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg overflow-hidden">
+                  <div className="px-6 py-4 border-b border-[var(--color-border)] bg-[var(--color-muted)]">
                     <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
                       Tarifs indicatifs
                     </h3>
@@ -244,7 +244,7 @@ export default function AtelierPage() {
                     <tbody className="divide-y divide-[var(--color-border)]">
                       {tarifs.map(({ label, prix }) => (
                         <tr key={label} className="group">
-                          <td className="px-6 py-4 text-sm text-[var(--color-gris-clair)] font-sans">
+                          <td className="px-6 py-4 text-sm text-[var(--color-muted-foreground)] font-sans">
                             {label}
                           </td>
                           <td className="px-6 py-4 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] text-right whitespace-nowrap">
@@ -255,7 +255,7 @@ export default function AtelierPage() {
                     </tbody>
                   </table>
                   <div className="px-6 py-4 border-t border-[var(--color-border)]">
-                    <p className="text-xs text-[var(--color-gris-moyen)]">
+                    <p className="text-xs text-[var(--color-muted-foreground)]">
                       * Tarifs indicatifs, pièces non incluses. Devis gratuit avant toute intervention.
                     </p>
                   </div>
@@ -271,7 +271,7 @@ export default function AtelierPage() {
           ================================================================ */}
       <section
         id="devis"
-        className="py-[var(--spacing-section)] bg-[var(--color-noir-mat)] border-t border-[var(--color-border)]"
+        className="py-[var(--spacing-section)] bg-[var(--color-card)] border-t border-[var(--color-border)]"
         aria-labelledby="devis-title"
       >
         <div className="max-w-3xl mx-auto px-[var(--spacing-container)]">
@@ -281,11 +281,11 @@ export default function AtelierPage() {
             </p>
             <h2
               id="devis-title"
-              className="font-heading text-4xl md:text-5xl text-[var(--color-blanc-casse)] uppercase mb-4"
+              className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase mb-4"
             >
               Demander un devis
             </h2>
-            <p className="font-sans text-base text-[var(--color-gris-moyen)]">
+            <p className="font-sans text-base text-[var(--color-muted-foreground)]">
               Décris ton problème ou ton projet — Mael te répond sous 24h.
             </p>
           </div>
@@ -299,12 +299,12 @@ export default function AtelierPage() {
           ================================================================ */}
       <section className="py-16 border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
             <div>
-              <h3 className="font-heading text-2xl text-[var(--color-blanc-casse)] uppercase mb-2">
+              <h3 className="font-heading text-2xl text-[var(--color-foreground)] uppercase mb-2">
                 Ta moto ne peut pas se déplacer ?
               </h3>
-              <p className="font-sans text-sm text-[var(--color-gris-moyen)]">
+              <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
                 Mael se déplace chez toi dans tout le Chablais. Dépannage ou entretien à domicile.
               </p>
             </div>

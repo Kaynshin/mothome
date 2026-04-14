@@ -85,13 +85,13 @@ export default function HomePage() {
           HERO — Static (parallax 3D désactivé temporairement — UNIA-57)
           ================================================================ */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-noir-profond)]"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-background)]"
         aria-label="Hero — Mothome"
       >
         {/* Static cinematic background */}
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,rgba(200,75,17,0.15),transparent)]" />
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-noir-profond)] to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-background)] to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
@@ -99,30 +99,30 @@ export default function HomePage() {
             Garage moto artisanal · Thonon-les-Bains
           </p>
           <h1
-            className="font-accent uppercase tracking-wider text-[var(--color-blanc-casse)] leading-none mb-4"
+            className="font-accent uppercase tracking-wider text-[var(--color-foreground)] leading-none mb-4"
             style={{ fontSize: "clamp(4rem, 15vw, 12rem)" }}
           >
             Mothome
           </h1>
-          <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
+          <p className="font-heading text-xl md:text-3xl text-[var(--color-muted-foreground)] uppercase tracking-widest mb-8">
             La Mécanique comme{" "}
             <span className="text-[var(--color-bleu-logo)]">Passion</span>
           </p>
-          <p className="font-sans text-base md:text-lg text-[var(--color-gris-moyen)] max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="font-sans text-base md:text-lg text-[var(--color-muted-foreground)] max-w-xl mx-auto mb-10 leading-relaxed">
             Atelier, service à domicile, accessoires, dépôt-vente — et un bar
             où les passionnés se retrouvent. Un concept unique dans le Chablais.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact#rdv"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
             >
               Prendre rendez-vous
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
             <Link
               href="/atelier"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-gris-moyen)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-muted-foreground)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
             >
               Découvrir l&apos;atelier
             </Link>
@@ -131,7 +131,7 @@ export default function HomePage() {
 
         {/* Scroll hint */}
         <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-gris-moyen)] animate-bounce"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-muted-foreground)] animate-bounce"
           aria-hidden="true"
         >
           <ChevronDown size={20} />
@@ -142,7 +142,7 @@ export default function HomePage() {
           SERVICES — 4 cards
           ================================================================ */}
       <section
-        className="py-[var(--spacing-section)] bg-[var(--color-noir-mat)]"
+        className="py-[var(--spacing-section)] bg-[var(--color-card)]"
         aria-labelledby="services-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
@@ -153,7 +153,7 @@ export default function HomePage() {
             </p>
             <h2
               id="services-title"
-              className="font-heading text-4xl md:text-5xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase"
             >
               Nos Services
             </h2>
@@ -164,7 +164,7 @@ export default function HomePage() {
             {SERVICES.map(({ icon: Icon, title, description, href, cta }) => (
               <article
                 key={title}
-                className="group relative flex flex-col p-6 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-all duration-300 hover:shadow-[var(--shadow-bleu)]"
+                className="group relative flex flex-col p-6 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-all duration-300 hover:shadow-[var(--shadow-bleu)]"
               >
                 {/* Icon */}
                 <div className="w-12 h-12 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-5 group-hover:bg-[var(--color-bleu-logo)]/20 transition-colors duration-300">
@@ -172,10 +172,10 @@ export default function HomePage() {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase mb-3">
+                <h3 className="font-heading text-xl text-[var(--color-foreground)] uppercase mb-3">
                   {title}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed flex-1 mb-5">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed flex-1 mb-5">
                   {description}
                 </p>
 
@@ -220,16 +220,16 @@ export default function HomePage() {
               </p>
               <h2
                 id="bar-title"
-                className="font-heading text-4xl md:text-5xl text-[var(--color-blanc-casse)] uppercase mb-6"
+                className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase mb-6"
               >
                 Garage <span className="text-[var(--color-or-mat)]">&</span> Bar
               </h2>
-              <p className="font-sans text-base text-[var(--color-gris-clair)] leading-relaxed mb-4">
+              <p className="font-sans text-base text-[var(--color-muted-foreground)] leading-relaxed mb-4">
                 Chez Mothome, pendant que Mael s&apos;occupe de ta moto, toi tu
                 t&apos;installes. Billard, PS5, écrans GP — et une vraie cuisine
                 maison pour patienter sans s&apos;ennuyer.
               </p>
-              <p className="font-sans text-base text-[var(--color-gris-moyen)] leading-relaxed mb-8">
+              <p className="font-sans text-base text-[var(--color-muted-foreground)] leading-relaxed mb-8">
                 Un endroit où les passionnés de moto se retrouvent. Pas juste un
                 garage — une expérience.
               </p>
@@ -244,7 +244,7 @@ export default function HomePage() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-sm text-[var(--color-gris-clair)]"
+                    className="flex items-center gap-3 text-sm text-[var(--color-muted-foreground)]"
                   >
                     <span
                       className="w-1.5 h-1.5 rounded-full bg-[var(--color-or-mat)] shrink-0"
@@ -266,7 +266,7 @@ export default function HomePage() {
 
             {/* Visual placeholder */}
             <div
-              className="relative aspect-[4/3] rounded-lg bg-[var(--color-noir-mat)] border border-[var(--color-border)] overflow-hidden flex items-center justify-center"
+              className="relative aspect-[4/3] rounded-lg bg-[var(--color-card)] border border-[var(--color-border)] overflow-hidden flex items-center justify-center"
               aria-hidden="true"
             >
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(184,148,58,0.12),transparent)]" />
@@ -278,7 +278,7 @@ export default function HomePage() {
                 <p className="font-accent text-2xl text-[var(--color-or-mat)]/40 tracking-widest uppercase">
                   Le Bar
                 </p>
-                <p className="font-sans text-xs text-[var(--color-gris-moyen)]/60">
+                <p className="font-sans text-xs text-[var(--color-muted-foreground)]/60">
                   Photos bientôt disponibles
                 </p>
               </div>
@@ -291,7 +291,7 @@ export default function HomePage() {
           TESTIMONIALS — Google Reviews
           ================================================================ */}
       <section
-        className="py-[var(--spacing-section)] bg-[var(--color-noir-mat)]"
+        className="py-[var(--spacing-section)] bg-[var(--color-card)]"
         aria-labelledby="testimonials-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
@@ -302,11 +302,11 @@ export default function HomePage() {
             </p>
             <h2
               id="testimonials-title"
-              className="font-heading text-4xl md:text-5xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase"
             >
               Avis Clients
             </h2>
-            <p className="mt-3 font-sans text-sm text-[var(--color-gris-moyen)]">
+            <p className="mt-3 font-sans text-sm text-[var(--color-muted-foreground)]">
               Avis vérifiés sur Google
             </p>
           </div>
@@ -334,17 +334,17 @@ export default function HomePage() {
           </p>
           <h2
             id="cta-title"
-            className="font-heading text-4xl md:text-6xl text-[var(--color-blanc-casse)] uppercase mb-6"
+            className="font-heading text-4xl md:text-6xl text-[var(--color-foreground)] uppercase mb-6"
           >
             Prends rendez-vous
           </h2>
-          <p className="font-sans text-base text-[var(--color-gris-moyen)] mb-10 leading-relaxed">
+          <p className="font-sans text-base text-[var(--color-muted-foreground)] mb-10 leading-relaxed">
             Révision, dépannage, devis — contacte Mael directement. Réponse
             rapide, tarif transparent.
           </p>
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-bold uppercase tracking-widest text-base rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
             Prendre rendez-vous
             <ArrowRight size={18} aria-hidden="true" />

@@ -73,10 +73,10 @@ export default function ContactForm() {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <CheckCircle size={44} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
-        <h3 className="font-heading text-2xl text-[var(--color-blanc-casse)] uppercase">
+        <h3 className="font-heading text-2xl text-[var(--color-foreground)] uppercase">
           Message envoyé !
         </h3>
-        <p className="font-sans text-[var(--color-gris-moyen)] max-w-sm">
+        <p className="font-sans text-[var(--color-muted-foreground)] max-w-sm">
           Mael vous répond sous 24h. À très bientôt chez Mothome !
         </p>
         <button
@@ -102,7 +102,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="contact-name"
-            className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
+            className="block text-sm font-heading font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wide mb-2"
           >
             Nom <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
@@ -115,7 +115,7 @@ export default function ContactForm() {
             placeholder="Votre nom"
             aria-describedby={errors.name ? "contact-name-error" : undefined}
             aria-invalid={!!errors.name}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-md text-[var(--color-foreground)] placeholder-[var(--color-muted-foreground)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.name && (
             <p id="contact-name-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -127,7 +127,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="contact-email"
-            className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
+            className="block text-sm font-heading font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wide mb-2"
           >
             Email <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
           </label>
@@ -140,7 +140,7 @@ export default function ContactForm() {
             placeholder="votre@email.fr"
             aria-describedby={errors.email ? "contact-email-error" : undefined}
             aria-invalid={!!errors.email}
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-md text-[var(--color-foreground)] placeholder-[var(--color-muted-foreground)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
           {errors.email && (
             <p id="contact-email-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -155,10 +155,10 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="contact-phone"
-            className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
+            className="block text-sm font-heading font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wide mb-2"
           >
             Téléphone{" "}
-            <span className="text-[var(--color-gris-moyen)] font-sans normal-case tracking-normal text-xs font-normal">
+            <span className="text-[var(--color-muted-foreground)] font-sans normal-case tracking-normal text-xs font-normal">
               (optionnel)
             </span>
           </label>
@@ -168,21 +168,21 @@ export default function ContactForm() {
             type="tel"
             autoComplete="tel"
             placeholder="06 12 34 56 78"
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
+            className="w-full px-4 py-3 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-md text-[var(--color-foreground)] placeholder-[var(--color-muted-foreground)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors"
           />
         </div>
 
         <div>
           <label
             htmlFor="contact-type"
-            className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
+            className="block text-sm font-heading font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wide mb-2"
           >
             Type de demande
           </label>
           <select
             id="contact-type"
             name="type"
-            className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors appearance-none"
+            className="w-full px-4 py-3 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-md text-[var(--color-foreground)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors appearance-none"
           >
             {DEMANDE_TYPES.map((t) => (
               <option key={t} value={t}>
@@ -197,7 +197,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="contact-message"
-          className="block text-sm font-heading font-semibold text-[var(--color-gris-clair)] uppercase tracking-wide mb-2"
+          className="block text-sm font-heading font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wide mb-2"
         >
           Message <span className="text-[var(--color-bleu-logo)]" aria-hidden="true">*</span>
         </label>
@@ -209,7 +209,7 @@ export default function ContactForm() {
           placeholder="Votre message..."
           aria-describedby={errors.message ? "contact-message-error" : undefined}
           aria-invalid={!!errors.message}
-          className="w-full px-4 py-3 bg-[var(--color-noir-doux)] border border-[var(--color-border)] rounded-md text-[var(--color-blanc-casse)] placeholder-[var(--color-gris-moyen)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors resize-y"
+          className="w-full px-4 py-3 bg-[var(--color-muted)] border border-[var(--color-border)] rounded-md text-[var(--color-foreground)] placeholder-[var(--color-muted-foreground)] font-sans text-sm focus:outline-none focus:border-[var(--color-bleu-logo)] transition-colors resize-y"
         />
         {errors.message && (
           <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-red-400">
@@ -235,7 +235,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] disabled:opacity-60 disabled:cursor-not-allowed text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
         aria-label={state === "submitting" ? "Envoi en cours..." : "Envoyer le message"}
       >
         {state === "submitting" ? (

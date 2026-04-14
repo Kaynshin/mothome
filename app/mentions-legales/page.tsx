@@ -14,29 +14,29 @@ export default function MentionsLegalesPage() {
     <section className="py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-[var(--spacing-container)]">
         <nav aria-label="Fil d'Ariane" className="mb-8">
-          <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+          <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
             <li>
               <Link
                 href="/"
-                className="hover:text-[var(--color-blanc-casse)] transition-colors"
+                className="hover:text-[var(--color-foreground)] transition-colors"
               >
                 Accueil
               </Link>
             </li>
             <li aria-hidden="true">/</li>
-            <li className="text-[var(--color-gris-clair)]" aria-current="page">
+            <li className="text-[var(--color-muted-foreground)]" aria-current="page">
               Mentions légales
             </li>
           </ol>
         </nav>
 
-        <h1 className="font-heading text-4xl md:text-5xl text-[var(--color-blanc-casse)] uppercase mb-10">
+        <h1 className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase mb-10">
           Mentions légales
         </h1>
 
-        <div className="space-y-8 font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed">
+        <div className="space-y-8 font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Éditeur du site
             </h2>
             <p>
@@ -55,7 +55,7 @@ export default function MentionsLegalesPage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Hébergement
             </h2>
             <p>
@@ -66,7 +66,7 @@ export default function MentionsLegalesPage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Propriété intellectuelle
             </h2>
             <p>
@@ -78,7 +78,7 @@ export default function MentionsLegalesPage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Responsabilité
             </h2>
             <p>
