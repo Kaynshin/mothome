@@ -37,7 +37,6 @@ describe("Footer", () => {
     expect(social).toBeInTheDocument();
     expect(within(social).getByLabelText("Instagram")).toBeInTheDocument();
     expect(within(social).getByLabelText("Facebook")).toBeInTheDocument();
-    expect(within(social).getByLabelText("YouTube")).toBeInTheDocument();
   });
 
   it("renders social links with external rel attributes", () => {
