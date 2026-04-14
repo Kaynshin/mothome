@@ -47,7 +47,7 @@ export default function MentionsLegalesPage() {
               Email :{" "}
               <a
                 href="mailto:contact@mothome.fr"
-                className="text-[var(--color-orange-brule)] hover:text-[var(--color-orange-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
               >
                 contact@mothome.fr
               </a>
