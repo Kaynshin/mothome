@@ -56,19 +56,19 @@ export default function ContactPage() {
           HERO
           ================================================================ */}
       <section
-        className="py-20 md:py-28 bg-[var(--color-noir-mat)] border-b border-[var(--color-border)]"
+        className="py-20 md:py-28 bg-[var(--color-card)] border-b border-[var(--color-border)]"
         aria-labelledby="contact-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <nav aria-label="Fil d'Ariane" className="mb-8">
-            <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+            <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
-                <Link href="/" className="hover:text-[var(--color-blanc-casse)] transition-colors">
+                <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
                   Accueil
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-[var(--color-gris-clair)]" aria-current="page">
+              <li className="text-[var(--color-muted-foreground)]" aria-current="page">
                 Contact
               </li>
             </ol>
@@ -80,11 +80,11 @@ export default function ContactPage() {
             </p>
             <h1
               id="contact-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6"
+              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6"
             >
               Contact
             </h1>
-            <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed">
+            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed">
               Rendez-vous, devis, question — plusieurs façons de joindre Mael.
               Réponse sous 24h garantie.
             </p>
@@ -103,7 +103,7 @@ export default function ContactPage() {
             <div>
               <h2
                 id="rdv"
-                className="font-heading text-3xl text-[var(--color-blanc-casse)] uppercase mb-8"
+                className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-8"
               >
                 Prendre rendez-vous
               </h2>
@@ -114,7 +114,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               {/* Infos pratiques */}
               <div>
-                <h2 className="font-heading text-3xl text-[var(--color-blanc-casse)] uppercase mb-6">
+                <h2 className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-6">
                   Infos pratiques
                 </h2>
 
@@ -134,7 +134,7 @@ export default function ContactPage() {
                       <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
                         Adresse
                       </span>
-                      <span className="font-sans text-sm text-[var(--color-gris-clair)] group-hover:text-[var(--color-blanc-casse)] transition-colors">
+                      <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
                         {CONTACT.address}
                       </span>
                       <span className="block font-sans text-xs text-[var(--color-bleu-logo)] mt-1">
@@ -155,7 +155,7 @@ export default function ContactPage() {
                       <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
                         Téléphone
                       </span>
-                      <span className="font-sans text-sm text-[var(--color-gris-clair)] group-hover:text-[var(--color-blanc-casse)] transition-colors">
+                      <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
                         {CONTACT.phone}
                       </span>
                     </div>
@@ -173,7 +173,7 @@ export default function ContactPage() {
                       <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
                         Email
                       </span>
-                      <span className="font-sans text-sm text-[var(--color-gris-clair)] group-hover:text-[var(--color-blanc-casse)] transition-colors">
+                      <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
                         {CONTACT.email}
                       </span>
                     </div>
@@ -189,20 +189,20 @@ export default function ContactPage() {
                     Horaires d&apos;ouverture
                   </h3>
                 </div>
-                <ul className="space-y-3 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg overflow-hidden" aria-label="Horaires d'ouverture">
+                <ul className="space-y-3 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg overflow-hidden" aria-label="Horaires d'ouverture">
                   {HORAIRES.map(({ jours, heures, ouvert }) => (
                     <li
                       key={jours}
                       className="flex items-center justify-between px-5 py-4 border-b border-[var(--color-border)] last:border-0"
                     >
-                      <span className="font-sans text-sm text-[var(--color-blanc-casse)]">
+                      <span className="font-sans text-sm text-[var(--color-foreground)]">
                         {jours}
                       </span>
                       <span
                         className={`font-heading text-sm font-semibold ${
                           ouvert
                             ? "text-[var(--color-bleu-logo)]"
-                            : "text-[var(--color-gris-moyen)]"
+                            : "text-[var(--color-muted-foreground)]"
                         }`}
                       >
                         {heures}
@@ -213,14 +213,14 @@ export default function ContactPage() {
               </div>
 
               {/* RDV en ligne */}
-              <div className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg">
+              <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <Calendar size={18} className="text-[var(--color-or-mat)]" aria-hidden="true" />
                   <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
                     RDV en ligne
                   </h3>
                 </div>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] mb-4 leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] mb-4 leading-relaxed">
                   Remplis le formulaire ci-contre avec tes disponibilités et le
                   type d&apos;intervention souhaitée. Mael confirme sous 24h.
                 </p>
@@ -246,7 +246,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <h2
             id="map-title"
-            className="font-heading text-3xl text-[var(--color-blanc-casse)] uppercase mb-8"
+            className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-8"
           >
             Nous trouver
           </h2>

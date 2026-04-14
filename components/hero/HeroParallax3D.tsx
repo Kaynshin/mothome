@@ -94,13 +94,13 @@ function PartLabel({ label, service, serviceHref, visible, index }: PartLabelPro
           aria-hidden="true"
         />
         {/* Label card */}
-        <div className="bg-[var(--color-noir-mat)]/90 border border-[var(--color-bleu-logo)]/30 rounded-md px-3 py-2 backdrop-blur-sm pointer-events-auto">
+        <div className="bg-[var(--color-card)]/90 border border-[var(--color-bleu-logo)]/30 rounded-md px-3 py-2 backdrop-blur-sm pointer-events-auto">
           <p className="font-heading text-xs font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide">
             {label}
           </p>
           <Link
             href={serviceHref}
-            className="font-sans text-xs text-[var(--color-gris-moyen)] hover:text-[var(--color-blanc-casse)] transition-colors"
+            className="font-sans text-xs text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors"
           >
             → {service}
           </Link>
@@ -352,7 +352,7 @@ export default function HeroParallax3D() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden bg-[var(--color-noir-profond)]"
+      className="relative w-full h-screen overflow-hidden bg-[var(--color-background)]"
       aria-label="Hero — Anatomy of Speed"
     >
       {/* Three.js canvas */}
@@ -409,20 +409,20 @@ export default function HeroParallax3D() {
 
         {/* Title */}
         <h1
-          className="font-accent uppercase tracking-wider text-[var(--color-blanc-casse)] leading-none mb-4"
+          className="font-accent uppercase tracking-wider text-[var(--color-foreground)] leading-none mb-4"
           style={{ fontSize: "clamp(4rem, 15vw, 12rem)" }}
         >
           Mothome
         </h1>
 
         {/* Tagline */}
-        <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
+        <p className="font-heading text-xl md:text-3xl text-[var(--color-muted-foreground)] uppercase tracking-widest mb-8">
           La Mécanique comme{" "}
           <span className="text-[var(--color-bleu-logo)]">Passion</span>
         </p>
 
         {/* Description */}
-        <p className="font-sans text-base md:text-lg text-[var(--color-gris-moyen)] max-w-xl mb-10 leading-relaxed">
+        <p className="font-sans text-base md:text-lg text-[var(--color-muted-foreground)] max-w-xl mb-10 leading-relaxed">
           Atelier, service à domicile, accessoires, dépôt-vente — et un bar
           où les passionnés se retrouvent. Un concept unique dans le Chablais.
         </p>
@@ -431,14 +431,14 @@ export default function HeroParallax3D() {
         <div className="flex flex-col sm:flex-row items-center gap-4 pointer-events-auto">
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
             Prendre rendez-vous
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link
             href="/atelier"
-            className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-gris-moyen)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-muted-foreground)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
             Découvrir l&apos;atelier
           </Link>
@@ -447,7 +447,7 @@ export default function HeroParallax3D() {
 
       {/* Phase indicator (scroll hint) */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-gris-moyen)] transition-opacity duration-300"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-muted-foreground)] transition-opacity duration-300"
         style={{ opacity: scrollProgress < 0.05 ? 1 : 0 }}
         aria-hidden="true"
       >
@@ -474,13 +474,13 @@ export default function HeroParallax3D() {
 function HeroFallback() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-noir-profond)]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-background)]"
       aria-label="Hero — Mothome"
     >
       {/* Static cinematic background */}
       <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,rgba(0,80,160,0.15),transparent)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-noir-profond)] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-background)] to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
@@ -488,37 +488,37 @@ function HeroFallback() {
           Garage moto artisanal · Thonon-les-Bains
         </p>
         <h1
-          className="font-accent uppercase tracking-wider text-[var(--color-blanc-casse)] leading-none mb-4"
+          className="font-accent uppercase tracking-wider text-[var(--color-foreground)] leading-none mb-4"
           style={{ fontSize: "clamp(4rem, 15vw, 12rem)" }}
         >
           Mothome
         </h1>
-        <p className="font-heading text-xl md:text-3xl text-[var(--color-gris-clair)] uppercase tracking-widest mb-8">
+        <p className="font-heading text-xl md:text-3xl text-[var(--color-muted-foreground)] uppercase tracking-widest mb-8">
           La Mécanique comme{" "}
           <span className="text-[var(--color-bleu-logo)]">Passion</span>
         </p>
-        <p className="font-sans text-base md:text-lg text-[var(--color-gris-moyen)] max-w-xl mx-auto mb-10 leading-relaxed">
+        <p className="font-sans text-base md:text-lg text-[var(--color-muted-foreground)] max-w-xl mx-auto mb-10 leading-relaxed">
           Atelier, service à domicile, accessoires, dépôt-vente — et un bar
           où les passionnés se retrouvent.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact#rdv"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
             Prendre rendez-vous
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link
             href="/atelier"
-            className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-gris-moyen)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-muted-foreground)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
             Découvrir l&apos;atelier
           </Link>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-gris-moyen)] animate-bounce" aria-hidden="true">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-muted-foreground)] animate-bounce" aria-hidden="true">
         <ChevronDown size={20} />
       </div>
     </section>

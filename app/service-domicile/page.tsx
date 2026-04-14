@@ -92,19 +92,19 @@ export default function ServiceDomicilePage() {
           HERO
           ================================================================ */}
       <section
-        className="py-20 md:py-28 bg-[var(--color-noir-mat)] border-b border-[var(--color-border)]"
+        className="py-20 md:py-28 bg-[var(--color-card)] border-b border-[var(--color-border)]"
         aria-labelledby="domicile-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <nav aria-label="Fil d'Ariane" className="mb-8">
-            <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+            <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
-                <Link href="/" className="hover:text-[var(--color-blanc-casse)] transition-colors">
+                <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
                   Accueil
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-[var(--color-gris-clair)]" aria-current="page">
+              <li className="text-[var(--color-muted-foreground)]" aria-current="page">
                 Service à domicile
               </li>
             </ol>
@@ -116,13 +116,13 @@ export default function ServiceDomicilePage() {
             </p>
             <h1
               id="domicile-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6 leading-none"
+              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none"
             >
               Service
               <br />
               <span className="text-[var(--color-bleu-logo)]">à domicile</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
+            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
               Mael se déplace avec son outillage professionnel pour entretenir ou
               dépanner votre moto là où elle se trouve — dans le Chablais et en
               Haute-Savoie.
@@ -130,14 +130,14 @@ export default function ServiceDomicilePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#reservation"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Réserver une intervention
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
               <a
                 href="tel:+33XXXXXXXXX"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 <Phone size={16} aria-hidden="true" />
                 Appeler Mael
@@ -154,18 +154,18 @@ export default function ServiceDomicilePage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="font-heading text-4xl md:text-5xl text-[var(--color-blanc-casse)] uppercase mb-6">
+              <h2 className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase mb-6">
                 La mécanique qui
                 <br />
                 <span className="text-[var(--color-bleu-logo)]">vient à vous</span>
               </h2>
-              <p className="font-sans text-[var(--color-gris-clair)] leading-relaxed mb-4">
+              <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed mb-4">
                 Plus besoin d&apos;amener votre moto au garage. Mael se déplace avec
                 un fourgon équipé — outillage professionnel, huiles, filtres et
                 consommables courants embarqués. L&apos;essentiel de l&apos;entretien
                 courant se fait sur place, en 1 à 3h.
               </p>
-              <p className="font-sans text-[var(--color-gris-clair)] leading-relaxed">
+              <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed">
                 Pour les réparations nécessitant l&apos;atelier, Mael récupère la
                 moto, effectue le travail à Thonon et vous la rapporte. Un seul
                 interlocuteur, du début à la fin.
@@ -189,7 +189,7 @@ export default function ServiceDomicilePage() {
                       />
                     </svg>
                   </span>
-                  <span className="font-sans text-sm text-[var(--color-gris-clair)]">
+                  <span className="font-sans text-sm text-[var(--color-muted-foreground)]">
                     {avantage}
                   </span>
                 </li>
@@ -213,7 +213,7 @@ export default function ServiceDomicilePage() {
             </p>
             <h2
               id="interventions-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               Types d&apos;interventions
             </h2>
@@ -223,17 +223,17 @@ export default function ServiceDomicilePage() {
             {INTERVENTIONS.map(({ icon: Icon, titre, description }) => (
               <div
                 key={titre}
-                className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-colors"
+                className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-colors"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-11 h-11 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] shrink-0">
                     <Icon size={20} aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-2">
+                    <h3 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-2">
                       {titre}
                     </h3>
-                    <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                    <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                       {description}
                     </p>
                   </div>
@@ -259,11 +259,11 @@ export default function ServiceDomicilePage() {
               </p>
               <h2
                 id="zones-title"
-                className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase mb-4"
+                className="font-heading text-4xl text-[var(--color-foreground)] uppercase mb-4"
               >
                 Zones couvertes
               </h2>
-              <p className="font-sans text-[var(--color-gris-moyen)] leading-relaxed mb-8">
+              <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed mb-8">
                 Basé à Thonon-les-Bains, Mael couvre l&apos;ensemble du Chablais et la
                 Haute-Savoie jusqu&apos;à environ 60 km. Pour les distances supérieures,
                 contactez-nous — on s&apos;adapte.
@@ -284,21 +284,21 @@ export default function ServiceDomicilePage() {
                         className={
                           highlight
                             ? "text-[var(--color-bleu-logo)]"
-                            : "text-[var(--color-gris-moyen)]"
+                            : "text-[var(--color-muted-foreground)]"
                         }
                         aria-hidden="true"
                       />
                       <span
                         className={`font-sans text-sm ${
                           highlight
-                            ? "text-[var(--color-blanc-casse)] font-medium"
-                            : "text-[var(--color-gris-clair)]"
+                            ? "text-[var(--color-foreground)] font-medium"
+                            : "text-[var(--color-muted-foreground)]"
                         }`}
                       >
                         {ville}
                       </span>
                     </div>
-                    <span className="font-heading text-xs text-[var(--color-gris-moyen)] uppercase tracking-wide">
+                    <span className="font-heading text-xs text-[var(--color-muted-foreground)] uppercase tracking-wide">
                       {distance}
                     </span>
                   </li>
@@ -308,18 +308,18 @@ export default function ServiceDomicilePage() {
 
             {/* Info complementary */}
             <div className="space-y-6">
-              <div className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg">
+              <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
                 <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
                   Tarif déplacement
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   Les frais de déplacement sont inclus dans le devis — pas de
                   mauvaise surprise. Pour les zones &gt; 40 km, un forfait kilométrique
                   peut s&apos;appliquer, précisé avant toute intervention.
                 </p>
               </div>
 
-              <div className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg">
+              <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
                 <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
                   Disponibilités
                 </h3>
@@ -330,7 +330,7 @@ export default function ServiceDomicilePage() {
                     { jours: "Week-end / urgence", heures: "Sur demande" },
                   ].map(({ jours, heures }) => (
                     <li key={jours} className="flex justify-between">
-                      <span className="font-sans text-sm text-[var(--color-gris-clair)]">{jours}</span>
+                      <span className="font-sans text-sm text-[var(--color-muted-foreground)]">{jours}</span>
                       <span className="font-heading text-sm text-[var(--color-bleu-logo)]">{heures}</span>
                     </li>
                   ))}
@@ -338,8 +338,8 @@ export default function ServiceDomicilePage() {
               </div>
 
               <div className="p-6 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg">
-                <p className="font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed">
-                  <strong className="font-heading text-[var(--color-blanc-casse)]">Hors zone ?</strong>{" "}
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
+                  <strong className="font-heading text-[var(--color-foreground)]">Hors zone ?</strong>{" "}
                   Appelez directement Mael — pour les cas particuliers ou les longues
                   distances, on trouve toujours une solution.
                 </p>
@@ -372,12 +372,12 @@ export default function ServiceDomicilePage() {
               </p>
               <h2
                 id="reservation-title"
-                className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase mb-4"
+                className="font-heading text-4xl text-[var(--color-foreground)] uppercase mb-4"
               >
                 Réserver une
                 <br />intervention
               </h2>
-              <p className="font-sans text-[var(--color-gris-moyen)] leading-relaxed mb-8">
+              <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed mb-8">
                 Remplis le formulaire avec tes disponibilités et une description du
                 besoin. Mael te rappelle sous 24h pour confirmer la date et établir
                 un devis gratuit.
@@ -393,13 +393,13 @@ export default function ServiceDomicilePage() {
                     <span className="font-heading text-2xl text-[var(--color-bleu-logo)]/40 w-8 shrink-0">
                       {num}
                     </span>
-                    <span className="font-sans text-sm text-[var(--color-gris-clair)]">{text}</span>
+                    <span className="font-sans text-sm text-[var(--color-muted-foreground)]">{text}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg p-6 md:p-8">
+            <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-6 md:p-8">
               <ReservationForm />
             </div>
           </div>

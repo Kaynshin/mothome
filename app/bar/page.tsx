@@ -120,19 +120,19 @@ export default function BarPage() {
           HERO
           ================================================================ */}
       <section
-        className="py-20 md:py-28 bg-[var(--color-noir-mat)] border-b border-[var(--color-border)]"
+        className="py-20 md:py-28 bg-[var(--color-card)] border-b border-[var(--color-border)]"
         aria-labelledby="bar-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <nav aria-label="Fil d'Ariane" className="mb-8">
-            <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+            <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
-                <Link href="/" className="hover:text-[var(--color-blanc-casse)] transition-colors">
+                <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
                   Accueil
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-[var(--color-gris-clair)]" aria-current="page">
+              <li className="text-[var(--color-muted-foreground)]" aria-current="page">
                 Le Bar
               </li>
             </ol>
@@ -144,12 +144,12 @@ export default function BarPage() {
             </p>
             <h1
               id="bar-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-blanc-casse)] uppercase mb-6 leading-none"
+              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none"
             >
               Le{" "}
               <span className="text-[var(--color-bleu-logo)]">Bar</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-gris-clair)] leading-relaxed max-w-xl">
+            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
               Derrière l&apos;atelier, il y a le bar. Le QG des motards du Chablais —
               billard, retransmissions GP, cuisine maison et une bonne ambiance
               garantie pour parler moto entre passionnés.
@@ -157,14 +157,14 @@ export default function BarPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#programme"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 Voir le programme
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
               <a
                 href="#menu"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-gris-clair)] hover:text-[var(--color-blanc-casse)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
               >
                 La carte
               </a>
@@ -187,7 +187,7 @@ export default function BarPage() {
             </p>
             <h2
               id="concept-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               Plus qu&apos;un bar
             </h2>
@@ -197,15 +197,15 @@ export default function BarPage() {
             {AMBIANCES.map(({ icon: Icon, titre, description }) => (
               <div
                 key={titre}
-                className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-colors"
+                className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg hover:border-[var(--color-bleu-logo)]/40 transition-colors"
               >
                 <div className="w-11 h-11 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] mb-4">
                   <Icon size={20} aria-hidden="true" />
                 </div>
-                <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase mb-3">
+                <h3 className="font-heading text-xl text-[var(--color-foreground)] uppercase mb-3">
                   {titre}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -230,11 +230,11 @@ export default function BarPage() {
               </p>
               <h2
                 id="menu-title"
-                className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase mb-4"
+                className="font-heading text-4xl text-[var(--color-foreground)] uppercase mb-4"
               >
                 La carte
               </h2>
-              <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+              <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                 Menu simple, fait maison. Pas de fioriture — de la bonne bouffe
                 pour accompagner la soirée. Prix indicatifs, susceptibles d&apos;évoluer.
               </p>
@@ -255,7 +255,7 @@ export default function BarPage() {
                         key={nom}
                         className="flex items-center justify-between px-5 py-3"
                       >
-                        <span className="font-sans text-sm text-[var(--color-gris-clair)]">
+                        <span className="font-sans text-sm text-[var(--color-muted-foreground)]">
                           {nom}
                         </span>
                         <span className="font-heading text-sm font-semibold text-[var(--color-bleu-logo)] shrink-0 ml-4">
@@ -286,7 +286,7 @@ export default function BarPage() {
             </p>
             <h2
               id="events-title"
-              className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
             >
               Événements
             </h2>
@@ -296,15 +296,15 @@ export default function BarPage() {
             {EVENEMENTS.map(({ type, titre, description }) => (
               <article
                 key={titre}
-                className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg"
+                className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg"
               >
                 <span className="inline-block px-2 py-0.5 bg-[var(--color-bleu-logo)]/10 rounded text-xs font-heading font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide mb-3">
                   {type}
                 </span>
-                <h3 className="font-heading text-xl text-[var(--color-blanc-casse)] uppercase mb-2">
+                <h3 className="font-heading text-xl text-[var(--color-foreground)] uppercase mb-2">
                   {titre}
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   {description}
                 </p>
               </article>
@@ -312,7 +312,7 @@ export default function BarPage() {
           </div>
 
           <div className="p-5 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
-            <p className="font-sans text-sm text-[var(--color-gris-clair)]">
+            <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
               Programme complet et dates des prochains événements sur Instagram.
             </p>
             <a
@@ -339,11 +339,11 @@ export default function BarPage() {
               </p>
               <h2
                 id="horaires-bar-title"
-                className="font-heading text-4xl text-[var(--color-blanc-casse)] uppercase mb-4"
+                className="font-heading text-4xl text-[var(--color-foreground)] uppercase mb-4"
               >
                 Horaires du bar
               </h2>
-              <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-6">
+              <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-6">
                 Les horaires peuvent varier lors des soirées GP ou des événements
                 spéciaux — vérifiez sur Instagram avant de venir.
               </p>
@@ -356,7 +356,7 @@ export default function BarPage() {
                     key={jours}
                     className="flex items-center justify-between px-5 py-4"
                   >
-                    <span className="font-sans text-sm text-[var(--color-blanc-casse)]">
+                    <span className="font-sans text-sm text-[var(--color-foreground)]">
                       {jours}
                     </span>
                     <span className="font-heading text-sm font-semibold text-[var(--color-bleu-logo)]">
@@ -368,21 +368,21 @@ export default function BarPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg">
+              <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
                 <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
                   Accès
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   Le bar est dans l&apos;espace attenant à l&apos;atelier. Entrée accessible
                   directement depuis le parking — cherchez la lumière et les motos.
                 </p>
               </div>
 
-              <div className="p-6 bg-[var(--color-noir-mat)] border border-[var(--color-border)] rounded-lg">
+              <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
                 <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
                   Réservation groupe
                 </h3>
-                <p className="font-sans text-sm text-[var(--color-gris-moyen)] leading-relaxed mb-4">
+                <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-4">
                   Vous venez en club ou en groupe &gt; 10 personnes ? Contactez-nous
                   à l&apos;avance pour s&apos;assurer d&apos;avoir la place — et parfois une bière
                   offerte à l&apos;arrivée.

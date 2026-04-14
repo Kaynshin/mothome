@@ -14,29 +14,29 @@ export default function PolitiqueConfidentialitePage() {
     <section className="py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-[var(--spacing-container)]">
         <nav aria-label="Fil d'Ariane" className="mb-8">
-          <ol className="flex items-center gap-2 text-xs text-[var(--color-gris-moyen)]">
+          <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
             <li>
               <Link
                 href="/"
-                className="hover:text-[var(--color-blanc-casse)] transition-colors"
+                className="hover:text-[var(--color-foreground)] transition-colors"
               >
                 Accueil
               </Link>
             </li>
             <li aria-hidden="true">/</li>
-            <li className="text-[var(--color-gris-clair)]" aria-current="page">
+            <li className="text-[var(--color-muted-foreground)]" aria-current="page">
               Politique de confidentialité
             </li>
           </ol>
         </nav>
 
-        <h1 className="font-heading text-4xl md:text-5xl text-[var(--color-blanc-casse)] uppercase mb-10">
+        <h1 className="font-heading text-4xl md:text-5xl text-[var(--color-foreground)] uppercase mb-10">
           Politique de confidentialité
         </h1>
 
-        <div className="space-y-8 font-sans text-sm text-[var(--color-gris-clair)] leading-relaxed">
+        <div className="space-y-8 font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Données collectées
             </h2>
             <p>
@@ -48,7 +48,7 @@ export default function PolitiqueConfidentialitePage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Finalité du traitement
             </h2>
             <p>Vos données sont collectées pour :</p>
@@ -60,7 +60,7 @@ export default function PolitiqueConfidentialitePage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Durée de conservation
             </h2>
             <p>
@@ -71,7 +71,7 @@ export default function PolitiqueConfidentialitePage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Vos droits
             </h2>
             <p>
@@ -89,7 +89,7 @@ export default function PolitiqueConfidentialitePage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Cookies
             </h2>
             <p>
@@ -101,7 +101,7 @@ export default function PolitiqueConfidentialitePage() {
           </div>
 
           <div>
-            <h2 className="font-heading text-lg text-[var(--color-blanc-casse)] uppercase mb-3">
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Contact
             </h2>
             <p>
