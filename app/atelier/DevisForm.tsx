@@ -84,7 +84,7 @@ export default function DevisForm() {
           Demande envoyée !
         </h3>
         <p className="font-sans text-[var(--color-muted-foreground)] max-w-sm">
-          Mael vous contacte sous 24h pour vous faire un devis. À très vite !
+          L&apos;atelier vous contacte sous 24h pour vous faire un devis. À très vite !
         </p>
         <button
           type="button"
@@ -260,7 +260,7 @@ export default function DevisForm() {
         >
           <AlertCircle size={16} className="text-red-400 shrink-0" aria-hidden="true" />
           <p className="text-sm text-red-300">
-            Une erreur s&apos;est produite. Réessayez ou contactez Mael directement.
+            Une erreur s&apos;est produite. Réessayez ou contactez l&apos;atelier directement.
           </p>
         </div>
       )}

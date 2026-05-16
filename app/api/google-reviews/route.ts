@@ -37,37 +37,37 @@ const FALLBACK_REVIEWS: GoogleReview[] = [
   {
     authorName: "Thomas R.",
     rating: 5,
-    text: "Mael a diagnostiqué en 20 minutes ce que 2 autres garages n'avaient pas trouvé en 3 semaines. Sérieux, compétent et honnête. Je n'irai plus nulle part ailleurs.",
+    text: "L'atelier a diagnostiqué en 20 minutes ce que 2 autres garages n'avaient pas trouvé en 3 semaines. Sérieux, compétent et honnête. Je n'irai plus nulle part ailleurs.",
     relativeTimeDescription: "il y a 2 mois",
   },
   {
     authorName: "Julien M.",
     rating: 5,
-    text: "Super ambiance, Mael est passionné et ça se voit dans son travail. Le bar en plus c'est un concept vraiment unique. On passe un bon moment pendant que la moto est révisée.",
+    text: "Super ambiance, l'équipe est passionnée et ça se voit dans le travail. Le bar en plus c'est un concept vraiment unique. On passe un bon moment pendant que la moto est révisée.",
     relativeTimeDescription: "il y a 3 mois",
   },
   {
     authorName: "Sarah L.",
     rating: 5,
-    text: "Première expérience dans un garage moto et franchement c'était top. Mael a tout expliqué clairement, sans jargon inutile. Tarifs transparents et travail soigné.",
+    text: "Première expérience dans un garage moto et franchement c'était top. L'équipe a tout expliqué clairement, sans jargon inutile. Tarifs transparents et travail soigné.",
     relativeTimeDescription: "il y a 1 mois",
   },
   {
     authorName: "Romain B.",
     rating: 5,
-    text: "Service à domicile impeccable — Mael est venu changer ma courroie directement dans ma résidence. Rapide, propre et au prix annoncé. Très recommandé.",
+    text: "Service à domicile impeccable — Mothome est venu changer ma courroie directement dans ma résidence. Rapide, propre et au prix annoncé. Très recommandé.",
     relativeTimeDescription: "il y a 4 mois",
   },
   {
     authorName: "Cédric V.",
     rating: 5,
-    text: "J'ai acheté ma moto en dépôt-vente chez Mothome. Mael l'avait vérifiée de fond en comble et m'a été totalement transparent sur l'état de la machine. Confiance totale.",
+    text: "J'ai acheté ma moto en dépôt-vente chez Mothome. L'atelier l'avait vérifiée de fond en comble et a été totalement transparent sur l'état de la machine. Confiance totale.",
     relativeTimeDescription: "il y a 5 mois",
   },
   {
     authorName: "Marine D.",
     rating: 5,
-    text: "Le concept garage + bar c'est génial. On attend que notre moto soit prête en regardant le GP sur grand écran, en mangeant un truc fait maison. Bravo Mael pour l'idée !",
+    text: "Le concept garage + bar c'est génial. On attend que notre moto soit prête en regardant le GP sur grand écran, en mangeant un truc fait maison. Bravo Mothome pour l'idée !",
     relativeTimeDescription: "il y a 2 mois",
   },
 ];

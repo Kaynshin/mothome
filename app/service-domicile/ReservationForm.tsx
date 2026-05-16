@@ -111,7 +111,7 @@ export default function ReservationForm() {
           Demande envoyée !
         </h3>
         <p className="font-sans text-[var(--color-muted-foreground)] max-w-sm">
-          Mael vous recontacte sous 24h pour confirmer l&apos;intervention. À très vite !
+          L&apos;atelier vous recontacte sous 24h pour confirmer l&apos;intervention. À très vite !
         </p>
         <button
           type="button"
@@ -286,7 +286,7 @@ export default function ReservationForm() {
         >
           <AlertCircle size={16} className="text-red-400 shrink-0" aria-hidden="true" />
           <p className="text-sm text-red-300">
-            {serverMessage || "Une erreur s'est produite. Réessayez ou contactez Mael directement."}
+            {serverMessage || "Une erreur s'est produite. Réessayez ou contactez l'atelier directement."}
           </p>
         </div>
       )}
