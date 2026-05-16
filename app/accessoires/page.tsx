@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ShieldCheck, Tag, Truck, Star, ChevronRight } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
+import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
   title: "Accessoires Moto — Casques, Équipements & Pièces — Mothome Thonon",
@@ -199,7 +200,7 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 Demander un produit
                 <ChevronRight size={16} aria-hidden="true" />
@@ -217,7 +218,7 @@ export default function AccessoiresPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {GARANTIES.map(({ icon: Icon, titre, description }) => (
               <div key={titre} className="flex flex-col gap-3">
-                <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
+                <div className="w-10 h-10 flex items-center justify-center rounded bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
                   <Icon size={18} aria-hidden="true" />
                 </div>
                 <h3 className="font-heading text-sm font-semibold text-[var(--color-foreground)] uppercase tracking-wide">
@@ -333,17 +334,18 @@ export default function AccessoiresPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 Contacter Mael
                 <ChevronRight size={16} aria-hidden="true" />
               </Link>
               <Link
                 href="/atelier"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 Voir l&apos;atelier
               </Link>
+              <PhoneCta variant="ghost" />
             </div>
           </div>
         </div>
