@@ -37,12 +37,23 @@ export const metadata: Metadata = {
     template: "%s | Mothome",
   },
   description:
-    "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial. Prenez rendez-vous avec Maël et son équipe.",
+    "Garage moto artisanal à Thonon-les-Bains (74200) : réparation, entretien toutes marques, accessoires, dépôt-vente et bar bikers. L'atelier qui prend soin de votre moto dans le Chablais et la Haute-Savoie. Appelez le 04 50 73 38 08.",
   keywords: [
     "garage moto Thonon-les-Bains",
+    "garage moto 74200",
     "mécanicien moto Thonon",
     "garage moto Chablais",
-    "entretien moto 74",
+    "entretien moto Haute-Savoie",
+    "réparation moto 74",
+    "garage moto Évian-les-Bains",
+    "garage moto Évian",
+    "garage moto Annemasse",
+    "garage moto Cluses",
+    "garage moto frontière Genève",
+    "dépôt-vente moto Haute-Savoie",
+    "accessoires moto Thonon",
+    "bar bikers Thonon",
+    "atelier moto Chablais",
   ],
   alternates: {
     canonical: "/",
@@ -70,7 +81,7 @@ export const metadata: Metadata = {
     siteName: "Mothome",
     title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
     description:
-      "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial. Prenez rendez-vous avec Maël et son équipe.",
+      "Garage moto artisanal à Thonon-les-Bains (74200) : réparation, entretien toutes marques, accessoires, dépôt-vente et bar bikers. L'atelier de référence dans le Chablais et la Haute-Savoie.",
     images: [
       {
         url: "/images/og-mothome.jpg",
@@ -84,7 +95,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
     description:
-      "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial.",
+      "Garage moto artisanal à Thonon-les-Bains (74200) : réparation, accessoires, dépôt-vente et bar bikers dans le Chablais et la Haute-Savoie.",
     images: ["/images/og-mothome.jpg"],
   },
 };
