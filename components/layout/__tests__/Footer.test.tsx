@@ -55,7 +55,7 @@ describe("Footer", () => {
 
   it("renders phone link with tel: protocol", () => {
     render(<Footer />);
-    const phoneLink = screen.getByRole("link", { name: /\+33/i });
+    const phoneLink = screen.getByRole("link", { name: /04 50 73 38 08/i });
     expect(phoneLink.getAttribute("href")).toMatch(/^tel:/);
   });
 
