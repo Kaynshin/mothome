@@ -23,7 +23,7 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 
 const CONTACT = {
   address: "Thonon-les-Bains, Haute-Savoie (74200)",
-  phone: "+33 4 50 00 00 00",
+  phone: "04 50 73 38 08",
   email: "contact@mothome.fr",
 } as const;
 
@@ -86,7 +86,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="p-2 rounded-md text-[var(--color-muted-foreground)] hover:text-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-logo)]/10 transition-colors duration-200"
+                  className="p-2 rounded text-[var(--color-muted-foreground)] hover:text-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-logo)]/10 transition-colors duration-200"
                 >
                   <Icon size={18} />
                 </a>
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <nav aria-label="Navigation secondaire">
-            <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-4">
+            <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-4">
               Navigation
             </h3>
             <ul className="space-y-2">
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Horaires */}
           <div>
-            <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-4">
+            <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-4">
               Horaires
             </h3>
             <ul className="space-y-3" aria-label="Horaires d'ouverture">
@@ -141,7 +141,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-4">
+            <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-4">
               Contact
             </h3>
             <address className="not-italic space-y-3">
@@ -159,7 +159,7 @@ export default function Footer() {
                 {CONTACT.address}
               </a>
               <a
-                href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
+                href="tel:+33450733808"
                 className="flex items-center gap-2 text-sm text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] transition-colors duration-200"
               >
                 <Phone
@@ -185,7 +185,7 @@ export default function Footer() {
             {/* CTA RDV */}
             <Link
               href={CTA.href}
-              className="inline-flex mt-6 items-center gap-2 px-5 py-2.5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+              className="inline-flex mt-6 items-center gap-2 px-5 py-2.5 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors duration-200"
             >
               {CTA.label}
             </Link>
