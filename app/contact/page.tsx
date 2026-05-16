@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, Calendar } from "lucide-react";
+import { MapPin, Mail, Clock, Calendar } from "lucide-react";
+import { PhoneCta } from "@/components/ui/phone-cta";
 import ContactForm from "./ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildContactPageSchema, buildBreadcrumbSchema } from "@/lib/schema";
@@ -131,7 +132,7 @@ export default function ContactPage() {
                       <MapPin size={18} aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
+                      <span className="block font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-1">
                         Adresse
                       </span>
                       <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
@@ -144,22 +145,9 @@ export default function ContactPage() {
                   </a>
 
                   {/* Phone */}
-                  <a
-                    href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-4 group"
-                  >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)] shrink-0 group-hover:bg-[var(--color-bleu-logo)]/20 transition-colors">
-                      <Phone size={18} aria-hidden="true" />
-                    </div>
-                    <div>
-                      <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
-                        Téléphone
-                      </span>
-                      <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
-                        {CONTACT.phone}
-                      </span>
-                    </div>
-                  </a>
+                  <div className="flex items-center gap-4">
+                    <PhoneCta variant="primary" label="Appeler l'atelier" />
+                  </div>
 
                   {/* Email */}
                   <a
@@ -170,7 +158,7 @@ export default function ContactPage() {
                       <Mail size={18} aria-hidden="true" />
                     </div>
                     <div>
-                      <span className="block font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-1">
+                      <span className="block font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-1">
                         Email
                       </span>
                       <span className="font-sans text-sm text-[var(--color-muted-foreground)] group-hover:text-[var(--color-foreground)] transition-colors">
@@ -185,7 +173,7 @@ export default function ContactPage() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <Clock size={18} className="text-[var(--color-bleu-logo)]" aria-hidden="true" />
-                  <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
+                  <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest">
                     Horaires d&apos;ouverture
                   </h3>
                 </div>
@@ -215,8 +203,8 @@ export default function ContactPage() {
               {/* RDV en ligne */}
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
-                  <Calendar size={18} className="text-[var(--color-or-mat)]" aria-hidden="true" />
-                  <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
+                  <Calendar size={18} className="text-[var(--color-bleu-livery)]" aria-hidden="true" />
+                  <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest">
                     RDV en ligne
                   </h3>
                 </div>
