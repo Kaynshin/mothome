@@ -62,7 +62,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "px-3 py-2 text-sm font-sans font-medium rounded-md transition-colors duration-200 uppercase tracking-wide whitespace-nowrap",
+                "px-3 py-2 text-sm font-sans font-medium rounded transition-colors duration-200 uppercase tracking-wide whitespace-nowrap",
                 pathname === link.href
                   ? "text-[var(--color-bleu-logo)] bg-[var(--color-bleu-logo)]/10"
                   : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/5"
@@ -88,7 +88,7 @@ export default function Header() {
           {/* Hamburger mobile */}
           <button
             type="button"
-            className="lg:hidden p-2 rounded-md text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/10 transition-colors"
+            className="lg:hidden p-2 rounded text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/10 transition-colors"
             onClick={() => setMobileOpen(true)}
             aria-label="Ouvrir le menu"
             aria-expanded={mobileOpen}
@@ -137,7 +137,7 @@ export default function Header() {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "px-4 py-3 text-base font-sans font-medium rounded-md transition-colors duration-200 uppercase tracking-wide",
+                  "px-4 py-3 text-base font-sans font-medium rounded transition-colors duration-200 uppercase tracking-wide",
                   pathname === link.href
                     ? "text-[var(--color-bleu-logo)] bg-[var(--color-bleu-logo)]/10"
                     : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/5"
