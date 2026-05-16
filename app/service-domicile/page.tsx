@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Wrench, MapPin, Clock, ShieldCheck, Phone, ChevronRight } from "lucide-react";
+import { Wrench, MapPin, Clock, ShieldCheck, ChevronRight } from "lucide-react";
 import ReservationForm from "./ReservationForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildServiceDomicileSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
   title: "Service à Domicile — Entretien & Dépannage Moto Thonon, Chablais",
@@ -130,18 +131,12 @@ export default function ServiceDomicilePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#reservation"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 Réserver une intervention
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
-              <a
-                href="tel:+33XXXXXXXXX"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
-              >
-                <Phone size={16} aria-hidden="true" />
-                Appeler Mael
-              </a>
+              <PhoneCta variant="ghost" label="Appeler l'atelier" />
             </div>
           </div>
         </div>
@@ -309,7 +304,7 @@ export default function ServiceDomicilePage() {
             {/* Info complementary */}
             <div className="space-y-6">
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-3">
                   Tarif déplacement
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
@@ -320,7 +315,7 @@ export default function ServiceDomicilePage() {
               </div>
 
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-3">
                   Disponibilités
                 </h3>
                 <ul className="space-y-2">
@@ -343,13 +338,9 @@ export default function ServiceDomicilePage() {
                   Appelez directement Mael — pour les cas particuliers ou les longues
                   distances, on trouve toujours une solution.
                 </p>
-                <a
-                  href="tel:+33XXXXXXXXX"
-                  className="inline-flex items-center gap-2 mt-3 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
-                >
-                  <Phone size={14} aria-hidden="true" />
-                  Appeler Mael →
-                </a>
+                <div className="mt-3">
+                  <PhoneCta variant="ghost" label="Appeler l'atelier" />
+                </div>
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { Wrench, CheckCircle, ArrowRight, Home } from "lucide-react";
 import DevisForm from "./DevisForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildAtelierSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
   title: "L'Atelier — Réparation & Entretien Moto à Thonon | Mothome",
@@ -151,7 +152,7 @@ export default function AtelierPage() {
             </nav>
 
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
+              <div className="w-10 h-10 flex items-center justify-center rounded bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
                 <Wrench size={20} aria-hidden="true" />
               </div>
               <span className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-widest">
@@ -171,14 +172,14 @@ export default function AtelierPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#devis"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors duration-200"
               >
                 Demander un devis
                 <ArrowRight size={15} aria-hidden="true" />
               </a>
               <Link
                 href="/service-domicile"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-muted-foreground)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-muted-foreground)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors duration-200"
               >
                 <Home size={15} aria-hidden="true" />
                 Aussi à domicile
@@ -235,7 +236,7 @@ export default function AtelierPage() {
               <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg overflow-hidden">
                   <div className="px-6 py-4 border-b border-[var(--color-border)] bg-[var(--color-muted)]">
-                    <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest">
+                    <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest">
                       Tarifs indicatifs
                     </h3>
                   </div>
@@ -308,13 +309,16 @@ export default function AtelierPage() {
                 Mael se déplace chez toi dans tout le Chablais. Dépannage ou entretien à domicile.
               </p>
             </div>
-            <Link
-              href="/service-domicile"
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-bleu-logo)]/40 hover:border-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 whitespace-nowrap"
-            >
-              <Home size={15} aria-hidden="true" />
-              Service à domicile
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+              <PhoneCta variant="ghost" />
+              <Link
+                href="/service-domicile"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-bleu-logo)]/40 hover:border-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)] font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors duration-200 whitespace-nowrap"
+              >
+                <Home size={15} aria-hidden="true" />
+                Service à domicile
+              </Link>
+            </div>
           </div>
         </div>
       </section>
