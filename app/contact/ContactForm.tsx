@@ -77,7 +77,7 @@ export default function ContactForm() {
           Message envoyé !
         </h3>
         <p className="font-sans text-[var(--color-muted-foreground)] max-w-sm">
-          Mael vous répond sous 24h. À très bientôt chez Mothome !
+          L&apos;équipe vous répond sous 24h. À très bientôt chez Mothome !
         </p>
         <button
           type="button"

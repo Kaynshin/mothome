@@ -190,11 +190,9 @@ export default function AccessoiresPage() {
             </p>
             <h1
               id="accessoires-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none"
+              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
             >
-              Acces-
-              <br />
-              <span className="text-[var(--color-bleu-logo)]">soires</span>
+              <span className="text-[var(--color-bleu-logo)]">Accessoires</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
               Casques, équipements, pièces et accessoires — les grandes marques
