@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Wrench, FileText, ChevronRight, Phone } from "lucide-react";
+import { ShieldCheck, Wrench, FileText, ChevronRight } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
+import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
   title: "Dépôt-Vente Moto — Vendre ou Acheter à Thonon — Mothome",
@@ -180,14 +181,14 @@ export default function DepotVentePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#deposer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 Déposer ma moto
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
               <a
                 href="#motos"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 Voir les motos dispo
               </a>
@@ -322,7 +323,7 @@ export default function DepotVentePage() {
           {/* Commission info */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-              <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+              <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-3">
                 Commission & conditions
               </h3>
               <ul className="space-y-2 font-sans text-sm text-[var(--color-muted-foreground)]">
@@ -355,13 +356,7 @@ export default function DepotVentePage() {
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <a
-                  href="tel:+33XXXXXXXXX"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
-                >
-                  <Phone size={14} aria-hidden="true" />
-                  Appeler Mael →
-                </a>
+                <PhoneCta variant="ghost" label="Appeler pour une moto" />
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] uppercase tracking-wide transition-colors"
@@ -416,7 +411,7 @@ export default function DepotVentePage() {
           <div className="mt-10 text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
             >
               Me renseigner sur une moto
               <ChevronRight size={16} aria-hidden="true" />
