@@ -6,27 +6,31 @@ import { buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
-  title: "Accessoires Moto — Casques, Équipements & Pièces — Mothome Thonon",
+  title: "Accessoires Moto — Casques HJC, Shark, Furygan — Mothome Thonon",
   description:
-    "Casques, équipements de protection, pièces détachées et accessoires moto. Grandes marques au meilleur prix à Thonon-les-Bains. Conseil expert, garantie constructeur.",
+    "Casques HJC, Shark, équipements Furygan, pièces et accessoires moto à Thonon-les-Bains. Alignement prix garanti sur les produits identiques. Conseil expert, garantie constructeur.",
   keywords: [
     "accessoires moto Thonon",
     "casque moto Thonon-les-Bains",
     "équipement moto Haute-Savoie",
     "pièces moto Chablais",
+    "HJC casque Thonon",
+    "Furygan équipement 74",
+    "Shark casque Haute-Savoie",
+    "alignement prix accessoires moto",
   ],
   alternates: { canonical: "/accessoires" },
   openGraph: {
-    title: "Accessoires Moto — Casques, Équipements & Pièces — Mothome Thonon",
+    title: "Accessoires Moto — Casques HJC, Shark, Furygan — Mothome Thonon",
     description:
-      "Casques, équipements de protection, pièces détachées et accessoires moto à Thonon-les-Bains. Conseil expert, garantie constructeur.",
+      "Casques HJC, Shark, équipements Furygan, pièces et accessoires moto à Thonon-les-Bains. Alignement prix garanti sur les produits identiques.",
     url: "/accessoires",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Accessoires Moto — Casques, Équipements & Pièces — Mothome Thonon",
+    title: "Accessoires Moto — Casques HJC, Shark, Furygan — Mothome Thonon",
     description:
-      "Casques, équipements de protection, pièces détachées et accessoires moto à Thonon-les-Bains.",
+      "Casques HJC, Shark, équipements Furygan, pièces et accessoires moto à Thonon-les-Bains. Alignement prix garanti.",
   },
 };
 
@@ -112,7 +116,7 @@ const GARANTIES = [
     icon: Star,
     titre: "Conseil expert",
     description:
-      "Mael connaît le matériel qu'il vend. Pas de blabla marketing — des conseils honnêtes adaptés à votre moto et votre budget.",
+      "L'atelier connaît le matériel qu'il vend. Pas de blabla marketing — des conseils honnêtes adaptés à votre moto et votre budget.",
   },
 ] as const;
 
@@ -327,8 +331,8 @@ export default function AccessoiresPage() {
               <span className="text-[var(--color-bleu-logo)]">que vous cherchez ?</span>
             </h2>
             <p className="font-sans text-[var(--color-muted-foreground)] mb-8 leading-relaxed">
-              Le catalogue affiché n&apos;est pas exhaustif. Contactez Mael directement
-              avec la référence ou la description du produit — il vous trouve le
+              Le catalogue affiché n&apos;est pas exhaustif. Contactez l&apos;atelier directement
+              avec la référence ou la description du produit — on vous trouve le
               meilleur prix et le délai le plus court.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -336,7 +340,7 @@ export default function AccessoiresPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
-                Contacter Mael
+                Contacter l&apos;atelier
                 <ChevronRight size={16} aria-hidden="true" />
               </Link>
               <Link

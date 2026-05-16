@@ -13,22 +13,31 @@ import GoogleReviews from "@/components/google-reviews/GoogleReviews";
 import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
-  title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
+  title: "Mothome — Garage Moto & Bar Motards à Thonon-les-Bains (74)",
   description:
-    "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial. Prenez rendez-vous avec Maël et son équipe.",
+    "Garage moto artisanal et bar à Thonon-les-Bains. Réparation, accessoires, dépôt-vente et espace convivial pour les passionnés du Chablais.",
   keywords: [
     "garage moto Thonon-les-Bains",
     "mécanicien moto Thonon",
     "garage moto Chablais",
     "entretien moto 74",
-    "moto Thonon bar",
+    "bar motards Thonon",
+    "bar moto Haute-Savoie",
+    "accessoires moto Thonon",
+    "dépôt-vente moto Chablais",
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Mothome — Garage Moto & Bar à Thonon-les-Bains (74)",
+    title: "Mothome — Garage Moto & Bar Motards à Thonon-les-Bains (74)",
     description:
-      "Garage moto artisanal à Thonon-les-Bains. Réparation, entretien, accessoires, dépôt-vente et bar convivial.",
+      "Garage moto artisanal et bar à Thonon-les-Bains. Réparation, accessoires, dépôt-vente et espace convivial pour les passionnés du Chablais.",
     url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mothome — Garage Moto & Bar Motards à Thonon-les-Bains (74)",
+    description:
+      "Garage moto artisanal et bar à Thonon-les-Bains. Réparation, accessoires, dépôt-vente et espace convivial pour les passionnés du Chablais.",
   },
 };
 
@@ -331,7 +340,7 @@ export default function HomePage() {
                 Garage <span className="text-[var(--color-bleu-livery)]">&amp;</span> Bar
               </h2>
               <p className="font-sans text-base text-[var(--color-muted-foreground)] leading-relaxed mb-4">
-                Chez Mothome, pendant que Mael s&apos;occupe de ta moto, toi tu
+                Chez Mothome, pendant que l&apos;atelier s&apos;occupe de ta moto, toi tu
                 t&apos;installes. Billard, PS5, écrans GP — et une vraie cuisine
                 maison pour patienter sans s&apos;ennuyer.
               </p>
@@ -447,7 +456,7 @@ export default function HomePage() {
             Prends rendez-vous
           </h2>
           <p className="font-sans text-base text-[var(--color-muted-foreground)] mb-10 leading-relaxed">
-            Révision, dépannage, devis — appelle Mael directement. Réponse
+            Révision, dépannage, devis — appelle l&apos;atelier directement. Réponse
             rapide, tarif transparent.
           </p>
 
