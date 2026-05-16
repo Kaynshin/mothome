@@ -9,25 +9,27 @@ import { PhoneCta } from "@/components/ui/phone-cta";
 export const metadata: Metadata = {
   title: "Service à Domicile — Entretien & Dépannage Moto Thonon, Chablais",
   description:
-    "Entretien et dépannage moto à domicile dans le Chablais et en Haute-Savoie. Mael se déplace chez vous — Thonon, Évian, Annemasse et environs. Devis gratuit.",
+    "Entretien et dépannage moto à domicile dans le Chablais et en Haute-Savoie. Déplacement à Thonon, Évian, Annemasse. Devis gratuit.",
   keywords: [
     "dépannage moto à domicile Thonon",
     "entretien moto domicile Chablais",
     "mécanicien moto domicile Haute-Savoie",
     "service moto domicile 74",
+    "mécanicien moto à domicile Évian",
+    "dépannage moto Chablais",
   ],
   alternates: { canonical: "/service-domicile" },
   openGraph: {
     title: "Service à Domicile — Entretien & Dépannage Moto Thonon, Chablais",
     description:
-      "Entretien et dépannage moto à domicile dans le Chablais et en Haute-Savoie. Mael se déplace chez vous.",
+      "Entretien et dépannage moto à domicile dans le Chablais et en Haute-Savoie. Déplacement à Thonon, Évian, Annemasse. Devis gratuit.",
     url: "/service-domicile",
   },
   twitter: {
     card: "summary_large_image",
     title: "Service à Domicile — Entretien & Dépannage Moto Thonon, Chablais",
     description:
-      "Entretien et dépannage moto à domicile dans le Chablais et en Haute-Savoie. Devis gratuit.",
+      "Entretien et dépannage moto à domicile dans le Chablais et en Haute-Savoie. Déplacement à Thonon, Évian, Annemasse. Devis gratuit.",
   },
 };
 
@@ -65,7 +67,7 @@ const INTERVENTIONS = [
     icon: MapPin,
     titre: "Récupération & convoyage",
     description:
-      "Votre moto est immobilisée ? Mael peut la récupérer, l'amener à l'atelier et vous la ramener.",
+      "Votre moto est immobilisée ? L'atelier peut la récupérer, l'amener à Thonon et vous la ramener.",
   },
 ] as const;
 
@@ -124,9 +126,9 @@ export default function ServiceDomicilePage() {
               <span className="text-[var(--color-bleu-logo)]">à domicile</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
-              Mael se déplace avec son outillage professionnel pour entretenir ou
-              dépanner votre moto là où elle se trouve — dans le Chablais et en
-              Haute-Savoie.
+              Notre mécanicien se déplace avec son outillage professionnel pour
+              entretenir ou dépanner votre moto là où elle se trouve — dans le
+              Chablais et en Haute-Savoie.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <a
@@ -155,13 +157,13 @@ export default function ServiceDomicilePage() {
                 <span className="text-[var(--color-bleu-logo)]">vient à vous</span>
               </h2>
               <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed mb-4">
-                Plus besoin d&apos;amener votre moto au garage. Mael se déplace avec
+                Plus besoin d&apos;amener votre moto au garage. L&apos;équipe se déplace avec
                 un fourgon équipé — outillage professionnel, huiles, filtres et
                 consommables courants embarqués. L&apos;essentiel de l&apos;entretien
                 courant se fait sur place, en 1 à 3h.
               </p>
               <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed">
-                Pour les réparations nécessitant l&apos;atelier, Mael récupère la
+                Pour les réparations nécessitant l&apos;atelier, Mothome récupère la
                 moto, effectue le travail à Thonon et vous la rapporte. Un seul
                 interlocuteur, du début à la fin.
               </p>
@@ -259,7 +261,7 @@ export default function ServiceDomicilePage() {
                 Zones couvertes
               </h2>
               <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed mb-8">
-                Basé à Thonon-les-Bains, Mael couvre l&apos;ensemble du Chablais et la
+                Basé à Thonon-les-Bains, Mothome couvre l&apos;ensemble du Chablais et la
                 Haute-Savoie jusqu&apos;à environ 60 km. Pour les distances supérieures,
                 contactez-nous — on s&apos;adapte.
               </p>
@@ -335,7 +337,7 @@ export default function ServiceDomicilePage() {
               <div className="p-6 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg">
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   <strong className="font-heading text-[var(--color-foreground)]">Hors zone ?</strong>{" "}
-                  Appelez directement Mael — pour les cas particuliers ou les longues
+                  Appelez directement l&apos;atelier — pour les cas particuliers ou les longues
                   distances, on trouve toujours une solution.
                 </p>
                 <div className="mt-3">
@@ -370,14 +372,14 @@ export default function ServiceDomicilePage() {
               </h2>
               <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed mb-8">
                 Remplis le formulaire avec tes disponibilités et une description du
-                besoin. Mael te rappelle sous 24h pour confirmer la date et établir
-                un devis gratuit.
+                besoin. L&apos;équipe vous rappelle sous 24h pour confirmer la date et
+                établir un devis gratuit.
               </p>
 
               <div className="space-y-4">
                 {[
                   { num: "01", text: "Remplis le formulaire" },
-                  { num: "02", text: "Mael confirme la date et le devis sous 24h" },
+                  { num: "02", text: "L'atelier confirme la date et le devis sous 24h" },
                   { num: "03", text: "Intervention sur place à l'heure convenue" },
                 ].map(({ num, text }) => (
                   <div key={num} className="flex items-center gap-4">
