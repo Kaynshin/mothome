@@ -1,8 +1,5 @@
 @import 'tailwindcss';
 
-/* Class-based dark mode (next-themes adds .dark to <html>) */
-@variant dark (&:is(.dark, .dark *));
-
 /* ============================================================
    MOTHOME — Design Tokens (Tailwind v4 CSS-first config)
    Direction artistique : Mécanique Premium & Passion
@@ -93,30 +90,6 @@
   --color-or-mat: #0050a0;
   --color-or-chaud: #1060b0;
   --color-or-clair: #2070b0;
-}
-
-/* ============================================================
-   Semantic color tokens — Dark mode
-   ============================================================ */
-
-.dark {
-  --color-background: #0a0a0a;
-  --color-foreground: #f5f0e8;
-  --color-card: #111111;
-  --color-card-foreground: #f5f0e8;
-  --color-muted: #1a1a1a;
-  --color-muted-foreground: #8a8070;
-  --color-border: #2a2520;
-  --color-primary: #0050a0;
-  --color-primary-foreground: #f5f0e8;
-  --color-secondary: #1060b0;
-  --color-secondary-foreground: #f5f0e8;
-  --color-accent: #1060b0;
-  --color-accent-foreground: #f5f0e8;
-  --color-brand: #1060b0;
-  --color-or-mat: #1060b0;
-  --color-or-chaud: #2070b0;
-  --color-or-clair: #4080c0;
 }
 
 /* ============================================================
