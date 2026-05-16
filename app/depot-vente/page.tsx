@@ -35,7 +35,7 @@ const ETAPES_VENDEUR = [
     num: "01",
     titre: "Estimation gratuite",
     description:
-      "Amenez votre moto au garage (ou envoyez des photos) — Mael l'estime au prix du marché et vous propose un prix de vente réaliste.",
+      "Amenez votre moto au garage (ou envoyez des photos) — l'atelier l'estime au prix du marché et vous propose un prix de vente réaliste.",
   },
   {
     num: "02",
@@ -47,7 +47,7 @@ const ETAPES_VENDEUR = [
     num: "03",
     titre: "Mise en vente",
     description:
-      "La moto est exposée au garage et publiée sur les principales plateformes. Mael gère les appels et les visites à votre place.",
+      "La moto est exposée au garage et publiée sur les principales plateformes. L'équipe Mothome gère les appels et les visites à votre place.",
   },
   {
     num: "04",
@@ -62,7 +62,7 @@ const AVANTAGES_ACHETEUR = [
     icon: Wrench,
     titre: "Contrôle mécanique inclus",
     description:
-      "Chaque moto en dépôt est vérifiée par Mael avant mise en vente. Les points de contrôle sont communiqués à l'acheteur.",
+      "Chaque moto en dépôt est vérifiée par l'atelier avant mise en vente. Les points de contrôle sont communiqués à l'acheteur.",
   },
   {
     icon: FileText,
@@ -352,7 +352,7 @@ export default function DepotVentePage() {
                   Estimation gratuite
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
-                  Appelez Mael ou passez au garage avec votre moto pour une estimation sans engagement.
+                  Appelez l&apos;atelier ou passez au garage avec votre moto pour une estimation sans engagement.
                 </p>
               </div>
               <div className="flex flex-col gap-2">

@@ -86,7 +86,7 @@ export default function ContactPage() {
               Contact
             </h1>
             <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed">
-              Rendez-vous, devis, question — plusieurs façons de joindre Mael.
+              Rendez-vous, devis, question — plusieurs façons de joindre l&apos;atelier.
               Réponse sous 24h garantie.
             </p>
           </div>
@@ -210,7 +210,7 @@ export default function ContactPage() {
                 </div>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] mb-4 leading-relaxed">
                   Remplis le formulaire ci-contre avec tes disponibilités et le
-                  type d&apos;intervention souhaitée. Mael confirme sous 24h.
+                  type d&apos;intervention souhaitée. L&apos;atelier confirme sous 24h.
                 </p>
                 <a
                   href="#rdv"

@@ -6,27 +6,31 @@ import { buildBarSchema, buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
-  title: "Le Bar Mothome — Bikers Bar, MotoGP & Billard à Thonon",
+  title: "Le Bar Mothome — Bikers Bar, MotoGP & Billard à Thonon (74200)",
   description:
-    "Le Bar Mothome : le QG des motards à Thonon-les-Bains. Billard, PS5, cuisine maison, retransmission MotoGP & WSBK en direct. Ambiance passionnés, bonne bouffe.",
+    "Le Bar Mothome à Thonon-les-Bains (74200) : le QG des motards du Chablais. Billard, PS5, cuisine maison, retransmission MotoGP & WSBK en direct. Ambiance passionnés.",
   keywords: [
     "bar moto Thonon",
     "bar bikers Thonon-les-Bains",
     "MotoGP bar Haute-Savoie",
     "bar motards Chablais",
+    "bikers bar Thonon",
+    "bar moto Haute-Savoie",
+    "retransmission moto GP Thonon",
+    "bar billard Thonon-les-Bains",
   ],
   alternates: { canonical: "/bar" },
   openGraph: {
-    title: "Le Bar Mothome — Bikers Bar, MotoGP & Billard à Thonon",
+    title: "Le Bar Mothome — Bikers Bar, MotoGP & Billard à Thonon (74200)",
     description:
-      "Le QG des motards à Thonon-les-Bains. Billard, PS5, cuisine maison, MotoGP en direct.",
+      "Le QG des motards du Chablais à Thonon-les-Bains. Billard, PS5, cuisine maison, retransmission MotoGP en direct.",
     url: "/bar",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Le Bar Mothome — Bikers Bar, MotoGP & Billard à Thonon",
+    title: "Le Bar Mothome — Bikers Bar, MotoGP & Billard à Thonon (74200)",
     description:
-      "Le QG des motards à Thonon-les-Bains. Billard, PS5, cuisine maison, MotoGP en direct.",
+      "Le QG des motards du Chablais à Thonon-les-Bains. Billard, PS5, cuisine maison, retransmission MotoGP en direct.",
   },
 };
 
