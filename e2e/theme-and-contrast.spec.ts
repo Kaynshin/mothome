@@ -1,25 +1,18 @@
 import { test, expect } from "@playwright/test";
 
 /**
- * E2E Tests: Dark/Light Mode Theme & Button Contrast Validation
+ * E2E Tests: Contrast Validation & Accessibility
  * Reference: UNIA-106 QA validation
- * Related docs: ACCESSIBILITY-REMEDIATION.md, UNIA-106-QA-REPORT.md
  *
  * Implementation notes:
- * - next-themes uses attribute="class" → adds/removes .dark on <html>
- * - defaultTheme="light" → light mode is the default
- * - localStorage key is "theme" (next-themes default)
+ * - Dark mode supprimé (next-themes et ThemeToggle retirés)
+ * - Site en light mode uniquement
  * - Light background: #f8f7f5 → rgb(248, 247, 245)
- * - Dark background:  #0a0a0a → rgb(10, 10, 10)
  */
 
-test.describe("Theme Toggle & Dark/Light Mode (UNIA-106)", () => {
+test.describe("Light Mode Validation", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
-    await page.evaluate(() => {
-      localStorage.removeItem("theme");
-    });
-    await page.reload();
   });
 
   test("should display light mode by default", async ({ page }) => {
@@ -36,88 +29,11 @@ test.describe("Theme Toggle & Dark/Light Mode (UNIA-106)", () => {
     expect(background).toMatch(/rgb\(248,\s*247,\s*245\)/);
   });
 
-  test("should have theme toggle button in header", async ({ page }) => {
+  test("should not have a theme toggle button in header", async ({ page }) => {
     const themeToggle = page.locator(
       "button[aria-label*='mode'], button[aria-label*='clair'], button[aria-label*='sombre']"
     );
-    await expect(themeToggle.first()).toBeVisible();
-  });
-
-  test("should toggle between light and dark mode", async ({ page }) => {
-    const themeToggle = page
-      .locator(
-        "button[aria-label*='mode'], button[aria-label*='clair'], button[aria-label*='sombre']"
-      )
-      .first();
-
-    // Start in light mode — click to go dark
-    await themeToggle.click();
-    await page.waitForTimeout(300);
-
-    const isDark = await page.evaluate(() =>
-      document.documentElement.classList.contains("dark")
-    );
-    expect(isDark).toBe(true);
-
-    const darkBg = await page
-      .locator("body")
-      .evaluate((el) => window.getComputedStyle(el).backgroundColor);
-    expect(darkBg).toMatch(/rgb\(10,\s*10,\s*10\)/);
-
-    // Toggle back to light
-    await themeToggle.click();
-    await page.waitForTimeout(300);
-
-    const isBackLight = await page.evaluate(() =>
-      !document.documentElement.classList.contains("dark")
-    );
-    expect(isBackLight).toBe(true);
-  });
-
-  test("should persist theme preference after page reload", async ({ page }) => {
-    const themeToggle = page
-      .locator(
-        "button[aria-label*='mode'], button[aria-label*='clair'], button[aria-label*='sombre']"
-      )
-      .first();
-
-    // Switch to dark mode
-    await themeToggle.click();
-    await page.waitForTimeout(300);
-
-    // Verify next-themes stored it under key "theme"
-    const storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
-    expect(storedTheme).toBe("dark");
-
-    // Reload and verify persistence
-    await page.reload();
-    await page.waitForLoadState("networkidle");
-
-    const isDark = await page.evaluate(() =>
-      document.documentElement.classList.contains("dark")
-    );
-    expect(isDark).toBe(true);
-  });
-
-  test("should change header background when theme toggles", async ({ page }) => {
-    const header = page.locator("header").first();
-    const lightHeaderBg = await header.evaluate((el) =>
-      window.getComputedStyle(el).backgroundColor
-    );
-
-    const themeToggle = page
-      .locator(
-        "button[aria-label*='mode'], button[aria-label*='clair'], button[aria-label*='sombre']"
-      )
-      .first();
-    await themeToggle.click();
-    await page.waitForTimeout(300);
-
-    const darkHeaderBg = await header.evaluate((el) =>
-      window.getComputedStyle(el).backgroundColor
-    );
-
-    expect(darkHeaderBg).not.toBe(lightHeaderBg);
+    await expect(themeToggle).toHaveCount(0);
   });
 });
 
@@ -165,30 +81,7 @@ test.describe("Button Contrast Validation (WCAG AA)", () => {
     return Math.round((((lighter + 0.05) / (darker + 0.05)) * 100) / 100);
   };
 
-  test("should have sufficient contrast on primary buttons in light mode", async ({ page }) => {
-    const primaryButton = page
-      .locator("button")
-      .filter({ has: page.locator("text=Prendre rendez-vous") })
-      .first();
-
-    if (await primaryButton.isVisible()) {
-      const bgColor = await primaryButton.evaluate((el) =>
-        window.getComputedStyle(el).backgroundColor
-      );
-      const textColor = await primaryButton.evaluate((el) =>
-        window.getComputedStyle(el).color
-      );
-
-      const ratio = calculateContrastRatio(rgbToHex(textColor), rgbToHex(bgColor));
-      expect(ratio).toBeGreaterThanOrEqual(4.5);
-    }
-  });
-
-  test("should have sufficient contrast on primary buttons in dark mode", async ({ page }) => {
-    // Switch to dark mode via class (simulates next-themes behavior)
-    await page.evaluate(() => document.documentElement.classList.add("dark"));
-    await page.waitForTimeout(200);
-
+  test("should have sufficient contrast on primary buttons", async ({ page }) => {
     const primaryButton = page
       .locator("button")
       .filter({ has: page.locator("text=Prendre rendez-vous") })
@@ -244,39 +137,12 @@ test.describe("Button Contrast Validation (WCAG AA)", () => {
       }
     }
 
-    expect(contrastIssues.length).toBe(
-      0,
+    expect(
+      contrastIssues.length,
       `Contrast issues found:\n${contrastIssues.join("\n")}`
-    );
+    ).toBe(0);
   });
 
-  test("should maintain contrast after switching to dark mode", async ({ page }) => {
-    const themeToggle = page
-      .locator(
-        "button[aria-label*='mode'], button[aria-label*='clair'], button[aria-label*='sombre']"
-      )
-      .first();
-
-    const primaryButton = page
-      .locator("button")
-      .filter({ has: page.locator("text=Prendre rendez-vous") })
-      .first();
-
-    if ((await primaryButton.isVisible()) && (await themeToggle.isVisible())) {
-      await themeToggle.click();
-      await page.waitForTimeout(300);
-
-      const bgColor = await primaryButton.evaluate((el) =>
-        window.getComputedStyle(el).backgroundColor
-      );
-      const textColor = await primaryButton.evaluate((el) =>
-        window.getComputedStyle(el).color
-      );
-
-      const ratio = calculateContrastRatio(rgbToHex(textColor), rgbToHex(bgColor));
-      expect(ratio).toBeGreaterThanOrEqual(4.5);
-    }
-  });
 });
 
 test.describe("Keyboard Navigation & Accessibility (UNIA-106)", () => {
