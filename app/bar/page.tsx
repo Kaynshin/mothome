@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Tv, Users, Coffee, ChevronRight } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBarSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
   title: "Le Bar Mothome — Bikers Bar, MotoGP & Billard à Thonon",
@@ -157,14 +158,14 @@ export default function BarPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="#programme"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 Voir le programme
                 <ChevronRight size={16} aria-hidden="true" />
               </a>
               <a
                 href="#menu"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
               >
                 La carte
               </a>
@@ -243,7 +244,7 @@ export default function BarPage() {
             <div className="space-y-8">
               {MENU.map(({ categorie, items }) => (
                 <div key={categorie}>
-                  <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                  <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-3">
                     {categorie}
                   </h3>
                   <ul
@@ -369,7 +370,7 @@ export default function BarPage() {
 
             <div className="space-y-6">
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-3">
                   Accès
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
@@ -379,7 +380,7 @@ export default function BarPage() {
               </div>
 
               <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <h3 className="font-heading text-sm font-semibold text-[var(--color-or-mat)] uppercase tracking-widest mb-3">
+                <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest mb-3">
                   Réservation groupe
                 </h3>
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed mb-4">
@@ -387,12 +388,15 @@ export default function BarPage() {
                   à l&apos;avance pour s&apos;assurer d&apos;avoir la place — et parfois une bière
                   offerte à l&apos;arrivée.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
-                >
-                  Contacter le bar →
-                </Link>
+                <div className="flex flex-col gap-3">
+                  <PhoneCta variant="ghost" />
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
+                  >
+                    Contacter le bar →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
