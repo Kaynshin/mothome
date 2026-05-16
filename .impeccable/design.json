@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-16T00:00:00Z",
+  "title": "Design System: Mot'Home",
+  "extensions": {
+    "colorMeta": {
+      "bleu-livery": {
+        "role": "primary",
+        "displayName": "Bleu Livery",
+        "canonical": "oklch(43% 0.19 263)",
+        "tonalRamp": [
+          "oklch(12% 0.06 263)",
+          "oklch(20% 0.10 263)",
+          "oklch(28% 0.14 263)",
+          "oklch(35% 0.17 263)",
+          "oklch(43% 0.19 263)",
+          "oklch(54% 0.18 263)",
+          "oklch(65% 0.15 263)",
+          "oklch(82% 0.08 263)"
+        ]
+      },
+      "bleu-rapide": {
+        "role": "primary",
+        "displayName": "Bleu Rapide",
+        "canonical": "oklch(48% 0.18 263)",
+        "tonalRamp": [
+          "oklch(14% 0.06 263)",
+          "oklch(22% 0.10 263)",
+          "oklch(30% 0.14 263)",
+          "oklch(38% 0.17 263)",
+          "oklch(48% 0.18 263)",
+          "oklch(58% 0.17 263)",
+          "oklch(68% 0.14 263)",
+          "oklch(84% 0.07 263)"
+        ]
+      },
+      "bleu-piste": {
+        "role": "primary",
+        "displayName": "Bleu Piste",
+        "canonical": "oklch(53% 0.17 263)",
+        "tonalRamp": [
+          "oklch(16% 0.05 263)",
+          "oklch(24% 0.09 263)",
+          "oklch(32% 0.13 263)",
+          "oklch(42% 0.16 263)",
+          "oklch(53% 0.17 263)",
+          "oklch(62% 0.15 263)",
+          "oklch(72% 0.12 263)",
+          "oklch(88% 0.06 263)"
+        ]
+      },
+      "chassis-noir": {
+        "role": "neutral",
+        "displayName": "Chassis Noir",
+        "canonical": "oklch(7% 0.005 263)",
+        "tonalRamp": [
+          "oklch(7% 0.005 263)",
+          "oklch(9% 0.005 263)",
+          "oklch(12% 0.005 263)",
+          "oklch(18% 0.005 263)",
+          "oklch(28% 0.005 263)",
+          "oklch(45% 0.005 263)",
+          "oklch(65% 0.005 263)",
+          "oklch(85% 0.005 263)"
+        ]
+      },
+      "chassis-mat": {
+        "role": "neutral",
+        "displayName": "Chassis Mat",
+        "canonical": "oklch(9% 0.005 263)",
+        "tonalRamp": [
+          "oklch(9% 0.005 263)",
+          "oklch(12% 0.005 263)",
+          "oklch(18% 0.005 263)",
+          "oklch(28% 0.005 263)",
+          "oklch(40% 0.005 263)",
+          "oklch(55% 0.005 263)",
+          "oklch(72% 0.005 263)",
+          "oklch(88% 0.005 263)"
+        ]
+      },
+      "chassis-doux": {
+        "role": "neutral",
+        "displayName": "Chassis Doux",
+        "canonical": "oklch(12% 0.005 263)",
+        "tonalRamp": [
+          "oklch(12% 0.005 263)",
+          "oklch(18% 0.005 263)",
+          "oklch(25% 0.005 263)",
+          "oklch(35% 0.005 263)",
+          "oklch(48% 0.005 263)",
+          "oklch(62% 0.005 263)",
+          "oklch(76% 0.005 263)",
+          "oklch(90% 0.005 263)"
+        ]
+      },
+      "blanc-sec": {
+        "role": "neutral",
+        "displayName": "Blanc Sec",
+        "canonical": "oklch(95% 0.01 80)",
+        "tonalRamp": [
+          "oklch(15% 0.01 80)",
+          "oklch(30% 0.01 80)",
+          "oklch(48% 0.01 80)",
+          "oklch(62% 0.01 80)",
+          "oklch(75% 0.01 80)",
+          "oklch(85% 0.01 80)",
+          "oklch(92% 0.01 80)",
+          "oklch(95% 0.01 80)"
+        ]
+      },
+      "piste-claire": {
+        "role": "neutral",
+        "displayName": "Piste Claire",
+        "canonical": "oklch(97% 0.005 80)",
+        "tonalRamp": [
+          "oklch(20% 0.005 80)",
+          "oklch(38% 0.005 80)",
+          "oklch(55% 0.005 80)",
+          "oklch(68% 0.005 80)",
+          "oklch(78% 0.005 80)",
+          "oklch(87% 0.005 80)",
+          "oklch(93% 0.005 80)",
+          "oklch(97% 0.005 80)"
+        ]
+      },
+      "ardoise": {
+        "role": "neutral",
+        "displayName": "Ardoise",
+        "canonical": "oklch(48% 0.012 70)",
+        "tonalRamp": [
+          "oklch(10% 0.012 70)",
+          "oklch(20% 0.012 70)",
+          "oklch(30% 0.012 70)",
+          "oklch(40% 0.012 70)",
+          "oklch(48% 0.012 70)",
+          "oklch(60% 0.012 70)",
+          "oklch(74% 0.012 70)",
+          "oklch(88% 0.012 70)"
+        ]
+      },
+      "fumee": {
+        "role": "neutral",
+        "displayName": "Fumée",
+        "canonical": "oklch(58% 0.012 70)",
+        "tonalRamp": [
+          "oklch(12% 0.012 70)",
+          "oklch(24% 0.012 70)",
+          "oklch(36% 0.012 70)",
+          "oklch(48% 0.012 70)",
+          "oklch(58% 0.012 70)",
+          "oklch(70% 0.012 70)",
+          "oklch(82% 0.012 70)",
+          "oklch(92% 0.012 70)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines uniquement — une seule occurrence par page. Ne jamais réutiliser pour des sous-titres." },
+      "headline": { "displayName": "Headline", "purpose": "Titres de section principale. Barlow Condensed 700 UPPERCASE." },
+      "title": { "displayName": "Title", "purpose": "Titres de card et sous-sections. Barlow Condensed 600 UPPERCASE." },
+      "body": { "displayName": "Body", "purpose": "Paragraphes et descriptions. Inter casse normale, max 70ch par ligne." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, labels de formulaire, méta-info, badges. Bebas Neue UPPERCASE, toujours en petite taille avec letter-spacing large." }
+    },
+    "shadows": [
+      {
+        "name": "shadow-bleu",
+        "value": "0 0 30px rgba(0, 80, 160, 0.3)",
+        "purpose": "Glow bleu ciblé sur état uniquement — header au scroll (>20px), input en focus, CTA primaire en hover. Jamais au repos."
+      },
+      {
+        "name": "focus-ring-bleu",
+        "value": "0 0 0 3px rgba(0, 80, 160, 0.2)",
+        "purpose": "Ring de focus accessible sur inputs et éléments interactifs. S'ajoute à la bordure Bleu Livery."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Easing standard pour toutes les transitions d'état. Rapide au démarrage, smooth à l'arrivée. Jamais de bounce ou elastic."
+      },
+      {
+        "name": "ease-smooth",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Easing pour transitions de layout (header scroll, sheet open). Existant dans globals.css (--ease-smooth)."
+      },
+      {
+        "name": "duration-fast",
+        "value": "150ms",
+        "purpose": "Micro-interactions : hover de bouton, changement de couleur, focus ring. En dessous de 150ms = imperceptible."
+      },
+      {
+        "name": "duration-normal",
+        "value": "300ms",
+        "purpose": "Transitions d'état importantes : header scroll, card hover, menu ouverture."
+      },
+      {
+        "name": "duration-slow",
+        "value": "500ms",
+        "purpose": "Animations de section : scroll-driven entrances, counter animation, parallax. Maximum absolu — ne pas dépasser."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1536px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button Primary",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal du site. Utilisé pour appeler l'atelier, prendre RDV, demander un devis.",
+      "html": "<button class=\"ds-btn-primary\">PRENDRE RENDEZ-VOUS</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; background-color: #0050a0; color: #f5f0e8; font-family: 'Bebas Neue', ui-sans-serif, sans-serif; font-size: 0.875rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 32px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; transition: background-color 150ms cubic-bezier(0.25, 1, 0.5, 1), transform 150ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-primary:hover { background-color: #1060b0; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #0050a0; outline-offset: 2px; } .ds-btn-primary:active { transform: translateY(0); transition-duration: 75ms; }"
+    },
+    {
+      "name": "Button Ghost",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "CTA secondaire. Utilisé pour les actions moins critiques (en savoir plus, voir les services).",
+      "html": "<button class=\"ds-btn-ghost\">EN SAVOIR PLUS</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; background-color: transparent; color: #0050a0; font-family: 'Bebas Neue', ui-sans-serif, sans-serif; font-size: 0.875rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 32px; border: 1px solid #0050a0; border-radius: 4px; cursor: pointer; text-decoration: none; transition: background-color 150ms cubic-bezier(0.25, 1, 0.5, 1), color 150ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-ghost:hover { background-color: rgba(0, 80, 160, 0.1); } .ds-btn-ghost:focus-visible { outline: 2px solid #0050a0; outline-offset: 2px; }"
+    },
+    {
+      "name": "Phone CTA",
+      "kind": "custom",
+      "refersTo": "button-primary",
+      "description": "Composant signature critique. Le numéro de téléphone est le CTA primaire du site — un appel passé est le succès. Présent sur toutes les pages principales.",
+      "html": "<a class=\"ds-phone-cta\" href=\"tel:+33XXXXXXXXX\"><svg class=\"ds-phone-cta__icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.5 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.53a16 16 0 0 0 5.56 5.56l1.42-1.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z\"/></svg><span class=\"ds-phone-cta__content\"><span class=\"ds-phone-cta__number\">04 XX XX XX XX</span><span class=\"ds-phone-cta__label\">APPELER L'ATELIER</span></span></a>",
+      "css": ".ds-phone-cta { display: inline-flex; align-items: center; gap: 12px; padding: 16px 24px; background-color: #111111; border-radius: 4px; text-decoration: none; color: #f5f0e8; transition: background-color 200ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-phone-cta:hover { background-color: #1a1a1a; } .ds-phone-cta:focus-visible { outline: 2px solid #0050a0; outline-offset: 2px; } .ds-phone-cta__icon { color: #0050a0; flex-shrink: 0; } .ds-phone-cta__content { display: flex; flex-direction: column; gap: 2px; } .ds-phone-cta__number { font-family: 'Barlow Condensed', ui-sans-serif, sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; color: #f5f0e8; } .ds-phone-cta__label { font-family: 'Bebas Neue', ui-sans-serif, sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #0050a0; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "Card des 4 services principaux (atelier, service à domicile, accessoires, dépôt-vente). Structure verticale eyebrow + titre + body + CTA inline. Les cards ne sont pas identiques en hauteur — rythme asymétrique voulu.",
+      "html": "<div class=\"ds-service-card\"><span class=\"ds-service-card__eyebrow\">Atelier</span><h3 class=\"ds-service-card__title\">Réparation & Entretien</h3><p class=\"ds-service-card__body\">Révisions, diagnostics, préparations circuit. Toutes marques, toutes cylindrées.</p><a class=\"ds-service-card__cta\" href=\"/atelier\">Demander un devis <span aria-hidden=\"true\">→</span></a></div>",
+      "css": ".ds-service-card { background-color: #111111; border-radius: 4px; padding: 32px; display: flex; flex-direction: column; gap: 12px; transition: background-color 200ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-service-card:hover { background-color: #1a1a1a; } .ds-service-card__eyebrow { font-family: 'Bebas Neue', ui-sans-serif, sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: #0050a0; } .ds-service-card__title { font-family: 'Barlow Condensed', ui-sans-serif, sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; color: #f5f0e8; line-height: 1.1; margin: 0; } .ds-service-card__body { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.9375rem; color: #8a8070; line-height: 1.6; margin: 0; } .ds-service-card__cta { font-family: 'Barlow Condensed', ui-sans-serif, sans-serif; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #0050a0; text-decoration: none; transition: color 150ms cubic-bezier(0.25, 1, 0.5, 1); margin-top: 4px; } .ds-service-card__cta:hover { color: #1060b0; } .ds-service-card__cta:focus-visible { outline: 2px solid #0050a0; outline-offset: 2px; border-radius: 2px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Lien de navigation principale du header. UPPERCASE Inter, transitions sur couleur et fond.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"/atelier\">Atelier</a><a class=\"ds-nav-link ds-nav-link--active\" href=\"/service-domicile\" aria-current=\"page\">Service à domicile</a><a class=\"ds-nav-link\" href=\"/accessoires\">Accessoires</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 4px; } .ds-nav-link { display: inline-block; padding: 8px 12px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6b6055; border-radius: 4px; text-decoration: none; transition: color 200ms cubic-bezier(0.25, 1, 0.5, 1), background-color 200ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-nav-link:hover { color: #1a1a1a; background-color: rgba(26, 26, 26, 0.05); } .ds-nav-link--active { color: #0050a0; background-color: rgba(0, 80, 160, 0.1); } .ds-nav-link:focus-visible { outline: 2px solid #0050a0; outline-offset: 2px; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Champs des formulaires (devis, RDV, contact). Label Bebas Neue UPPERCASE, focus ring bleu.",
+      "html": "<div class=\"ds-input-wrapper\"><label class=\"ds-input-label\" for=\"ds-nom\">Votre nom</label><input class=\"ds-input\" id=\"ds-nom\" type=\"text\" placeholder=\"Maël Dupont\" /></div>",
+      "css": ".ds-input-wrapper { display: flex; flex-direction: column; gap: 6px; } .ds-input-label { font-family: 'Bebas Neue', ui-sans-serif, sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8070; } .ds-input { background-color: #111111; color: #f5f0e8; border: 1px solid #2a2520; border-radius: 4px; padding: 12px 16px; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 1rem; line-height: 1.5; transition: border-color 150ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 150ms cubic-bezier(0.25, 1, 0.5, 1); outline: none; width: 100%; } .ds-input::placeholder { color: #6b6055; } .ds-input:focus-visible { border-color: #0050a0; box-shadow: 0 0 0 3px rgba(0, 80, 160, 0.2); } .ds-input:disabled { opacity: 0.5; cursor: not-allowed; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Livery",
+    "overview": "Une combinaison de course. Chaque zone de couleur compte, l'identité est instantanément lisible à 300m, le bleu Mot'Home porte tout. Pas de second mot, pas d'ornement. Le système design n'imite pas Ducati ou Red Bull — il s'inspire de l'idée derrière toute livery réussie : maximum d'identité avec le minimum de bruit.\n\nMot'Home est un atelier moto local à Thonon, pas un constructeur international. La livery est donc humble dans son matériau (pas de glossy luxe, pas de glassmorphism, pas d'effets verre) mais entière dans son engagement chromatique : le bleu Mot'Home (#0050a0) porte 30 à 60% des surfaces en mode sombre. C'est une stratégie Committed, pas Restrained.\n\nLe système rejette explicitement : SaaS-cream, lifestyle motard contemplatif, garage rustique vieux bois, or mat décoratif, hero-metric template, card grids identiques.",
+    "keyCharacteristics": [
+      "Bleu unique, chromatiquement souverain — neutres légèrement tintés brand (chroma ~0.005)",
+      "Typographie tout-majuscule pour les titres (Barlow Condensed 800/700) ; Inter casse normale pour le corps",
+      "Profondeur par layering tonal, jamais par shadow décorative",
+      "Motion vif et coupé : ease-out exponentiel, cut sec, pas de bounce",
+      "Radius minimal 4px (boutons, inputs, service cards) ; 8px réservé aux containers larges",
+      "Mobile-first : la majorité du trafic local arrive sur téléphone en repérage avant appel"
+    ],
+    "rules": [
+      {
+        "name": "The Bleu Porte Tout Rule",
+        "body": "Le bleu Livery (#0050a0) est la seule couleur saturée du système. Aucun second accent. Si une donnée a besoin d'un second ton (success/error), texte + icône suffisent. La rareté chromatique est le point.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Or Rule",
+        "body": "L'or mat #b8943a de la palette historique est banni. Il dilue le register racing en suggérant un luxe ornemental que Mot'Home n'est pas.",
+        "section": "colors"
+      },
+      {
+        "name": "The Uppercase Rule",
+        "body": "Titres (Barlow Condensed) et labels (Bebas Neue) sont toujours en majuscules. Inter corps de texte est toujours en casse normale. Jamais de mélange à un même niveau de hiérarchie.",
+        "section": "typography"
+      },
+      {
+        "name": "The Pas-De-Gradient-Text Rule",
+        "body": "background-clip: text combiné à un linear-gradient est interdit partout. L'emphase passe par le poids de graisse (700 à 800), pas par la couleur dégradée.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Les surfaces sont plates au repos. Une shadow n'apparaît qu'en réponse à un état (hover, focus, scroll). Si une card doit ressortir, elle monte d'un cran tonal — jamais d'une shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Pas-De-Blur Rule",
+        "body": "Backdrop-blur est autorisé uniquement sur le header au scroll, où il sépare le nav du contenu. Aucune autre utilisation. Pas de cards en verre, pas de modals translucides.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Utiliser #0050a0 (Bleu Livery) pour chaque affordance interactive : CTA, lien actif, focus ring, label de section.",
+      "Mettre le numéro de téléphone en CTA primaire visible sur toutes les pages. Un appel passé est le succès.",
+      "Construire la profondeur par layering tonal (Chassis Noir → Chassis Mat → Chassis Doux). Jamais par shadow au repos.",
+      "Garder le logo mothome-logo.png et mothome-ecusson.jpg intacts. Aucune retouche, aucun re-coloring.",
+      "Respecter prefers-reduced-motion : toutes les animations (whip pan, speed lines, counter, parallax) dégradent vers opacity ou aucun mouvement.",
+      "Préférer une photo réelle d'atelier à un paragraphe 'notre savoir-faire'. Le métier se montre, ne se décrit pas.",
+      "Utiliser ease-out exponentiel (cubic-bezier(0.25, 1, 0.5, 1)) sur toutes les transitions.",
+      "Appliquer une bordure 1px Gris Piste sur les cards en light mode."
+    ],
+    "donts": [
+      "Ne pas utiliser #b8943a (or mat) comme accent. Il dilue le register racing.",
+      "Ne pas appliquer backdrop-blur ailleurs que le header au scroll. Pas de glassmorphism, pas de cards en verre.",
+      "Ne pas utiliser gradient text (background-clip: text + linear-gradient). Emphase par poids de graisse.",
+      "Ne pas ajouter border-left > 1px coloré sur cards, alerts, callouts.",
+      "Ne pas reproduire le template hero-metric SaaS : gros chiffre + label + stats secondaires.",
+      "Ne pas afficher les 4 cards services en grid iso identique. Casser le rythme en taille ou position.",
+      "Ne pas utiliser bounce, élastique, spring sur les motions. Ease-out exponentiel uniquement.",
+      "Ne pas ralentir au-delà de 500ms. Le racing est direct. Cut sec avant fondu lent.",
+      "Ne pas utiliser tons sépia, photos lifestyle au coucher de soleil, mood contemplatif.",
+      "Ne pas utiliser #000 pur ou #fff pur. Les neutres sont tintés (chroma 0.005–0.01) pour cohésion atmosphérique.",
+      "Ne pas introduire un second accent saturé. Le Bleu Livery porte tout.",
+      "Ne jamais modifier le logo."
+    ]
+  }
+}

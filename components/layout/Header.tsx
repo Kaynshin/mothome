@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, CTA } from "./nav-config";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -74,10 +73,8 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA desktop + theme toggle + burger mobile */}
+        {/* CTA desktop + burger mobile */}
         <div className="flex items-center gap-2">
-          <ThemeToggle />
-
           <Button
             asChild
             className="hidden sm:inline-flex bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-[var(--color-primary-foreground)] font-heading font-semibold uppercase tracking-widest text-sm px-5 h-9 transition-colors duration-200"
