@@ -5,27 +5,30 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "À Propos — Maël & Mothome, le garage moto de Thonon",
+  title: "À Propos — Maël & l'histoire de Mothome, garage moto à Thonon",
   description:
-    "L'histoire de Mothome : Maël, mécanicien passionné installé à Thonon-les-Bains. Un atelier artisanal, un bar pour les riders, et une vision : la moto sans compromis.",
+    "Découvrez l'histoire de Maël, fondateur de Mothome — un atelier moto artisanal à Thonon-les-Bains, un bar pour les riders, et une vision : la moto sans compromis dans le Chablais.",
   keywords: [
     "mécanicien moto Thonon",
     "garage artisanal moto Haute-Savoie",
     "histoire Mothome",
     "Maël mécanicien Chablais",
+    "fondateur Mothome",
+    "histoire garage moto Thonon",
+    "atelier moto artisanal Chablais",
   ],
   alternates: { canonical: "/a-propos" },
   openGraph: {
-    title: "À Propos — Maël & Mothome, le garage moto de Thonon",
+    title: "À Propos — Maël & l'histoire de Mothome, garage moto à Thonon",
     description:
-      "L'histoire de Mothome : Maël, mécanicien passionné installé à Thonon-les-Bains. Atelier artisanal et bar pour les riders.",
+      "L'histoire de Maël, fondateur de Mothome : un atelier moto artisanal à Thonon-les-Bains et un bar pour les riders du Chablais.",
     url: "/a-propos",
   },
   twitter: {
     card: "summary_large_image",
-    title: "À Propos — Maël & Mothome, le garage moto de Thonon",
+    title: "À Propos — Maël & l'histoire de Mothome, garage moto à Thonon",
     description:
-      "L'histoire de Mothome : Maël, mécanicien passionné installé à Thonon-les-Bains.",
+      "L'histoire de Maël, fondateur de Mothome — atelier moto artisanal à Thonon-les-Bains, Haute-Savoie.",
   },
 };
 

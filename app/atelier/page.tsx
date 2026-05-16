@@ -7,28 +7,34 @@ import { buildAtelierSchema, buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
 
 export const metadata: Metadata = {
-  title: "L'Atelier — Réparation & Entretien Moto à Thonon | Mothome",
+  title:
+    "Réparation Moto Thonon-les-Bains — Entretien & Garage Toutes Marques 74 | Mothome",
   description:
-    "Révision, réparation, contrôle technique et kit éthanol eFlexMoto. Tarifs transparents, travail artisanal. Garage moto toutes marques en Haute-Savoie.",
+    "Garage moto artisanal à Thonon-les-Bains. Révision, réparation toutes marques, contrôle technique, kit éthanol. Tarifs transparents en Haute-Savoie.",
   keywords: [
-    "réparation moto Haute-Savoie",
-    "entretien moto Thonon",
+    "réparation moto Thonon-les-Bains",
+    "entretien moto 74",
+    "garage moto Haute-Savoie",
+    "garage toutes marques Haute-Savoie",
+    "révision moto Thonon",
+    "mécanicien moto Chablais",
     "contrôle technique moto Thonon",
-    "révision moto 74",
     "kit éthanol moto eFlexMoto",
   ],
   alternates: { canonical: "/atelier" },
   openGraph: {
-    title: "L'Atelier — Réparation & Entretien Moto à Thonon | Mothome",
+    title:
+      "Réparation Moto Thonon-les-Bains — Entretien & Garage Toutes Marques 74 | Mothome",
     description:
-      "Révision, réparation, contrôle technique et kit éthanol eFlexMoto. Tarifs transparents, travail artisanal. Garage moto toutes marques en Haute-Savoie.",
+      "Garage moto artisanal à Thonon-les-Bains. Révision, réparation toutes marques, contrôle technique, kit éthanol. Tarifs transparents en Haute-Savoie.",
     url: "/atelier",
   },
   twitter: {
     card: "summary_large_image",
-    title: "L'Atelier — Réparation & Entretien Moto à Thonon | Mothome",
+    title:
+      "Réparation Moto Thonon-les-Bains — Entretien & Garage Toutes Marques 74 | Mothome",
     description:
-      "Révision, réparation, contrôle technique et kit éthanol eFlexMoto. Tarifs transparents, travail artisanal. Garage moto toutes marques en Haute-Savoie.",
+      "Garage moto artisanal à Thonon-les-Bains. Révision, réparation toutes marques, contrôle technique, kit éthanol. Tarifs transparents en Haute-Savoie.",
   },
 };
 
@@ -61,7 +67,7 @@ const SERVICES = [
     id: "reparation",
     title: "Réparation & Diagnostic",
     description:
-      "Panne électrique, moteur qui claque, transmission qui grince — Mael diagnostique rapidement et répare juste ce qu'il faut. Pas de pièces inutiles, pas de surfacturation.",
+      "Panne électrique, moteur qui claque, transmission qui grince — l'atelier diagnostique rapidement et répare juste ce qu'il faut. Pas de pièces inutiles, pas de surfacturation.",
     features: [
       "Diagnostic électronique et mécanique",
       "Réparation moteur (distribution, embrayage…)",
@@ -287,7 +293,7 @@ export default function AtelierPage() {
               Demander un devis
             </h2>
             <p className="font-sans text-base text-[var(--color-muted-foreground)]">
-              Décris ton problème ou ton projet — Mael te répond sous 24h.
+              Décris ton problème ou ton projet — l&apos;équipe vous répond sous 24h.
             </p>
           </div>
 
@@ -306,7 +312,7 @@ export default function AtelierPage() {
                 Ta moto ne peut pas se déplacer ?
               </h3>
               <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
-                Mael se déplace chez toi dans tout le Chablais. Dépannage ou entretien à domicile.
+                Mothome se déplace chez toi dans tout le Chablais. Dépannage ou entretien à domicile.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
