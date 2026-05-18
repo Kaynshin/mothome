@@ -208,7 +208,7 @@ export default function HomePage() {
           <Stagger className="grid grid-cols-1 lg:grid-cols-3 gap-4" stagger={90}>
             {/* Atelier — featured 2×2 */}
             <article
-              className="lg:col-span-2 lg:row-span-2 flex flex-col p-10 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition-[background-color,border-color] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/30 group"
+              className="lg:col-span-2 lg:row-span-2 flex flex-col p-10 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/40 hover:shadow-[0_16px_40px_-12px_rgba(0,80,160,0.25)] group"
             >
               <p className="font-accent text-xs text-[var(--color-bleu-livery)] uppercase tracking-[0.18em] mb-3">
                 Atelier
@@ -239,7 +239,7 @@ export default function HomePage() {
 
             {/* Service à domicile */}
             <article
-              className="flex flex-col p-8 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition-[background-color,border-color] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/30 group"
+              className="flex flex-col p-8 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/40 hover:shadow-[0_16px_40px_-12px_rgba(0,80,160,0.25)] group"
             >
               <p className="font-accent text-xs text-[var(--color-bleu-livery)] uppercase tracking-[0.18em] mb-3">
                 À domicile
@@ -270,7 +270,7 @@ export default function HomePage() {
 
             {/* Accessoires */}
             <article
-              className="flex flex-col p-8 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition-[background-color,border-color] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/30 group"
+              className="flex flex-col p-8 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/40 hover:shadow-[0_16px_40px_-12px_rgba(0,80,160,0.25)] group"
             >
               <p className="font-accent text-xs text-[var(--color-bleu-livery)] uppercase tracking-[0.18em] mb-3">
                 Accessoires
@@ -300,7 +300,7 @@ export default function HomePage() {
 
             {/* Dépôt-Vente — full width */}
             <article
-              className="lg:col-span-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 p-8 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition-[background-color,border-color] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/30 group"
+              className="lg:col-span-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 p-8 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] hover:-translate-y-1 hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/40 hover:shadow-[0_16px_40px_-12px_rgba(0,80,160,0.25)] group"
             >
               <div className="flex-1">
                 <p className="font-accent text-xs text-[var(--color-bleu-livery)] uppercase tracking-[0.18em] mb-2">
