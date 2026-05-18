@@ -5,6 +5,7 @@ import { PhoneCta } from "@/components/ui/phone-cta";
 import ContactForm from "./ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildContactPageSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { FadeIn } from "@/components/motion/FadeIn";
 
 export const metadata: Metadata = {
   title: "Contact & Rendez-vous — Garage Moto Mothome à Thonon-les-Bains",
@@ -61,7 +62,11 @@ export default function ContactPage() {
         aria-labelledby="contact-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <nav aria-label="Fil d'Ariane" className="mb-8">
+          <nav
+            aria-label="Fil d'Ariane"
+            className="mh-fade-up-mount mb-8"
+            style={{ animationDelay: "0ms" }}
+          >
             <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
                 <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
@@ -76,17 +81,24 @@ export default function ContactPage() {
           </nav>
 
           <div className="max-w-2xl">
-            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
+            <p
+              className="mh-fade-up-mount font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4"
+              style={{ animationDelay: "80ms" }}
+            >
               Garage Mothome · Thonon-les-Bains
             </p>
             <h1
               id="contact-hero-title"
-              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              className="mh-fade-up-mount font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              style={{ animationDelay: "160ms" }}
             >
               Nous{" "}
               <span className="text-[var(--color-bleu-logo)]">contacter</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed">
+            <p
+              className="mh-fade-up-mount font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed"
+              style={{ animationDelay: "280ms" }}
+            >
               Rendez-vous, devis, question — plusieurs façons de joindre l&apos;atelier.
               Réponse sous 24h garantie.
             </p>
@@ -102,7 +114,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             {/* ---- Form ---- */}
-            <div>
+            <FadeIn direction="right">
               <h2
                 id="rdv"
                 className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-8"
@@ -110,10 +122,10 @@ export default function ContactPage() {
                 Prendre rendez-vous
               </h2>
               <ContactForm />
-            </div>
+            </FadeIn>
 
             {/* ---- Info ---- */}
-            <div className="space-y-8">
+            <FadeIn direction="left" delay={150} className="space-y-8">
               {/* Infos pratiques */}
               <div>
                 <h2 className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-6">
@@ -220,7 +232,7 @@ export default function ContactPage() {
                   Accéder au formulaire →
                 </a>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -233,14 +245,16 @@ export default function ContactPage() {
         aria-labelledby="map-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <h2
-            id="map-title"
-            className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-8"
-          >
-            Nous trouver
-          </h2>
+          <FadeIn direction="up">
+            <h2
+              id="map-title"
+              className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-8"
+            >
+              Nous trouver
+            </h2>
+          </FadeIn>
 
-          <div className="relative rounded-lg overflow-hidden border border-[var(--color-border)] aspect-video max-h-96">
+          <FadeIn direction="up" delay={120} className="relative rounded-lg overflow-hidden border border-[var(--color-border)] aspect-video max-h-96">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44000!2d6.4798!3d46.3714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c3e3e3e3e3e3e%3A0x0!2sThonon-les-Bains%2C%20France!5e0!3m2!1sfr!2sfr!4v1234567890"
               width="100%"
@@ -252,7 +266,7 @@ export default function ContactPage() {
               title="Localisation de Mothome à Thonon-les-Bains"
               className="grayscale opacity-80"
             />
-          </div>
+          </FadeIn>
 
           <div className="mt-4 flex justify-end">
             <a
