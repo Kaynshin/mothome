@@ -68,21 +68,11 @@ const MotosSchema = z.array(MotoSchema).min(MIN_MOTOS).max(MAX_MOTOS);
 
 // Ordre = publication date DESC (le plus récent en premier).
 export const FALLBACK_MOTOS: readonly Moto[] = [
-  {
-    id: "3191396957",
-    marque: "Aprilia",
-    modele: "Caponord 1200 Travel",
-    annee: 2018,
-    km: "35 000 km",
-    prix: "7 500 €",
-    cylindree: "1200 cc",
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/88/9e/99/889e993be3ba1add4625bf9938a5780767e9e2a2.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3191396957",
-    ville: "Anthy-sur-Léman",
-    publishedAt: "2026-05-04",
-    disponible: true,
-  },
+  // Aprilia Caponord 3191396957 retirée — annonce publiée par "lascap"
+  // (autre vendeur pro), pas par MOT'HOME. La description mentionne
+  // "En dépôt vente chez MOT'HOME" comme info historique mais le profil
+  // pro vendeur dans le footer LBC n'est pas MOT'HOME.
+  // Faux positif exclu via isMothomeAd() (heading "## MOT'HOME" absent).
   {
     id: "3188337073",
     marque: "Piaggio",
@@ -286,15 +276,22 @@ function parseFrenchDate(ddmmyyyy: string): string | null {
  * sur demande du client).
  */
 function isMothomeAd(markdown: string): boolean {
-  const isPro = /vendeur professionnel/i.test(markdown);
-  if (!isPro) return false;
+  // Seul marker fiable = heading "## MOT'HOME" présent dans le footer
+  // profil pro Leboncoin de chaque vraie annonce publiée PAR MOT'HOME.
+  //
+  // Cas écartés (faux positifs observés) :
+  //   - "Mot'Home vous propose..." en description : peut être copy-paste
+  //     par un autre vendeur (ex: revente d'une moto passée par MOT'HOME).
+  //   - "En dépôt vente chez MOT'HOME" : idem, info historique.
+  //   - "Vendeur professionnel" seul : autres pros existent (lascap, etc.).
+  //
+  // Le heading "## MOT'HOME" n'apparaît QUE dans le footer profil pro
+  // du vendeur dont l'annonce est publiée — pas dans les sections
+  // "annonces similaires" ni dans des copy-paste de description.
+  if (!/^##\s*MOT['\s]?HOME\b/im.test(markdown)) return false;
 
-  const mothomeSellerMarkers = [
-    /^##\s*MOT['\s]?HOME/im, // footer profil pro
-    /Mot['\s]?Home\s+vous\s+propose/i, // formule description
-    /[Ee]n\s+d[ée]p[ôo]t\s+vente\s+chez\s+MOT['\s]?HOME/i, // variante
-  ];
-  return mothomeSellerMarkers.some((rx) => rx.test(markdown));
+  // Sanity check pro
+  return /vendeur professionnel/i.test(markdown);
 }
 
 /** Parse une page d'annonce Leboncoin et extrait les données structurées. */
