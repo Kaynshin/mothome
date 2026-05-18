@@ -101,8 +101,8 @@ export function MotosShowcase({ motos, leboncoinUrl }: Props) {
         ))}
       </Stagger>
 
-      <div className="sm:hidden text-center mb-8">
-        {canExpand ? (
+      {canExpand && (
+        <div className="sm:hidden text-center mb-6">
           <button
             type="button"
             onClick={() => setVisible((c) => Math.min(c + BATCH, motos.length))}
@@ -112,26 +112,15 @@ export function MotosShowcase({ motos, leboncoinUrl }: Props) {
             Voir plus ({nextBatch})
             <ChevronRight size={16} aria-hidden="true" />
           </button>
-        ) : (
-          <a
-            href={leboncoinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-livery)] hover:text-[var(--color-bleu-livery)] text-[var(--color-muted-foreground)] font-accent uppercase tracking-[0.12em] text-sm rounded transition-colors duration-150"
-            aria-label="Voir le reste des annonces Mothome sur Leboncoin (ouvre un nouvel onglet)"
-          >
-            Voir le reste sur Leboncoin
-            <ExternalLink size={14} aria-hidden="true" />
-          </a>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="text-center">
         <a
           href={leboncoinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden sm:inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-livery)] hover:text-[var(--color-bleu-livery)] text-[var(--color-muted-foreground)] font-accent uppercase tracking-[0.12em] text-sm rounded transition-colors duration-150"
+          className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-livery)] hover:text-[var(--color-bleu-livery)] text-[var(--color-muted-foreground)] font-accent uppercase tracking-[0.12em] text-sm rounded transition-colors duration-150"
           aria-label="Voir toutes les annonces Mothome sur Leboncoin (ouvre un nouvel onglet)"
         >
           Voir toutes les annonces sur Leboncoin
