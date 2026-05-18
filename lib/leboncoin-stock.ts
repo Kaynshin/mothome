@@ -143,21 +143,9 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
     publishedAt: "2026-04-25",
     disponible: true,
   },
-  {
-    id: "3182078736",
-    marque: "Vespa",
-    modele: "125",
-    annee: 2004,
-    km: "30 200 km",
-    prix: "2 650 €",
-    cylindree: "125 cc",
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/a4/07/78/a4077879539512b5289257932ccb67fd0bb3aab5.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3182078736",
-    ville: "Sciez",
-    publishedAt: "2026-04-18",
-    disponible: true,
-  },
+  // Vespa 3182078736 retirée — annonce particulier qui mentionne Mot'Home
+  // (révision faite chez Mot'home), pas une annonce publiée par MOT'HOME.
+  // Faux positif identifié et exclu via isMothomeAd().
   {
     id: "3167498520",
     marque: "Peugeot",
@@ -278,21 +266,35 @@ function parseFrenchDate(ddmmyyyy: string): string | null {
 }
 
 /**
- * Filtre défensif : vérifie que l'annonce vient bien de MOT'HOME.
+ * Filtre vendeur strict : annonce publiée PAR MOT'HOME (pas juste un
+ * particulier qui mentionne le garage dans sa description).
  *
- * Leboncoin peut inclure des annonces "similaires" ou sponsorisées dans
- * une page de recherche, qui ne viennent pas du vendeur recherché. On
- * filtre par mention textuelle "Mot'Home" (case-insensitive, avec ou
- * sans apostrophe) — présente dans le footer pro et/ou la description
- * de chaque vraie annonce MOT'HOME (formule récurrente "Mot'Home vous
- * propose en dépôt vente...").
+ * Heuristique = présence d'au moins UNE de ces formules typiques :
+ *   1. Footer pro "## MOT'HOME"
+ *   2. Formule en description "Mot'Home vous propose"
+ *   3. Variante "En dépôt vente chez MOT'HOME"
  *
- * SIREN officiel MOT'HOME = 888246212 (fallback futur si l'heuristique
- * texte devient insuffisante : passer en scrape rawHtml et chercher
- * "siren":"888246212" dans le JSON Next.js embedded).
+ * Cas exclus volontairement (faux positifs observés) :
+ *   - "révision faite chez Mot'home" (particulier qui cite le garage)
+ *   - "Suivi chez Mot'Home" (particulier qui décrit l'historique)
+ *
+ * Filtre complémentaire : "Vendeur professionnel" doit apparaître
+ * (critère "Annonces pro" demandé par le client).
+ *
+ * SIREN officiel MOT'HOME = 888246212 (présent dans rawHtml mais pas
+ * toujours dans le markdown extrait — pas utilisé comme filtre primaire
+ * sur demande du client).
  */
 function isMothomeAd(markdown: string): boolean {
-  return /mot.?home/i.test(markdown);
+  const isPro = /vendeur professionnel/i.test(markdown);
+  if (!isPro) return false;
+
+  const mothomeSellerMarkers = [
+    /^##\s*MOT['\s]?HOME/im, // footer profil pro
+    /Mot['\s]?Home\s+vous\s+propose/i, // formule description
+    /[Ee]n\s+d[ée]p[ôo]t\s+vente\s+chez\s+MOT['\s]?HOME/i, // variante
+  ];
+  return mothomeSellerMarkers.some((rx) => rx.test(markdown));
 }
 
 /** Parse une page d'annonce Leboncoin et extrait les données structurées. */
