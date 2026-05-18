@@ -21,6 +21,7 @@ module.exports = {
     "/a-propos",
     "/mentions-legales",
     "/politique-confidentialite",
+    "/motion-demo",
   ],
   changefreq: "weekly",
   priority: 0.7,
