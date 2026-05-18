@@ -21,7 +21,7 @@
 import { z } from "zod";
 
 export const LEBONCOIN_SEARCH_URL =
-  "https://www.leboncoin.fr/recherche?category=3&text=Mot%27Home&locations=dn_74";
+  "https://www.leboncoin.fr/recherche?category=3&text=Mot%27Home&locations=dn_74&owner_type=pro&sort=time&order=desc";
 
 const FIRECRAWL_API_URL = "https://api.firecrawl.dev/v2/scrape";
 const MAX_MOTOS = 9;
@@ -133,6 +133,21 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
     publishedAt: "2026-04-25",
     disponible: true,
   },
+  {
+    id: "3136020613",
+    marque: "Yamaha",
+    modele: "FZ6",
+    annee: 2006,
+    km: "35 000 km",
+    prix: "3 100 €",
+    cylindree: "600 cc",
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/13/46/ac/1346ac043a2b4770e073b45babd671ede36545c2.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3136020613",
+    ville: "Thonon-les-Bains",
+    publishedAt: "2026-04-13",
+    disponible: true,
+  },
   // Vespa 3182078736 retirée — annonce particulier qui mentionne Mot'Home
   // (révision faite chez Mot'home), pas une annonce publiée par MOT'HOME.
   // Faux positif identifié et exclu via isMothomeAd().
@@ -177,6 +192,21 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
     photo:
       "https://img.leboncoin.fr/api/v1/lbcpb1/images/4c/41/2c/4c412ccb8ac9a692e34a6f2fc553f35cfe8e4ae7.jpg?rule=ad-large",
     lbcUrl: "https://www.leboncoin.fr/ad/motos/3166786946",
+    ville: "Thonon-les-Bains",
+    publishedAt: "2026-03-23",
+    disponible: true,
+  },
+  {
+    id: "3043684933",
+    marque: "Kawasaki",
+    modele: "Z 900",
+    annee: 2021,
+    km: "1 495 km",
+    prix: "8 000 €",
+    cylindree: "900 cc",
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/d7/7f/96/d77f96c2f2afc30a05fe5220611dca8897d08ec3.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3043684933",
     ville: "Thonon-les-Bains",
     publishedAt: "2026-03-23",
     disponible: true,

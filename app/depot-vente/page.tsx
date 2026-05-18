@@ -211,9 +211,12 @@ export default async function DepotVentePage() {
             </p>
             <h2
               id="motos-title"
-              className="font-heading text-4xl text-[var(--color-foreground)] uppercase"
+              className="font-heading text-4xl text-[var(--color-foreground)] uppercase flex items-baseline gap-3 flex-wrap"
             >
               Motos disponibles
+              <span className="font-sans text-xl text-[var(--color-muted-foreground)] normal-case tracking-normal">
+                ({motos.length})
+              </span>
             </h2>
           </FadeIn>
 
