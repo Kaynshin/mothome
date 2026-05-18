@@ -167,11 +167,9 @@ export default function DepotVentePage() {
             </p>
             <h1
               id="depot-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none"
+              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
             >
-              Dépôt-
-              <br />
-              <span className="text-[var(--color-bleu-logo)]">Vente</span>
+              Dépôt-<span className="text-[var(--color-bleu-logo)]">Vente</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
               Vous vendez votre moto ou vous cherchez une occasion fiable ?
