@@ -49,7 +49,7 @@ export default function MentionsLegalesPage() {
               Téléphone :{" "}
               <a
                 href="tel:+33450733808"
-                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
               >
                 04.50.73.38.08
               </a>
@@ -57,7 +57,7 @@ export default function MentionsLegalesPage() {
               Email :{" "}
               <a
                 href="mailto:contact@mothome.fr"
-                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
               >
                 contact@mothome.fr
               </a>
@@ -138,7 +138,7 @@ export default function MentionsLegalesPage() {
               données personnelles sont détaillées dans notre{" "}
               <Link
                 href="/politique-confidentialite"
-                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
               >
                 politique de confidentialité
               </Link>

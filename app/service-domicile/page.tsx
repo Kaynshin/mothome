@@ -360,7 +360,7 @@ export default function ServiceDomicilePage() {
                   Appelez directement l&apos;atelier au{" "}
                   <a
                     href="tel:+33450733808"
-                    className="font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                    className="font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
                   >
                     04 50 73 38 08
                   </a>

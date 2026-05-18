@@ -83,7 +83,7 @@ export default function PolitiqueConfidentialitePage() {
               contactez-nous à{" "}
               <a
                 href="mailto:contact@mothome.fr"
-                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
               >
                 contact@mothome.fr
               </a>
@@ -98,7 +98,7 @@ export default function PolitiqueConfidentialitePage() {
                 href="https://www.cnil.fr/fr/plaintes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
               >
                 cnil.fr/fr/plaintes
               </a>
@@ -136,7 +136,7 @@ export default function PolitiqueConfidentialitePage() {
                 href="https://www.dataprivacyframework.gov/list"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
               >
                 Data Privacy Framework (DPF)
               </a>{" "}
@@ -163,7 +163,7 @@ export default function PolitiqueConfidentialitePage() {
               personnelles, contactez-nous à{" "}
               <a
                 href="mailto:contact@mothome.fr"
-                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
               >
                 contact@mothome.fr
               </a>
