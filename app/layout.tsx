@@ -3,6 +3,7 @@ import { Barlow_Condensed, Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { StickyPhoneCtaController } from "@/components/ui/StickyPhoneCtaController";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMotorcycleRepairSchema } from "@/lib/schema";
 import { Analytics } from "@vercel/analytics/next";
@@ -114,6 +115,7 @@ export default function RootLayout({
           <JsonLd data={buildMotorcycleRepairSchema()} />
           <Header />
           <main className="flex-1 pt-16 md:pt-20">{children}</main>
+          <StickyPhoneCtaController />
           <Footer />
           <Analytics />
           <SpeedInsights />
