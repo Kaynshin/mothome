@@ -13,6 +13,7 @@ import GoogleReviews from "@/components/google-reviews/GoogleReviews";
 import { PhoneCta } from "@/components/ui/phone-cta";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Stagger } from "@/components/motion/Stagger";
+import { LiveryStripes } from "@/components/motion/LiveryStripes";
 import { CountUp } from "@/components/stats/CountUp";
 import {
   fetchGooglePlaceData,
@@ -112,11 +113,14 @@ export default async function HomePage() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-background)]"
         aria-label="Hero — Mothome"
       >
-        {/* Background glow bleu livery */}
+        {/* Background glow bleu livery (z-0, sous les stripes) */}
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,rgba(0,80,160,0.18),transparent)]" />
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--color-background)] to-transparent" />
         </div>
+
+        {/* Livery stripes (z-1, devant le gradient, derrière le contenu) */}
+        <LiveryStripes />
 
         <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
           <p
