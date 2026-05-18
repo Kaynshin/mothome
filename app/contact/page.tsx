@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Mail, Clock, Calendar } from "lucide-react";
-import { PhoneCta } from "@/components/ui/phone-cta";
 import { FormsDisabledCTA } from "@/components/contact/FormsDisabledCTA";
 import ContactForm from "./ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -167,12 +166,6 @@ export default function ContactPage() {
                     </div>
                   </a>
 
-                  {/* Phone — variant ghost car le primary est porté par
-                      le form (bouton submit) ou le fallback FormsDisabledCTA */}
-                  <div className="flex items-center gap-4">
-                    <PhoneCta variant="ghost" label="Appeler l'atelier" />
-                  </div>
-
                   {/* Email */}
                   <a
                     href={`mailto:${CONTACT.email}`}
@@ -251,37 +244,21 @@ export default function ContactPage() {
       </section>
 
       {/* ================================================================
-          CARTE — Google Maps embed
+          CARTE — Google Maps embed (full-width)
           ================================================================ */}
       <section
-        className="pb-[var(--spacing-section)] border-t border-[var(--color-border)] pt-[var(--spacing-section)]"
+        className="border-t border-[var(--color-border)] pt-[var(--spacing-section)]"
         aria-labelledby="map-title"
       >
-        <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <FadeIn direction="up">
+        {/* Titre + lien Google Maps : contenu */}
+        <div className="max-w-7xl mx-auto px-[var(--spacing-container)] mb-8">
+          <FadeIn direction="up" className="flex flex-wrap items-baseline justify-between gap-4">
             <h2
               id="map-title"
-              className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-8"
+              className="font-heading text-3xl text-[var(--color-foreground)] uppercase"
             >
               Nous trouver
             </h2>
-          </FadeIn>
-
-          <FadeIn direction="up" delay={120} className="relative rounded-lg overflow-hidden border border-[var(--color-border)] aspect-video max-h-96">
-            <iframe
-              src="https://maps.google.com/maps?q=6+Chemin+de+Marclaz+Dessus,+74200+Thonon-les-Bains&hl=fr&z=16&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localisation de Mothome — 6 Chemin de Marclaz Dessus, Thonon-les-Bains"
-              className="grayscale opacity-80"
-            />
-          </FadeIn>
-
-          <div className="mt-4 flex justify-end">
             <a
               href={CONTACT.mapsUrl}
               target="_blank"
@@ -291,8 +268,27 @@ export default function ContactPage() {
               <MapPin size={14} aria-hidden="true" />
               Ouvrir dans Google Maps
             </a>
-          </div>
+          </FadeIn>
         </div>
+
+        {/* Iframe : pleine largeur, edge-to-edge */}
+        <FadeIn
+          direction="up"
+          delay={120}
+          className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden border-t border-[var(--color-border)]"
+        >
+          <iframe
+            src="https://maps.google.com/maps?q=6+Chemin+de+Marclaz+Dessus,+74200+Thonon-les-Bains&hl=fr&z=16&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Localisation de Mothome — 6 Chemin de Marclaz Dessus, Thonon-les-Bains"
+            className="grayscale opacity-80"
+          />
+        </FadeIn>
       </section>
     </>
   );
