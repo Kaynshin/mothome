@@ -1,12 +1,20 @@
 # Git workflow — MANDATORY
 
-**Branche principale de ce projet : `refonte`** (pas `main`). `main` reste figé sur l'ancienne version jusqu'au cutover final.
+**Branche de développement active : `dev`.** `main` est la branche de production (auto-deploy Vercel sur `mothome.fr`). Le cutover initial `refonte` → `main` a été effectué le 2026-05-18 ; `refonte` a été supprimée et remplacée par `dev`.
 
-Avant toute opération Git (commit, branche, PR, merge), invoquer le skill `git-workflow-refonte`. Règles dures :
+Règles dures :
 
-- Jamais de commit direct sur `refonte` — toujours créer une feature branch (`feat/<slug>`, `fix/<slug>`, `chore/<slug>`).
-- Toute PR cible `refonte` (`--base refonte`), jamais `main`.
-- Intégration via **Rebase and merge** uniquement — pas de merge commit dans `refonte`.
+- **Jamais de commit direct sur `dev` ni `main`.** Toujours créer une feature branch : `feat/<slug>`, `fix/<slug>`, `chore/<slug>`.
+- **Toute PR de feature cible `dev`** (`gh pr create --base dev`).
+- **Releases en prod** : PR `dev` → `main` quand un lot de features est prêt à être déployé publiquement.
+- Intégration via **Rebase and merge** uniquement (pas de merge commit, historique linéaire).
+- Commits : [Conventional Commits](https://www.conventionalcommits.org/) (vérifié par commitlint).
+
+Schéma :
+
+```
+feat/<slug> ──merge──▶ dev ──release──▶ main ──auto-deploy──▶ mothome.fr
+```
 
 # gstack
 

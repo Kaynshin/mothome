@@ -82,13 +82,18 @@ Composants signature :
 
 ## Workflow Git
 
-**Branche principale active : `refonte`** (pas `main`). `main` reste figé sur l'ancienne version jusqu'au cutover final vers la production publique.
+**Branche de développement active : `dev`.** `main` est la branche de production (auto-deploy Vercel sur mothome.fr).
+
+```
+feat/<slug> ──merge──▶ dev ──release──▶ main ──auto-deploy──▶ mothome.fr
+```
 
 Règles dures (voir [CLAUDE.md](./CLAUDE.md)) :
 
-- Jamais de commit direct sur `refonte`. Toujours créer une feature branch : `feat/<slug>`, `fix/<slug>`, `chore/<slug>`.
-- Toute PR cible `refonte` : `gh pr create --base refonte`.
-- Intégration via **Rebase and merge** uniquement (pas de merge commit dans `refonte`).
+- Jamais de commit direct sur `dev` ni `main`. Toujours créer une feature branch : `feat/<slug>`, `fix/<slug>`, `chore/<slug>`.
+- Toute PR de feature cible `dev` : `gh pr create --base dev`.
+- Releases en prod : PR `dev` → `main` quand un lot de features est prêt à être déployé publiquement.
+- Intégration via **Rebase and merge** uniquement (historique linéaire).
 - Commits : [Conventional Commits](https://www.conventionalcommits.org/) (vérifié par commitlint).
 
 ## Setup
@@ -182,10 +187,8 @@ Voir [docs/testing-standards.md](./docs/testing-standards.md) pour les directive
 | Env | Branche | URL |
 |---|---|---|
 | Production | `main` | https://www.mothome.fr (auto-deploy Vercel) |
-| Staging | `refonte` | URL preview Vercel automatique sur chaque push |
+| Staging | `dev` | URL preview Vercel automatique sur chaque push |
 | Feature previews | `*` | URL preview Vercel sur chaque PR |
-
-Tant que le cutover `refonte` → `main` n'est pas effectué, la production publique sert l'ancienne version du site. La refonte vit en preview sur Vercel.
 
 ## Documentation
 
