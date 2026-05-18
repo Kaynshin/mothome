@@ -36,12 +36,12 @@ const HORAIRES = [
 const SOCIAL = [
   {
     label: "Instagram",
-    href: "https://instagram.com/mothome",
+    href: "https://www.instagram.com/mothome74",
     Icon: InstagramIcon,
   },
   {
     label: "Facebook",
-    href: "https://facebook.com/mothome",
+    href: "https://www.facebook.com/people/MotHome/100060499194608/",
     Icon: FacebookIcon,
   },
 ] as const;
