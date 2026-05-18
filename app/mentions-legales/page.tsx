@@ -40,10 +40,9 @@ export default function MentionsLegalesPage() {
               Éditeur du site
             </h2>
             <p>
-              Mothome — Garage Moto & Bar
+              SARL MOT&apos;HOME
               <br />
-              {/* TODO LCEN: préciser forme juridique exacte (SARL / SAS / EI / EURL / micro-entrepreneur) */}
-              Forme juridique : <em>[à compléter — SARL / SAS / EI / micro-entrepreneur]</em>
+              Garage Moto & Bar
               <br />
               6 Chemin de Marclaz Dessus, 74200 Thonon-les-Bains
               <br />
@@ -69,15 +68,19 @@ export default function MentionsLegalesPage() {
             <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Immatriculation
             </h2>
-            {/* TODO LCEN: remplir RCS Thonon + SIREN/SIRET + capital social (si société) + N° TVA intracom (si assujetti) */}
             <p>
-              RCS Thonon-les-Bains : <em>[à compléter — N° d&apos;immatriculation]</em>
+              RCS Thonon-les-Bains : 888 246 212
               <br />
-              SIREN / SIRET : <em>[à compléter]</em>
+              SIREN : 888 246 212
               <br />
-              Capital social : <em>[à compléter si société]</em>
+              SIRET (siège) : 888 246 212 00029
               <br />
-              N° TVA intracommunautaire : <em>[à compléter si assujetti]</em>
+              Code APE : 45.40Z (Commerce, entretien et réparation de motocycles)
+              <br />
+              {/* TODO LCEN art. R123-237: capital social SARL — valeur exacte à fournir (inaccessible via APIs publiques) */}
+              Capital social : <em>[à compléter — capital social SARL]</em>
+              <br />
+              N° TVA intracommunautaire : FR44 888 246 212
             </p>
           </div>
 
@@ -85,19 +88,16 @@ export default function MentionsLegalesPage() {
             <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Directeur de la publication
             </h2>
-            {/* TODO LCEN art. 6.III: nom du directeur de la publication (personne physique) */}
-            <p>
-              <em>[à compléter — nom et prénom du dirigeant ou directeur de la publication]</em>
-            </p>
+            <p>Maël Quéré, en qualité de Gérant de la SARL MOT&apos;HOME.</p>
           </div>
 
           <div>
             <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Hébergement
             </h2>
-            {/* TODO LCEN: confirmer hébergeur final (France probable). Mettre à jour dénomination + adresse + téléphone exacts. */}
+            {/* TODO LCEN: confirmer hébergeur final (France ou autre). Mettre à jour dénomination + adresse + téléphone. */}
             <p>
-              <em>[à confirmer — hébergeur en France]</em>
+              <em>[à confirmer — hébergeur du site]</em>
               <br />
               Dénomination, adresse complète et téléphone de l&apos;hébergeur seront
               renseignés ici dès la finalisation du déploiement.
