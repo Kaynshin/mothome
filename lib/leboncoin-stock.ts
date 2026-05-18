@@ -20,8 +20,19 @@
 
 import { z } from "zod";
 
-export const LEBONCOIN_SEARCH_URL =
+/**
+ * URL de recherche Leboncoin filtrée MOT'HOME (catégorie motos,
+ * Haute-Savoie, vendeurs pros, triés par date publication desc).
+ *
+ * Configurable via env var `LEBONCOIN_SEARCH_URL` (Vercel/host) pour
+ * pouvoir ajuster le filtre sans redéployer le code. Fallback à la
+ * valeur par défaut si l'env var n'est pas définie.
+ */
+const DEFAULT_SEARCH_URL =
   "https://www.leboncoin.fr/recherche?category=3&text=Mot%27Home&locations=dn_74&owner_type=pro&sort=time&order=desc";
+
+export const LEBONCOIN_SEARCH_URL =
+  process.env.LEBONCOIN_SEARCH_URL ?? DEFAULT_SEARCH_URL;
 
 const FIRECRAWL_API_URL = "https://api.firecrawl.dev/v2/scrape";
 const MAX_MOTOS = 9;
