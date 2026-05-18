@@ -60,7 +60,11 @@ const MAX_TEXT_LENGTH = 180;
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} étoiles sur 5`}>
+    <div
+      className="flex gap-0.5"
+      role="img"
+      aria-label={`${rating} étoiles sur 5`}
+    >
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}

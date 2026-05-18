@@ -78,7 +78,7 @@ export default function Footer() {
               sur mesure par des passionnés.
             </p>
             {/* Social */}
-            <div className="flex gap-3" aria-label="Réseaux sociaux">
+            <div className="flex gap-3" role="group" aria-label="Réseaux sociaux">
               {SOCIAL.map(({ label, href, Icon }) => (
                 <a
                   key={label}
