@@ -26,8 +26,9 @@ const HORAIRES = [
   { jours: "Dimanche", heures: "Fermé", ouvert: false },
 ] as const;
 
-const MAPS_URL = "https://maps.google.com/?q=Mothome+Thonon-les-Bains";
-const ADDRESS = "Thonon-les-Bains, Haute-Savoie (74)";
+const MAPS_URL =
+  "https://maps.google.com/?q=6+Chemin+de+Marclaz+Dessus,+74200+Thonon-les-Bains";
+const ADDRESS = "6 Chemin de Marclaz Dessus, 74200 Thonon-les-Bains";
 
 export function FormsDisabledCTA({
   title = "Appelez-nous directement",
