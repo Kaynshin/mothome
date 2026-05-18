@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Mentions légales du site Mothome, garage moto à Thonon-les-Bains.",
   alternates: { canonical: "/mentions-legales" },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 export default function MentionsLegalesPage() {
@@ -42,7 +42,18 @@ export default function MentionsLegalesPage() {
             <p>
               Mothome — Garage Moto & Bar
               <br />
+              {/* TODO LCEN: préciser forme juridique exacte (SARL / SAS / EI / EURL / micro-entrepreneur) */}
+              Forme juridique : <em>[à compléter — SARL / SAS / EI / micro-entrepreneur]</em>
+              <br />
               6 Chemin de Marclaz Dessus, 74200 Thonon-les-Bains
+              <br />
+              Téléphone :{" "}
+              <a
+                href="tel:+33450733808"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+              >
+                04.50.73.38.08
+              </a>
               <br />
               Email :{" "}
               <a
@@ -56,12 +67,40 @@ export default function MentionsLegalesPage() {
 
           <div>
             <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
+              Immatriculation
+            </h2>
+            {/* TODO LCEN: remplir RCS Thonon + SIREN/SIRET + capital social (si société) + N° TVA intracom (si assujetti) */}
+            <p>
+              RCS Thonon-les-Bains : <em>[à compléter — N° d&apos;immatriculation]</em>
+              <br />
+              SIREN / SIRET : <em>[à compléter]</em>
+              <br />
+              Capital social : <em>[à compléter si société]</em>
+              <br />
+              N° TVA intracommunautaire : <em>[à compléter si assujetti]</em>
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
+              Directeur de la publication
+            </h2>
+            {/* TODO LCEN art. 6.III: nom du directeur de la publication (personne physique) */}
+            <p>
+              <em>[à compléter — nom et prénom du dirigeant ou directeur de la publication]</em>
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Hébergement
             </h2>
+            {/* TODO LCEN: confirmer hébergeur final (France probable). Mettre à jour dénomination + adresse + téléphone exacts. */}
             <p>
-              Vercel Inc.
+              <em>[à confirmer — hébergeur en France]</em>
               <br />
-              440 N Bashaw St, Crozet, VA 22932, États-Unis
+              Dénomination, adresse complète et téléphone de l&apos;hébergeur seront
+              renseignés ici dès la finalisation du déploiement.
             </p>
           </div>
 
@@ -87,6 +126,23 @@ export default function MentionsLegalesPage() {
               l&apos;exactitude, la complétude ou l&apos;actualité des
               informations diffusées. L&apos;utilisation des informations
               fournies se fait sous la seule responsabilité de l&apos;utilisateur.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
+              Données personnelles
+            </h2>
+            <p>
+              Les modalités de collecte, de traitement et de conservation des
+              données personnelles sont détaillées dans notre{" "}
+              <Link
+                href="/politique-confidentialite"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+              >
+                politique de confidentialité
+              </Link>
+              .
             </p>
           </div>
         </div>
