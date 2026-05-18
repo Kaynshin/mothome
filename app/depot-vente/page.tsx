@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, Wrench, FileText, ChevronRight } from "lucide-react";
+import { ShieldCheck, Wrench, FileText, ChevronRight, ExternalLink } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
@@ -80,33 +81,47 @@ const AVANTAGES_ACHETEUR = [
   },
 ] as const;
 
+// Stock actuel — 3 dernières annonces publiées sur le compte Leboncoin
+// MOT'HOME (Haute-Savoie, catégorie motos). Mises à jour manuellement à
+// chaque rotation de stock. Le profil Leboncoin du vendeur n'est pas
+// scrapable automatiquement (captcha Datadome), d'où la mise à jour
+// éditoriale via la recherche Leboncoin "Mot'Home" + Haute-Savoie.
 const MOTOS_EXEMPLE = [
   {
-    marque: "Honda",
-    modele: "CB650R",
-    annee: 2021,
-    km: "12 400 km",
+    marque: "Aprilia",
+    modele: "Caponord 1200 Travel",
+    annee: 2018,
+    km: "35 000 km",
     prix: "7 500 €",
-    etat: "Excellent état",
+    cylindree: "1200 cc",
     disponible: true,
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/88/9e/99/889e993be3ba1add4625bf9938a5780767e9e2a2.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3191396957",
+  },
+  {
+    marque: "Piaggio",
+    modele: "MP3 530 HPE Exclusive",
+    annee: 2023,
+    km: "7 000 km",
+    prix: "8 500 €",
+    cylindree: "530 cc",
+    disponible: true,
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/59/b4/7d/59b47d289bd3d9313ec7653ef4bc9beff877bc29.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3188337073",
   },
   {
     marque: "Yamaha",
-    modele: "MT-07",
-    annee: 2019,
-    km: "28 000 km",
-    prix: "5 800 €",
-    etat: "Bon état",
+    modele: "MT-09",
+    annee: 2013,
+    km: "32 665 km",
+    prix: "5 000 €",
+    cylindree: "850 cc",
     disponible: true,
-  },
-  {
-    marque: "KTM",
-    modele: "Duke 390",
-    annee: 2022,
-    km: "6 200 km",
-    prix: "4 900 €",
-    etat: "Très bon état",
-    disponible: false,
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/3d/b5/2d/3db52db32cd8e1167006305cdd0b67d20229ee16.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3188246799",
   },
 ] as const;
 
@@ -236,49 +251,72 @@ export default function DepotVentePage() {
             {MOTOS_EXEMPLE.map((moto) => (
               <article
                 key={`${moto.marque}-${moto.modele}-${moto.annee}`}
-                className={`relative p-6 bg-[var(--color-card)] border rounded-lg ${
+                className={`relative bg-[var(--color-card)] border rounded-lg overflow-hidden flex flex-col ${
                   moto.disponible
                     ? "border-[var(--color-border)]"
                     : "border-[var(--color-border)] opacity-50"
                 }`}
               >
-                {!moto.disponible && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-muted-foreground)]/20 rounded text-xs font-heading font-semibold text-[var(--color-muted-foreground)] uppercase tracking-wide">
-                    Vendue
-                  </div>
-                )}
-                {moto.disponible && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-bleu-logo)]/15 rounded text-xs font-heading font-semibold text-[var(--color-bleu-logo)] uppercase tracking-wide">
-                    Disponible
-                  </div>
-                )}
-
-                <div className="mb-4 pt-2">
-                  <h3 className="font-heading text-xl text-[var(--color-foreground)] uppercase">
-                    {moto.marque} {moto.modele}
-                  </h3>
-                  <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
-                    {moto.annee} · {moto.km}
-                  </p>
+                <div className="relative aspect-[4/3] bg-[var(--color-muted)]">
+                  <Image
+                    src={moto.photo}
+                    alt={`${moto.marque} ${moto.modele} ${moto.annee} — annonce dépôt-vente Mothome`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                  {!moto.disponible && (
+                    <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-chassis-noir)]/80 rounded text-xs font-heading font-semibold text-[var(--color-blanc-sec)] uppercase tracking-wide">
+                      Vendue
+                    </div>
+                  )}
+                  {moto.disponible && (
+                    <div className="absolute top-3 right-3 px-2 py-0.5 bg-[var(--color-bleu-logo)] rounded text-xs font-heading font-semibold text-white uppercase tracking-wide">
+                      Disponible
+                    </div>
+                  )}
                 </div>
 
-                <div className="flex items-end justify-between">
-                  <div>
-                    <span className="block font-sans text-xs text-[var(--color-muted-foreground)] mb-1">
-                      {moto.etat}
-                    </span>
-                    <span className="font-heading text-2xl text-[var(--color-bleu-logo)]">
-                      {moto.prix}
-                    </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="mb-4">
+                    <h3 className="font-heading text-xl text-[var(--color-foreground)] uppercase">
+                      {moto.marque} {moto.modele}
+                    </h3>
+                    <p className="font-sans text-sm text-[var(--color-muted-foreground)]">
+                      {moto.annee} · {moto.km}
+                    </p>
                   </div>
-                  {moto.disponible && (
-                    <Link
-                      href="/contact"
-                      className="text-xs font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
-                    >
-                      Me renseigner →
-                    </Link>
-                  )}
+
+                  <div className="flex items-end justify-between mt-auto">
+                    <div>
+                      <span className="block font-sans text-xs text-[var(--color-muted-foreground)] mb-1">
+                        {moto.cylindree}
+                      </span>
+                      <span className="font-heading text-2xl text-[var(--color-bleu-logo)]">
+                        {moto.prix}
+                      </span>
+                    </div>
+                    {moto.disponible && (
+                      <div className="flex flex-col items-end gap-2">
+                        <a
+                          href={moto.lbcUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-heading font-semibold text-[var(--color-muted-foreground)] hover:text-[var(--color-bleu-logo)] uppercase tracking-wide transition-colors"
+                          aria-label={`Voir l'annonce ${moto.marque} ${moto.modele} sur Leboncoin (ouvre un nouvel onglet)`}
+                        >
+                          Voir l&apos;annonce
+                          <ExternalLink size={12} aria-hidden="true" />
+                        </a>
+                        <Link
+                          href="/contact"
+                          className="text-xs font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
+                        >
+                          Me renseigner →
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
