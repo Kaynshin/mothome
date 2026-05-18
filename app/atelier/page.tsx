@@ -166,8 +166,8 @@ export default function AtelierPage() {
               </span>
             </div>
 
-            <h1 className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6">
-              L&apos;Atelier
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap">
+              L&apos;<span className="text-[var(--color-bleu-logo)]">Atelier</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed mb-8 max-w-2xl">
               Mécanique artisanale à Thonon-les-Bains. Toutes marques, du scooter à
