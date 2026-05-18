@@ -13,6 +13,7 @@ import GoogleReviews from "@/components/google-reviews/GoogleReviews";
 import { PhoneCta } from "@/components/ui/phone-cta";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Stagger } from "@/components/motion/Stagger";
+import { CountUp } from "@/components/stats/CountUp";
 
 export const metadata: Metadata = {
   title: "Mothome — Garage Moto & Bar Motards à Thonon-les-Bains (74)",
@@ -330,6 +331,59 @@ export default function HomePage() {
                 />
               </Link>
             </article>
+          </Stagger>
+        </div>
+      </section>
+
+      {/* ================================================================
+          STATS — Odomètre racing
+          ================================================================ */}
+      <section
+        className="py-[var(--spacing-section)] bg-[var(--color-background)] border-t border-[var(--color-border)] relative overflow-hidden"
+        aria-labelledby="stats-title"
+      >
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_50%_80%_at_50%_50%,rgba(0,80,160,0.08),transparent)]"
+          aria-hidden="true"
+        />
+        <div className="relative max-w-7xl mx-auto px-[var(--spacing-container)]">
+          <FadeIn direction="up" className="text-center mb-14">
+            <p className="font-accent text-sm text-[var(--color-bleu-livery)] uppercase tracking-[0.3em] mb-2">
+              L&apos;atelier en chiffres
+            </p>
+            <h2
+              id="stats-title"
+              className="font-heading font-bold text-3xl md:text-4xl text-[var(--color-foreground)] uppercase"
+              style={{ letterSpacing: "0.02em" }}
+            >
+              La passion mesurée
+            </h2>
+          </FadeIn>
+
+          <Stagger
+            className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+            stagger={120}
+          >
+            {[
+              { value: 16, suffix: "+", label: "Ans de passion" },
+              { value: 40, suffix: "+", label: "Marques travaillées" },
+              { value: 5, suffix: "/5", label: "Note Google" },
+              { value: 100, suffix: "%", label: "Satisfaction client" },
+            ].map(({ value, suffix, label }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center text-center"
+              >
+                <CountUp
+                  end={value}
+                  suffix={suffix}
+                  className="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-[var(--color-bleu-livery)] leading-none mb-3 tabular-nums"
+                />
+                <span className="font-accent text-xs md:text-sm text-[var(--color-muted-foreground)] uppercase tracking-[0.18em]">
+                  {label}
+                </span>
+              </div>
+            ))}
           </Stagger>
         </div>
       </section>
