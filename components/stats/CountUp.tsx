@@ -13,7 +13,12 @@ interface CountUpProps {
   duration?: number;
   suffix?: string;
   prefix?: string;
+  decimals?: number;
   className?: string;
+}
+
+function format(value: number, decimals: number): string {
+  return decimals > 0 ? value.toFixed(decimals) : String(Math.floor(value));
 }
 
 export function CountUp({
@@ -21,6 +26,7 @@ export function CountUp({
   duration = 1.8,
   suffix = "",
   prefix = "",
+  decimals = 0,
   className,
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -33,7 +39,7 @@ export function CountUp({
     ).matches;
 
     if (prefersReducedMotion) {
-      ref.current.textContent = `${prefix}${end}${suffix}`;
+      ref.current.textContent = `${prefix}${format(end, decimals)}${suffix}`;
       return;
     }
 
@@ -49,7 +55,7 @@ export function CountUp({
       },
       onUpdate: () => {
         if (ref.current) {
-          ref.current.textContent = `${prefix}${Math.floor(obj.val)}${suffix}`;
+          ref.current.textContent = `${prefix}${format(obj.val, decimals)}${suffix}`;
         }
       },
     });
@@ -57,11 +63,17 @@ export function CountUp({
     return () => {
       tween.kill();
     };
-  }, [end, duration, prefix, suffix]);
+  }, [end, duration, prefix, suffix, decimals]);
 
   return (
-    <span ref={ref} className={className} aria-label={`${prefix}${end}${suffix}`}>
-      {prefix}0{suffix}
+    <span
+      ref={ref}
+      className={className}
+      aria-label={`${prefix}${format(end, decimals)}${suffix}`}
+    >
+      {prefix}
+      {format(0, decimals)}
+      {suffix}
     </span>
   );
 }
