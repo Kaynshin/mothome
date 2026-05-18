@@ -339,12 +339,12 @@ export default function BarPage() {
               Programme complet et dates des prochains événements sur Instagram.
             </p>
             <a
-              href="https://instagram.com/mothome"
+              href="https://www.instagram.com/mothome74"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors shrink-0"
             >
-              @mothome sur Instagram →
+              @mothome74 sur Instagram →
             </a>
           </div>
         </div>

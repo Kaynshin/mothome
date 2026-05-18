@@ -48,8 +48,8 @@ export const BUSINESS = {
     "Annemasse",
   ],
   sameAs: [
-    "https://www.instagram.com/mothome",
-    "https://www.facebook.com/mothome",
+    "https://www.instagram.com/mothome74",
+    "https://www.facebook.com/people/MotHome/100060499194608/",
   ],
 } as const;
 
