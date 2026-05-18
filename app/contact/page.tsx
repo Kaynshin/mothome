@@ -34,10 +34,11 @@ export const metadata: Metadata = {
 };
 
 const CONTACT = {
-  address: "Thonon-les-Bains, Haute-Savoie (74)",
+  address: "6 Chemin de Marclaz Dessus, 74200 Thonon-les-Bains",
   phone: "04 50 73 38 08",
   email: "contact@mothome.fr",
-  mapsUrl: "https://maps.google.com/?q=Mothome+Thonon-les-Bains",
+  mapsUrl:
+    "https://maps.google.com/?q=6+Chemin+de+Marclaz+Dessus,+74200+Thonon-les-Bains",
 } as const;
 
 const HORAIRES = [
@@ -268,14 +269,14 @@ export default function ContactPage() {
 
           <FadeIn direction="up" delay={120} className="relative rounded-lg overflow-hidden border border-[var(--color-border)] aspect-video max-h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44000!2d6.4798!3d46.3714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c3e3e3e3e3e3e%3A0x0!2sThonon-les-Bains%2C%20France!5e0!3m2!1sfr!2sfr!4v1234567890"
+              src="https://maps.google.com/maps?q=6+Chemin+de+Marclaz+Dessus,+74200+Thonon-les-Bains&hl=fr&z=16&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localisation de Mothome à Thonon-les-Bains"
+              title="Localisation de Mothome — 6 Chemin de Marclaz Dessus, Thonon-les-Bains"
               className="grayscale opacity-80"
             />
           </FadeIn>

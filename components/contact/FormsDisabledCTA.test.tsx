@@ -59,7 +59,7 @@ describe("FormsDisabledCTA", () => {
     expect(mapLink).toHaveAttribute("rel", "noopener noreferrer");
     expect(mapLink).toHaveAttribute(
       "href",
-      "https://maps.google.com/?q=Mothome+Thonon-les-Bains",
+      "https://maps.google.com/?q=6+Chemin+de+Marclaz+Dessus,+74200+Thonon-les-Bains",
     );
   });
 

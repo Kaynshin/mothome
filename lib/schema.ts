@@ -11,7 +11,7 @@ export const BUSINESS = {
   telephone: "+33450733808",
   email: "contact@mothome.fr",
   address: {
-    streetAddress: "Thonon-les-Bains",
+    streetAddress: "6 Chemin de Marclaz Dessus",
     addressLocality: "Thonon-les-Bains",
     postalCode: "74200",
     addressRegion: "Auvergne-Rhône-Alpes",
