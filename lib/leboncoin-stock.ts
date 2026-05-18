@@ -8,14 +8,21 @@
  * Source de vérité = URL de recherche pré-filtrée Leboncoin :
  * https://www.leboncoin.fr/recherche?category=3&text=Mot%27Home&locations=dn_74
  *
+ * Kill-switch : `LEBONCOIN_LIVE_FETCH=true` requis pour activer le fetch
+ * réel via Firecrawl. Quand absent ou != "true", on renvoie directement
+ * FALLBACK_MOTOS (zéro appel API). Évite de cramer des crédits Firecrawl
+ * pendant les phases de dev/preview où chaque build cold-start réamorce
+ * le cache ISR.
+ *
  * Resilience : si Firecrawl échoue (API down, Datadome captcha, parsing
  * cassé, validation Zod KO), on retourne FALLBACK_MOTOS — les 9 dernières
  * connues hardcodées. Le site ne casse jamais.
  *
- * Optimisation credits : on commence par scraper la recherche (1 call),
- * on compare le set d'IDs avec ce qui est en mémoire ; si identique,
- * on retourne directement le cache courant sans re-scraper les détails.
- * Quand stock change : 1 call recherche + 9 calls détails = 10 calls.
+ * Optimisation credits (quand kill-switch ON) : on commence par scraper
+ * la recherche (1 call), on compare le set d'IDs avec ce qui est en
+ * mémoire ; si identique, on retourne directement le cache courant sans
+ * re-scraper les détails. Quand stock change : 1 call recherche + 9
+ * calls détails = 10 calls.
  */
 
 import { z } from "zod";
@@ -433,7 +440,21 @@ function arraysEqual(a: string[], b: string[]): boolean {
  * appel, on retourne directement le cache courant sans re-scraper les
  * détails (économise 9 calls Firecrawl).
  */
+/**
+ * Kill-switch Firecrawl. Quand `LEBONCOIN_LIVE_FETCH` !== "true",
+ * on retourne FALLBACK_MOTOS direct sans aucun appel API (zéro crédit
+ * Firecrawl consommé). Permet de désactiver le live-fetch pendant
+ * les phases de dev/preview où chaque build cold-start réamorce le
+ * cache ISR et burn 10+ calls.
+ *
+ * Pour réactiver : `LEBONCOIN_LIVE_FETCH=true` côté Vercel env vars.
+ */
+const LIVE_FETCH_ENABLED = process.env.LEBONCOIN_LIVE_FETCH === "true";
+
 export async function fetchTopMotos(): Promise<readonly Moto[]> {
+  if (!LIVE_FETCH_ENABLED) {
+    return FALLBACK_MOTOS;
+  }
   try {
     const searchMd = await firecrawlScrape(LEBONCOIN_SEARCH_URL);
     if (!searchMd) {
