@@ -221,6 +221,18 @@
   transform: scaleX(1);
 }
 
+.mh-card-lift {
+  transition: transform var(--duration-normal) var(--ease-out-quart),
+              box-shadow var(--duration-normal) var(--ease-out-quart),
+              border-color var(--duration-normal) var(--ease-out-quart),
+              background-color var(--duration-normal) var(--ease-out-quart);
+}
+
+.mh-card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(0, 80, 160, 0.18);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mh-fade-up-mount,
   .mh-fade-in-mount,
@@ -230,5 +242,13 @@
 
   .mh-link-underline::after {
     transition: none;
+  }
+
+  .mh-card-lift {
+    transition: none;
+  }
+
+  .mh-card-lift:hover {
+    transform: none;
   }
 }
