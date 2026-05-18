@@ -441,15 +441,19 @@ function arraysEqual(a: string[], b: string[]): boolean {
  * détails (économise 9 calls Firecrawl).
  */
 /**
- * Kill-switch Firecrawl. Quand `LEBONCOIN_LIVE_FETCH` !== "true",
- * on retourne FALLBACK_MOTOS direct sans aucun appel API (zéro crédit
- * Firecrawl consommé). Permet de désactiver le live-fetch pendant
- * les phases de dev/preview où chaque build cold-start réamorce le
- * cache ISR et burn 10+ calls.
+ * Kill-switch Firecrawl — HARDCODÉ FALSE (2026-05-18).
  *
- * Pour réactiver : `LEBONCOIN_LIVE_FETCH=true` côté Vercel env vars.
+ * Volontairement non-configurable via env var pour empêcher tout
+ * fetch accidentel (preview deploy, prod redeploy, mauvaise config
+ * Vercel). Tant que cette constante reste `false`, fetchTopMotos()
+ * retourne FALLBACK_MOTOS sans toucher Firecrawl. Zéro crédit
+ * consommé, point.
+ *
+ * Pour réactiver le live-fetch : remettre cette ligne à
+ * `process.env.LEBONCOIN_LIVE_FETCH === "true"` et configurer l'env
+ * var côté Vercel (scope Production only).
  */
-const LIVE_FETCH_ENABLED = process.env.LEBONCOIN_LIVE_FETCH === "true";
+const LIVE_FETCH_ENABLED = false;
 
 export async function fetchTopMotos(): Promise<readonly Moto[]> {
   if (!LIVE_FETCH_ENABLED) {
