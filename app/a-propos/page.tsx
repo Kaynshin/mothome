@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Wrench, Heart, ChevronRight } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
+import { FadeIn } from "@/components/motion/FadeIn";
+import { Stagger } from "@/components/motion/Stagger";
 
 export const metadata: Metadata = {
   title: "À Propos — Maël & l'histoire de Mothome, garage moto à Thonon",
@@ -127,7 +129,11 @@ export default function AProposPage() {
         aria-labelledby="apropos-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <nav aria-label="Fil d'Ariane" className="mb-8">
+          <nav
+            aria-label="Fil d'Ariane"
+            className="mh-fade-up-mount mb-8"
+            style={{ animationDelay: "0ms" }}
+          >
             <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
                 <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
@@ -142,17 +148,24 @@ export default function AProposPage() {
           </nav>
 
           <div className="max-w-3xl">
-            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
+            <p
+              className="mh-fade-up-mount font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4"
+              style={{ animationDelay: "80ms" }}
+            >
               Garage Mothome · Thonon-les-Bains
             </p>
             <h1
               id="apropos-hero-title"
-              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              className="mh-fade-up-mount font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              style={{ animationDelay: "160ms" }}
             >
               À{" "}
               <span className="text-[var(--color-bleu-logo)]">propos</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
+            <p
+              className="mh-fade-up-mount font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl"
+              style={{ animationDelay: "280ms" }}
+            >
               Mothome, c&apos;est l&apos;histoire d&apos;un mécanicien passionné qui a décidé
               de créer le garage qu&apos;il aurait voulu trouver quand il cherchait
               quelqu&apos;un à qui confier sa moto.
@@ -170,7 +183,7 @@ export default function AProposPage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
+            <FadeIn direction="right">
               <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
                 L&apos;histoire
               </p>
@@ -205,10 +218,10 @@ export default function AProposPage() {
                   ensemble.
                 </p>
               </div>
-            </div>
+            </FadeIn>
 
             {/* Équipe */}
-            <div className="space-y-6">
+            <FadeIn direction="left" delay={150} className="space-y-6">
               {EQUIPE.map(({ nom, role, description, marques }) => (
                 <div
                   key={nom}
@@ -261,7 +274,7 @@ export default function AProposPage() {
                   Rejoindre l&apos;aventure →
                 </Link>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -274,7 +287,7 @@ export default function AProposPage() {
         aria-labelledby="timeline-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="mb-12">
+          <FadeIn direction="up" className="mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Le parcours
             </p>
@@ -284,9 +297,14 @@ export default function AProposPage() {
             >
               La route jusqu&apos;ici
             </h2>
-          </div>
+          </FadeIn>
 
-          <ol className="relative border-l border-[var(--color-border)] space-y-10 pl-8 ml-4">
+          <Stagger
+            as="ol"
+            className="relative border-l border-[var(--color-border)] space-y-10 pl-8 ml-4"
+            stagger={100}
+            direction="left"
+          >
             {TIMELINE.map(({ annee, titre, description }) => (
               <li key={annee} className="relative">
                 <div className="absolute -left-[2.15rem] top-1 w-4 h-4 rounded-full bg-[var(--color-card)] border-2 border-[var(--color-bleu-logo)]" aria-hidden="true" />
@@ -301,7 +319,7 @@ export default function AProposPage() {
                 </p>
               </li>
             ))}
-          </ol>
+          </Stagger>
         </div>
       </section>
 
@@ -313,7 +331,7 @@ export default function AProposPage() {
         aria-labelledby="valeurs-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="mb-12">
+          <FadeIn direction="up" className="mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Ce qui guide le travail
             </p>
@@ -323,9 +341,9 @@ export default function AProposPage() {
             >
               Valeurs
             </h2>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={90}>
             {VALEURS.map(({ icon: Icon, titre, description }) => (
               <div
                 key={titre}
@@ -342,7 +360,7 @@ export default function AProposPage() {
                 </p>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -351,7 +369,7 @@ export default function AProposPage() {
           ================================================================ */}
       <section className="py-[var(--spacing-section)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="max-w-2xl mx-auto text-center">
+          <FadeIn direction="up" className="max-w-2xl mx-auto text-center">
             <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-foreground)] uppercase mb-4">
               Venez nous{" "}
               <span className="text-[var(--color-bleu-logo)]">rendre visite</span>
@@ -375,7 +393,7 @@ export default function AProposPage() {
                 Voir l&apos;atelier
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </>
