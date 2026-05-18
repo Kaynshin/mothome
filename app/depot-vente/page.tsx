@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Wrench, FileText, ChevronRight, ExternalLink } from "lucide-react";
+import {
+  fetchTopMotos,
+  LEBONCOIN_SEARCH_URL,
+} from "@/lib/leboncoin-stock";
+
+// ISR : refresh stock motos une fois par semaine (7j × 24h × 3600s).
+// Stale-while-revalidate Next.js — le visiteur reçoit toujours le cache
+// instantanément, le refresh se fait en background pour le visiteur suivant.
+export const revalidate = 604800;
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
@@ -81,49 +90,9 @@ const AVANTAGES_ACHETEUR = [
   },
 ] as const;
 
-// Stock actuel — 3 dernières annonces publiées sur le compte Leboncoin
-// MOT'HOME (Haute-Savoie, catégorie motos). Mises à jour manuellement à
-// chaque rotation de stock. Le profil Leboncoin du vendeur n'est pas
-// scrapable automatiquement (captcha Datadome), d'où la mise à jour
-// éditoriale via la recherche Leboncoin "Mot'Home" + Haute-Savoie.
-const MOTOS_EXEMPLE = [
-  {
-    marque: "Aprilia",
-    modele: "Caponord 1200 Travel",
-    annee: 2018,
-    km: "35 000 km",
-    prix: "7 500 €",
-    cylindree: "1200 cc",
-    disponible: true,
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/88/9e/99/889e993be3ba1add4625bf9938a5780767e9e2a2.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3191396957",
-  },
-  {
-    marque: "Piaggio",
-    modele: "MP3 530 HPE Exclusive",
-    annee: 2023,
-    km: "7 000 km",
-    prix: "8 500 €",
-    cylindree: "530 cc",
-    disponible: true,
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/59/b4/7d/59b47d289bd3d9313ec7653ef4bc9beff877bc29.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3188337073",
-  },
-  {
-    marque: "Yamaha",
-    modele: "MT-09",
-    annee: 2013,
-    km: "32 665 km",
-    prix: "5 000 €",
-    cylindree: "850 cc",
-    disponible: true,
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/3d/b5/2d/3db52db32cd8e1167006305cdd0b67d20229ee16.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3188246799",
-  },
-] as const;
+// MOTOS_EXEMPLE supprimé — déplacé dans lib/leboncoin-stock.ts comme
+// FALLBACK_MOTOS (9 dernières connues), récupéré via ISR + Firecrawl
+// par fetchTopMotos().
 
 function buildDepotVenteSchema() {
   return {
@@ -145,7 +114,8 @@ function buildDepotVenteSchema() {
   };
 }
 
-export default function DepotVentePage() {
+export default async function DepotVentePage() {
+  const motos = await fetchTopMotos();
   return (
     <>
       <JsonLd data={buildDepotVenteSchema()} />
@@ -248,9 +218,9 @@ export default function DepotVentePage() {
           </FadeIn>
 
           <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10" stagger={90}>
-            {MOTOS_EXEMPLE.map((moto) => (
+            {motos.map((moto) => (
               <article
-                key={`${moto.marque}-${moto.modele}-${moto.annee}`}
+                key={moto.id}
                 className={`relative bg-[var(--color-card)] border rounded-lg overflow-hidden flex flex-col ${
                   moto.disponible
                     ? "border-[var(--color-border)]"
@@ -322,16 +292,28 @@ export default function DepotVentePage() {
             ))}
           </Stagger>
 
-          <p className="font-sans text-sm text-[var(--color-muted-foreground)] text-center">
-            Stock mis à jour régulièrement.{" "}
-            <Link
-              href="/contact"
-              className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+          <div className="text-center">
+            <a
+              href={LEBONCOIN_SEARCH_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-livery)] hover:text-[var(--color-bleu-livery)] text-[var(--color-muted-foreground)] font-accent uppercase tracking-[0.12em] text-sm rounded transition-colors duration-150"
+              aria-label="Voir toutes les annonces Mothome sur Leboncoin (ouvre un nouvel onglet)"
             >
-              Contactez-nous
-            </Link>{" "}
-            pour la liste complète ou pour une demande spécifique.
-          </p>
+              Voir toutes les annonces sur Leboncoin
+              <ExternalLink size={14} aria-hidden="true" />
+            </a>
+            <p className="font-sans text-sm text-[var(--color-muted-foreground)] mt-4">
+              Stock mis à jour automatiquement.{" "}
+              <Link
+                href="/contact"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+              >
+                Contactez-nous
+              </Link>{" "}
+              pour une demande spécifique.
+            </p>
+          </div>
         </div>
       </section>
 

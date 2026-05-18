@@ -113,7 +113,7 @@ npm install
 
 ### Variables d'environnement
 
-Créer `.env.local` à la racine :
+Créer `.env.local` à la racine (template complet dans `.env.example`) :
 
 ```env
 # Google Places API (avis + KPIs live)
@@ -124,9 +124,14 @@ GOOGLE_PLACE_ID=your_place_id
 RESEND_API_KEY=your_resend_key
 CONTACT_EMAIL_FROM=noreply@mothome.fr
 CONTACT_EMAIL_TO=contact@mothome.fr
+
+# Firecrawl (refresh auto stock dépôt-vente Leboncoin)
+FIRECRAWL_API_KEY=fc-xxxxxxxxxxxxx
 ```
 
-En cas d'absence : fallback automatique (reviews codés en dur, KPI statique).
+En cas d'absence : fallback automatique (reviews codés en dur, KPI statique, stock dépôt-vente = 9 dernières motos hardcodées dans `lib/leboncoin-stock.ts`).
+
+**Note runtime** : la page `/depot-vente` utilise ISR (Incremental Static Regeneration, `revalidate=604800` = 1 semaine). Compatible avec tout hébergeur Next.js 15 supportant ISR (Vercel, Netlify, Cloudflare Pages, auto-hébergement Node). **Incompatible avec static export** (`output: 'export'`) — dans ce cas, prévoir un rebuild hebdomadaire côté CI ou désactiver le refresh auto.
 
 ## Développement
 
