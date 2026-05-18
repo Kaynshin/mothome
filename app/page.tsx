@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import GoogleReviews from "@/components/google-reviews/GoogleReviews";
 import { PhoneCta } from "@/components/ui/phone-cta";
+import { FadeIn } from "@/components/motion/FadeIn";
+import { Stagger } from "@/components/motion/Stagger";
 
 export const metadata: Metadata = {
   title: "Mothome — Garage Moto & Bar Motards à Thonon-les-Bains (74)",
@@ -109,24 +111,41 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-[var(--spacing-container)] text-center">
-          <p className="font-accent text-sm md:text-base text-[var(--color-bleu-livery)] uppercase tracking-[0.3em] mb-6">
+          <p
+            className="mh-fade-up-mount font-accent text-sm md:text-base text-[var(--color-bleu-livery)] uppercase tracking-[0.3em] mb-6"
+            style={{ animationDelay: "0ms" }}
+          >
             Garage moto artisanal · Thonon-les-Bains
           </p>
           <h1
-            className="font-heading font-black uppercase text-[var(--color-foreground)] leading-none mb-4"
-            style={{ fontSize: "clamp(4rem, 15vw, 12rem)", lineHeight: 0.92, letterSpacing: "0.01em" }}
+            className="mh-fade-up-mount font-heading font-black uppercase text-[var(--color-foreground)] leading-none mb-4"
+            style={{
+              fontSize: "clamp(4rem, 15vw, 12rem)",
+              lineHeight: 0.92,
+              letterSpacing: "0.01em",
+              animationDelay: "100ms",
+            }}
           >
             Mothome
           </h1>
-          <p className="font-heading text-xl md:text-3xl text-[var(--color-muted-foreground)] uppercase tracking-widest mb-8">
+          <p
+            className="mh-fade-up-mount font-heading text-xl md:text-3xl text-[var(--color-muted-foreground)] uppercase tracking-widest mb-8"
+            style={{ animationDelay: "220ms" }}
+          >
             La Mécanique comme{" "}
             <span className="text-[var(--color-bleu-livery)]">Passion</span>
           </p>
-          <p className="font-sans text-base md:text-lg text-[var(--color-muted-foreground)] max-w-xl mx-auto mb-10 leading-relaxed">
+          <p
+            className="mh-fade-up-mount font-sans text-base md:text-lg text-[var(--color-muted-foreground)] max-w-xl mx-auto mb-10 leading-relaxed"
+            style={{ animationDelay: "340ms" }}
+          >
             Atelier, service à domicile, accessoires, dépôt-vente — et un bar
             où les passionnés se retrouvent. Un concept unique dans le Chablais.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div
+            className="mh-fade-up-mount flex flex-col sm:flex-row items-center justify-center gap-4"
+            style={{ animationDelay: "460ms" }}
+          >
             <Link
               href="/contact#rdv"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-livery)] hover:bg-[var(--color-bleu-rapide)] hover:-translate-y-px text-white font-accent uppercase tracking-[0.12em] text-sm rounded transition-[colors,transform] duration-150 ease-[cubic-bezier(0.25,1,0.5,1)] shadow-[var(--shadow-bleu)]"
@@ -145,10 +164,13 @@ export default function HomePage() {
 
         {/* Scroll hint */}
         <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-muted-foreground)] motion-safe:animate-bounce"
+          className="mh-fade-in-mount absolute bottom-8 left-1/2 -translate-x-1/2"
+          style={{ animationDelay: "800ms" }}
           aria-hidden="true"
         >
-          <ChevronDown size={20} />
+          <div className="text-[var(--color-muted-foreground)] motion-safe:animate-bounce">
+            <ChevronDown size={20} />
+          </div>
         </div>
       </section>
 
@@ -161,7 +183,7 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           {/* Section header */}
-          <div className="mb-12">
+          <FadeIn direction="up" className="mb-12">
             <p className="font-accent text-sm text-[var(--color-bleu-livery)] uppercase tracking-[0.3em] mb-2">
               Ce qu&apos;on fait
             </p>
@@ -172,7 +194,7 @@ export default function HomePage() {
             >
               Nos Services
             </h2>
-          </div>
+          </FadeIn>
 
           {/*
             Bento grid :
@@ -183,7 +205,7 @@ export default function HomePage() {
               col 1-3 / row 3   → Dépôt-Vente full width
             Mobile : stack simple
           */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <Stagger className="grid grid-cols-1 lg:grid-cols-3 gap-4" stagger={90}>
             {/* Atelier — featured 2×2 */}
             <article
               className="lg:col-span-2 lg:row-span-2 flex flex-col p-10 bg-[var(--color-muted)] border border-[var(--color-border)] rounded transition-[background-color,border-color] duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-[var(--color-card)] hover:border-[var(--color-bleu-livery)]/30 group"
@@ -308,7 +330,7 @@ export default function HomePage() {
                 />
               </Link>
             </article>
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -328,7 +350,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
-            <div>
+            <FadeIn direction="right">
               <p className="font-accent text-sm text-[var(--color-bleu-livery)] uppercase tracking-[0.3em] mb-4">
                 Le concept unique
               </p>
@@ -350,7 +372,12 @@ export default function HomePage() {
               </p>
 
               {/* Bar features */}
-              <ul className="space-y-3 mb-8" aria-label="Équipements du bar">
+              <Stagger
+                as="ul"
+                className="space-y-3 mb-8"
+                stagger={80}
+                initialDelay={150}
+              >
                 {[
                   "Retransmissions MotoGP sur grand écran",
                   "Table de billard & PS5",
@@ -368,7 +395,7 @@ export default function HomePage() {
                     {item}
                   </li>
                 ))}
-              </ul>
+              </Stagger>
 
               <Link
                 href="/bar"
@@ -377,18 +404,20 @@ export default function HomePage() {
                 <Coffee size={15} aria-hidden="true" />
                 Passer au bar
               </Link>
-            </div>
+            </FadeIn>
 
             {/* Visual placeholder */}
-            <div
+            <FadeIn
+              direction="left"
+              delay={150}
               className="relative aspect-[4/3] rounded-lg bg-[var(--color-card)] border border-[var(--color-border)] overflow-hidden flex items-center justify-center"
-              aria-hidden="true"
             >
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(0,80,160,0.10),transparent)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(0,80,160,0.10),transparent)]" aria-hidden="true" />
               <div className="text-center space-y-3 relative z-10">
                 <Coffee
                   size={48}
                   className="text-[var(--color-bleu-livery)]/30 mx-auto"
+                  aria-hidden="true"
                 />
                 <p className="font-heading font-bold text-2xl text-[var(--color-bleu-livery)]/30 tracking-widest uppercase">
                   Le Bar
@@ -397,7 +426,7 @@ export default function HomePage() {
                   Photos bientôt disponibles
                 </p>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -411,7 +440,7 @@ export default function HomePage() {
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           {/* Section header */}
-          <div className="mb-14">
+          <FadeIn direction="up" className="mb-14">
             <p className="font-accent text-sm text-[var(--color-bleu-livery)] uppercase tracking-[0.3em] mb-2">
               Ils nous font confiance
             </p>
@@ -425,9 +454,11 @@ export default function HomePage() {
             <p className="mt-3 font-sans text-sm text-[var(--color-muted-foreground)]">
               Avis vérifiés sur Google
             </p>
-          </div>
+          </FadeIn>
 
-          <GoogleReviews />
+          <FadeIn direction="up" delay={120}>
+            <GoogleReviews />
+          </FadeIn>
         </div>
       </section>
 
@@ -444,7 +475,12 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        <div className="relative max-w-3xl mx-auto px-[var(--spacing-container)] text-center">
+        <FadeIn
+          direction="up"
+          duration={700}
+          distance={24}
+          className="relative max-w-3xl mx-auto px-[var(--spacing-container)] text-center"
+        >
           <p className="font-accent text-sm text-[var(--color-bleu-livery)] uppercase tracking-[0.3em] mb-4">
             Prêt à passer à l&apos;action ?
           </p>
@@ -470,7 +506,7 @@ export default function HomePage() {
               <ArrowRight size={14} aria-hidden="true" />
             </Link>
           </div>
-        </div>
+        </FadeIn>
       </section>
     </>
   );
