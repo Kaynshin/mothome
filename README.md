@@ -127,6 +127,8 @@ CONTACT_EMAIL_TO=contact@mothome.fr
 
 # Firecrawl (refresh auto stock dépôt-vente Leboncoin)
 FIRECRAWL_API_KEY=fc-xxxxxxxxxxxxx
+# URL de recherche LBC filtrée (override optionnel, défaut hardcodé)
+LEBONCOIN_SEARCH_URL=https://www.leboncoin.fr/recherche?category=3&text=Mot%27Home&locations=dn_74&owner_type=pro&sort=time&order=desc
 ```
 
 En cas d'absence : fallback automatique (reviews codés en dur, KPI statique, stock dépôt-vente = 9 dernières motos hardcodées dans `lib/leboncoin-stock.ts`).
