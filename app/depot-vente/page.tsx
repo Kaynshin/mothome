@@ -4,6 +4,8 @@ import { ShieldCheck, Wrench, FileText, ChevronRight } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
+import { FadeIn } from "@/components/motion/FadeIn";
+import { Stagger } from "@/components/motion/Stagger";
 
 export const metadata: Metadata = {
   title: "Dépôt-Vente Moto — Vendre ou Acheter à Thonon — Mothome",
@@ -147,7 +149,11 @@ export default function DepotVentePage() {
         aria-labelledby="depot-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <nav aria-label="Fil d'Ariane" className="mb-8">
+          <nav
+            aria-label="Fil d'Ariane"
+            className="mh-fade-up-mount mb-8"
+            style={{ animationDelay: "0ms" }}
+          >
             <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
                 <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
@@ -162,21 +168,31 @@ export default function DepotVentePage() {
           </nav>
 
           <div className="max-w-3xl">
-            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
+            <p
+              className="mh-fade-up-mount font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4"
+              style={{ animationDelay: "80ms" }}
+            >
               Garage Mothome · Occasion
             </p>
             <h1
               id="depot-hero-title"
-              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              className="mh-fade-up-mount font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              style={{ animationDelay: "160ms" }}
             >
               Dépôt-<span className="text-[var(--color-bleu-logo)]">Vente</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
+            <p
+              className="mh-fade-up-mount font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl"
+              style={{ animationDelay: "280ms" }}
+            >
               Vous vendez votre moto ou vous cherchez une occasion fiable ?
               Mothome gère la vente de A à Z et certifie chaque moto mécaniquement.
               Commission seulement si vente réussie.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div
+              className="mh-fade-up-mount flex flex-wrap gap-4 mt-8"
+              style={{ animationDelay: "400ms" }}
+            >
               <a
                 href="#deposer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
@@ -204,7 +220,7 @@ export default function DepotVentePage() {
         aria-labelledby="motos-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="mb-12">
+          <FadeIn direction="up" className="mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Stock actuel
             </p>
@@ -214,9 +230,9 @@ export default function DepotVentePage() {
             >
               Motos disponibles
             </h2>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10" stagger={90}>
             {MOTOS_EXEMPLE.map((moto) => (
               <article
                 key={`${moto.marque}-${moto.modele}-${moto.annee}`}
@@ -266,7 +282,7 @@ export default function DepotVentePage() {
                 </div>
               </article>
             ))}
-          </div>
+          </Stagger>
 
           <p className="font-sans text-sm text-[var(--color-muted-foreground)] text-center">
             Stock mis à jour régulièrement.{" "}
@@ -290,7 +306,7 @@ export default function DepotVentePage() {
         aria-labelledby="vendeur-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="mb-12">
+          <FadeIn direction="up" className="mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Vous vendez ?
             </p>
@@ -300,9 +316,9 @@ export default function DepotVentePage() {
             >
               Comment ça marche
             </h2>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" stagger={80}>
             {ETAPES_VENDEUR.map(({ num, titre, description }) => (
               <div key={num} className="relative">
                 <span className="block font-heading text-5xl text-[var(--color-bleu-logo)]/15 mb-4 leading-none">
@@ -316,7 +332,7 @@ export default function DepotVentePage() {
                 </p>
               </div>
             ))}
-          </div>
+          </Stagger>
 
           {/* Commission info */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -375,7 +391,7 @@ export default function DepotVentePage() {
         aria-labelledby="acheteur-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="mb-12">
+          <FadeIn direction="up" className="mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Vous achetez ?
             </p>
@@ -385,9 +401,9 @@ export default function DepotVentePage() {
             >
               L&apos;occasion certifiée
             </h2>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={90}>
             {AVANTAGES_ACHETEUR.map(({ icon: Icon, titre, description }) => (
               <div
                 key={titre}
@@ -404,9 +420,9 @@ export default function DepotVentePage() {
                 </p>
               </div>
             ))}
-          </div>
+          </Stagger>
 
-          <div className="mt-10 text-center">
+          <FadeIn direction="up" delay={100} className="mt-10 text-center">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
@@ -414,7 +430,7 @@ export default function DepotVentePage() {
               Me renseigner sur une moto
               <ChevronRight size={16} aria-hidden="true" />
             </Link>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </>

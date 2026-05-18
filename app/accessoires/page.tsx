@@ -4,6 +4,8 @@ import { ShieldCheck, Tag, Truck, Star, ChevronRight } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
+import { FadeIn } from "@/components/motion/FadeIn";
+import { Stagger } from "@/components/motion/Stagger";
 
 export const metadata: Metadata = {
   title: "Accessoires Moto — Casques HJC, Shark, Furygan — Mothome Thonon",
@@ -170,7 +172,11 @@ export default function AccessoiresPage() {
         aria-labelledby="accessoires-hero-title"
       >
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <nav aria-label="Fil d'Ariane" className="mb-8">
+          <nav
+            aria-label="Fil d'Ariane"
+            className="mh-fade-up-mount mb-8"
+            style={{ animationDelay: "0ms" }}
+          >
             <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
               <li>
                 <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
@@ -185,22 +191,32 @@ export default function AccessoiresPage() {
           </nav>
 
           <div className="max-w-3xl">
-            <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4">
+            <p
+              className="mh-fade-up-mount font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-4"
+              style={{ animationDelay: "80ms" }}
+            >
               Garage Mothome · Équipement
             </p>
             <h1
               id="accessoires-hero-title"
-              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              className="mh-fade-up-mount font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              style={{ animationDelay: "160ms" }}
             >
               Les{" "}
               <span className="text-[var(--color-bleu-logo)]">Accessoires</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl">
+            <p
+              className="mh-fade-up-mount font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed max-w-xl"
+              style={{ animationDelay: "280ms" }}
+            >
               Casques, équipements, pièces et accessoires — les grandes marques
               au juste prix, avec le conseil d&apos;un passionné. Sur commande ou en
               stock selon les références.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div
+              className="mh-fade-up-mount flex flex-wrap gap-4 mt-8"
+              style={{ animationDelay: "400ms" }}
+            >
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
@@ -218,7 +234,7 @@ export default function AccessoiresPage() {
           ================================================================ */}
       <section className="py-16 border-b border-[var(--color-border)]" aria-label="Nos engagements">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={90}>
             {GARANTIES.map(({ icon: Icon, titre, description }) => (
               <div key={titre} className="flex flex-col gap-3">
                 <div className="w-10 h-10 flex items-center justify-center rounded bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
@@ -232,7 +248,7 @@ export default function AccessoiresPage() {
                 </p>
               </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -241,7 +257,7 @@ export default function AccessoiresPage() {
           ================================================================ */}
       <section className="py-[var(--spacing-section)]" aria-labelledby="categories-title">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="mb-12">
+          <FadeIn direction="up" className="mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Notre sélection
             </p>
@@ -251,12 +267,12 @@ export default function AccessoiresPage() {
             >
               Catégories
             </h2>
-          </div>
+          </FadeIn>
 
           <div className="space-y-px border border-[var(--color-border)] rounded-lg overflow-hidden">
             {CATEGORIES.map((cat, idx) => (
+              <FadeIn key={cat.slug}>
               <article
-                key={cat.slug}
                 id={cat.slug}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${
                   idx % 2 === 0
@@ -313,6 +329,7 @@ export default function AccessoiresPage() {
                   </ul>
                 </div>
               </article>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -323,7 +340,7 @@ export default function AccessoiresPage() {
           ================================================================ */}
       <section className="py-16 bg-[var(--color-card)] border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="max-w-2xl mx-auto text-center">
+          <FadeIn direction="up" className="max-w-2xl mx-auto text-center">
             <h2 className="font-heading text-3xl md:text-4xl text-[var(--color-foreground)] uppercase mb-4">
               Vous ne trouvez pas ce
               <br />
@@ -350,7 +367,7 @@ export default function AccessoiresPage() {
               </Link>
               <PhoneCta variant="ghost" />
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </>

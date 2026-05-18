@@ -5,6 +5,7 @@ import DevisForm from "./DevisForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildAtelierSchema, buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
+import { FadeIn } from "@/components/motion/FadeIn";
 
 export const metadata: Metadata = {
   title:
@@ -143,7 +144,11 @@ export default function AtelierPage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="max-w-3xl">
             {/* Breadcrumb */}
-            <nav aria-label="Fil d'Ariane" className="mb-8">
+            <nav
+              aria-label="Fil d'Ariane"
+              className="mh-fade-up-mount mb-8"
+              style={{ animationDelay: "0ms" }}
+            >
               <ol className="flex items-center gap-2 text-xs text-[var(--color-muted-foreground)]">
                 <li>
                   <Link href="/" className="hover:text-[var(--color-foreground)] transition-colors">
@@ -157,7 +162,10 @@ export default function AtelierPage() {
               </ol>
             </nav>
 
-            <div className="flex items-center gap-3 mb-6">
+            <div
+              className="mh-fade-up-mount flex items-center gap-3 mb-6"
+              style={{ animationDelay: "80ms" }}
+            >
               <div className="w-10 h-10 flex items-center justify-center rounded bg-[var(--color-bleu-logo)]/10 text-[var(--color-bleu-logo)]">
                 <Wrench size={20} aria-hidden="true" />
               </div>
@@ -166,16 +174,25 @@ export default function AtelierPage() {
               </span>
             </div>
 
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap">
+            <h1
+              className="mh-fade-up-mount font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
+              style={{ animationDelay: "160ms" }}
+            >
               L&apos;<span className="text-[var(--color-bleu-logo)]">Atelier</span>
             </h1>
-            <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed mb-8 max-w-2xl">
+            <p
+              className="mh-fade-up-mount font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed mb-8 max-w-2xl"
+              style={{ animationDelay: "280ms" }}
+            >
               Mécanique artisanale à Thonon-les-Bains. Toutes marques, du scooter à
               la sportive. Tarifs transparents affichés en clair — fini le PDF
               introuvable.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div
+              className="mh-fade-up-mount flex flex-col sm:flex-row gap-4"
+              style={{ animationDelay: "400ms" }}
+            >
               <a
                 href="#devis"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors duration-200"
@@ -201,8 +218,8 @@ export default function AtelierPage() {
       <section className="py-[var(--spacing-section)]" aria-label="Nos services et tarifs">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)] space-y-20">
           {SERVICES.map(({ id, title, description, features, tarifs }, index) => (
+            <FadeIn key={id} direction="up">
             <article
-              key={id}
               id={id}
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
             >
@@ -269,6 +286,7 @@ export default function AtelierPage() {
                 </div>
               </div>
             </article>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -282,7 +300,7 @@ export default function AtelierPage() {
         aria-labelledby="devis-title"
       >
         <div className="max-w-3xl mx-auto px-[var(--spacing-container)]">
-          <div className="text-center mb-12">
+          <FadeIn direction="up" className="text-center mb-12">
             <p className="font-heading text-sm text-[var(--color-bleu-logo)] uppercase tracking-[0.3em] mb-3">
               Gratuit & sans engagement
             </p>
@@ -295,9 +313,11 @@ export default function AtelierPage() {
             <p className="font-sans text-base text-[var(--color-muted-foreground)]">
               Décris ton problème ou ton projet — l&apos;équipe vous répond sous 24h.
             </p>
-          </div>
+          </FadeIn>
 
-          <DevisForm />
+          <FadeIn direction="up" delay={120}>
+            <DevisForm />
+          </FadeIn>
         </div>
       </section>
 
@@ -306,7 +326,7 @@ export default function AtelierPage() {
           ================================================================ */}
       <section className="py-16 border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
+          <FadeIn direction="up" className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
             <div>
               <h3 className="font-heading text-2xl text-[var(--color-foreground)] uppercase mb-2">
                 Ta moto ne peut pas se déplacer ?
@@ -325,7 +345,7 @@ export default function AtelierPage() {
                 Service à domicile
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </>
