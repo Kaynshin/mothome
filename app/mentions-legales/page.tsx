@@ -77,8 +77,7 @@ export default function MentionsLegalesPage() {
               <br />
               Code APE : 45.40Z (Commerce, entretien et réparation de motocycles)
               <br />
-              {/* TODO LCEN art. R123-237: capital social SARL — valeur exacte à fournir (inaccessible via APIs publiques) */}
-              Capital social : <em>[à compléter — capital social SARL]</em>
+              Capital social : 2 000 €
               <br />
               N° TVA intracommunautaire : FR44 888 246 212
             </p>
