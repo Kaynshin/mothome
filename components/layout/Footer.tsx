@@ -22,7 +22,7 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 }
 
 const CONTACT = {
-  address: "Thonon-les-Bains, Haute-Savoie (74200)",
+  address: "6 Chemin de Marclaz Dessus, 74200 Thonon-les-Bains",
   phone: "04 50 73 38 08",
   email: "contact@mothome.fr",
 } as const;

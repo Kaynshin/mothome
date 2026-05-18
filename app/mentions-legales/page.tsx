@@ -42,7 +42,7 @@ export default function MentionsLegalesPage() {
             <p>
               Mothome — Garage Moto & Bar
               <br />
-              Thonon-les-Bains, Haute-Savoie (74200)
+              6 Chemin de Marclaz Dessus, 74200 Thonon-les-Bains
               <br />
               Email :{" "}
               <a
