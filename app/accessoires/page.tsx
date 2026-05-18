@@ -130,7 +130,7 @@ function buildAccessoiresSchema() {
     description:
       "Vente de casques, équipements, pièces et accessoires moto à Thonon-les-Bains. Grandes marques, conseil expert, garantie constructeur.",
     url: "https://www.mothome.fr/accessoires",
-    telephone: "+33450000000",
+    telephone: "+33450733808",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Thonon-les-Bains",
