@@ -33,7 +33,7 @@ export function StickyPhoneCta({ visible }: StickyPhoneCtaProps) {
           // Focus visible — outline intérieur (bord d'écran)
           "focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--color-blanc-sec)] focus-visible:outline-offset-[-4px]",
           // Touch
-          "touch-action-manipulation",
+          "touch-manipulation",
           // Animation mount/unmount
           "transition-[transform,opacity] will-change-[transform,opacity]",
           visible
@@ -42,7 +42,6 @@ export function StickyPhoneCta({ visible }: StickyPhoneCtaProps) {
           // prefers-reduced-motion : fade seulement, sans translate
           "motion-reduce:translate-y-0 motion-reduce:duration-150 motion-reduce:ease-linear",
         ].join(" ")}
-        style={{ touchAction: "manipulation" }}
       >
         {/* Icône */}
         <Phone
