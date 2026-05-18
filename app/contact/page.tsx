@@ -81,9 +81,10 @@ export default function ContactPage() {
             </p>
             <h1
               id="contact-hero-title"
-              className="font-heading text-5xl md:text-7xl text-[var(--color-foreground)] uppercase mb-6"
+              className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[var(--color-foreground)] uppercase mb-6 leading-none whitespace-nowrap"
             >
-              Contact
+              Nous{" "}
+              <span className="text-[var(--color-bleu-logo)]">contacter</span>
             </h1>
             <p className="font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed">
               Rendez-vous, devis, question — plusieurs façons de joindre l&apos;atelier.
