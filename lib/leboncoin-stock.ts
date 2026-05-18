@@ -26,6 +26,10 @@ export const LEBONCOIN_SEARCH_URL =
 const FIRECRAWL_API_URL = "https://api.firecrawl.dev/v2/scrape";
 const MAX_MOTOS = 9;
 const MIN_MOTOS = 3;
+// Pool de candidats à fetcher depuis la recherche. Plus grand que
+// MAX_MOTOS car on filtre ensuite par mention MOT'HOME (la recherche
+// LBC peut inclure des annonces voisines hors vendeur).
+const CANDIDATE_POOL = 15;
 
 // ---------------------------------------------------------------------------
 // Schema (Zod)
@@ -48,6 +52,8 @@ export const MotoSchema = z.object({
     .url()
     .refine((u) => u.startsWith("https://www.leboncoin.fr/ad/motos/")),
   ville: z.string().optional(),
+  /** Date de publication ISO (YYYY-MM-DD) — extraite du markdown LBC. */
+  publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   disponible: z.literal(true).default(true),
 });
 
@@ -60,6 +66,7 @@ const MotosSchema = z.array(MotoSchema).min(MIN_MOTOS).max(MAX_MOTOS);
 // Sert quand Firecrawl est indisponible OU quand FIRECRAWL_API_KEY absente.
 // ---------------------------------------------------------------------------
 
+// Ordre = publication date DESC (le plus récent en premier).
 export const FALLBACK_MOTOS: readonly Moto[] = [
   {
     id: "3191396957",
@@ -73,6 +80,7 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
       "https://img.leboncoin.fr/api/v1/lbcpb1/images/88/9e/99/889e993be3ba1add4625bf9938a5780767e9e2a2.jpg?rule=ad-large",
     lbcUrl: "https://www.leboncoin.fr/ad/motos/3191396957",
     ville: "Anthy-sur-Léman",
+    publishedAt: "2026-05-04",
     disponible: true,
   },
   {
@@ -87,6 +95,7 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
       "https://img.leboncoin.fr/api/v1/lbcpb1/images/59/b4/7d/59b47d289bd3d9313ec7653ef4bc9beff877bc29.jpg?rule=ad-large",
     lbcUrl: "https://www.leboncoin.fr/ad/motos/3188337073",
     ville: "Thonon-les-Bains",
+    publishedAt: "2026-04-29",
     disponible: true,
   },
   {
@@ -101,6 +110,7 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
       "https://img.leboncoin.fr/api/v1/lbcpb1/images/3d/b5/2d/3db52db32cd8e1167006305cdd0b67d20229ee16.jpg?rule=ad-large",
     lbcUrl: "https://www.leboncoin.fr/ad/motos/3188246799",
     ville: "Thonon-les-Bains",
+    publishedAt: "2026-04-29",
     disponible: true,
   },
   {
@@ -115,62 +125,7 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
       "https://img.leboncoin.fr/api/v1/lbcpb1/images/2c/27/db/2c27db9baaf3faf57e3682ed352d373fd5112240.jpg?rule=ad-large",
     lbcUrl: "https://www.leboncoin.fr/ad/motos/3188229988",
     ville: "Thonon-les-Bains",
-    disponible: true,
-  },
-  {
-    id: "3182078736",
-    marque: "Vespa",
-    modele: "125",
-    annee: 2004,
-    km: "30 200 km",
-    prix: "2 650 €",
-    cylindree: "125 cc",
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/a4/07/78/a4077879539512b5289257932ccb67fd0bb3aab5.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3182078736",
-    ville: "Sciez",
-    disponible: true,
-  },
-  {
-    id: "3167498520",
-    marque: "Peugeot",
-    modele: "Métropolis 400",
-    annee: 2013,
-    km: "23 264 km",
-    prix: "3 000 €",
-    cylindree: "400 cc",
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/10/0b/11/100b1173d7dbc7077e3caf7fd0f6396fa35339b8.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3167498520",
-    ville: "Thonon-les-Bains",
-    disponible: true,
-  },
-  {
-    id: "3166907502",
-    marque: "BMW",
-    modele: "F 850 GS Rally",
-    annee: 2018,
-    km: "53 086 km",
-    prix: "7 500 €",
-    cylindree: "850 cc",
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/26/8f/4d/268f4d1cdea210c5f4210493b9e9cbc9de9c4383.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3166907502",
-    ville: "Thonon-les-Bains",
-    disponible: true,
-  },
-  {
-    id: "3166786946",
-    marque: "Honda",
-    modele: "VT 600 Shadow",
-    annee: 1998,
-    km: "15 167 km",
-    prix: "3 200 €",
-    cylindree: "600 cc",
-    photo:
-      "https://img.leboncoin.fr/api/v1/lbcpb1/images/4c/41/2c/4c412ccb8ac9a692e34a6f2fc553f35cfe8e4ae7.jpg?rule=ad-large",
-    lbcUrl: "https://www.leboncoin.fr/ad/motos/3166786946",
-    ville: "Thonon-les-Bains",
+    publishedAt: "2026-04-29",
     disponible: true,
   },
   {
@@ -185,6 +140,67 @@ export const FALLBACK_MOTOS: readonly Moto[] = [
       "https://img.leboncoin.fr/api/v1/lbcpb1/images/fc/fa/2e/fcfa2e36a5db650c2c47d062f5e1d8512da6bd6b.jpg?rule=ad-large",
     lbcUrl: "https://www.leboncoin.fr/ad/motos/3136329734",
     ville: "Thonon-les-Bains",
+    publishedAt: "2026-04-25",
+    disponible: true,
+  },
+  {
+    id: "3182078736",
+    marque: "Vespa",
+    modele: "125",
+    annee: 2004,
+    km: "30 200 km",
+    prix: "2 650 €",
+    cylindree: "125 cc",
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/a4/07/78/a4077879539512b5289257932ccb67fd0bb3aab5.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3182078736",
+    ville: "Sciez",
+    publishedAt: "2026-04-18",
+    disponible: true,
+  },
+  {
+    id: "3167498520",
+    marque: "Peugeot",
+    modele: "Métropolis 400",
+    annee: 2013,
+    km: "23 264 km",
+    prix: "3 000 €",
+    cylindree: "400 cc",
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/10/0b/11/100b1173d7dbc7077e3caf7fd0f6396fa35339b8.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3167498520",
+    ville: "Thonon-les-Bains",
+    publishedAt: "2026-03-24",
+    disponible: true,
+  },
+  {
+    id: "3166907502",
+    marque: "BMW",
+    modele: "F 850 GS Rally",
+    annee: 2018,
+    km: "53 086 km",
+    prix: "7 500 €",
+    cylindree: "850 cc",
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/26/8f/4d/268f4d1cdea210c5f4210493b9e9cbc9de9c4383.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3166907502",
+    ville: "Thonon-les-Bains",
+    publishedAt: "2026-03-23",
+    disponible: true,
+  },
+  {
+    id: "3166786946",
+    marque: "Honda",
+    modele: "VT 600 Shadow",
+    annee: 1998,
+    km: "15 167 km",
+    prix: "3 200 €",
+    cylindree: "600 cc",
+    photo:
+      "https://img.leboncoin.fr/api/v1/lbcpb1/images/4c/41/2c/4c412ccb8ac9a692e34a6f2fc553f35cfe8e4ae7.jpg?rule=ad-large",
+    lbcUrl: "https://www.leboncoin.fr/ad/motos/3166786946",
+    ville: "Thonon-les-Bains",
+    publishedAt: "2026-03-23",
     disponible: true,
   },
 ];
@@ -251,8 +267,39 @@ function parseSearchIds(markdown: string): string[] {
   return ids;
 }
 
+/**
+ * Convertit "29/04/2026" (format LBC) en "2026-04-29" (ISO).
+ * Retourne null si la chaîne n'est pas au bon format.
+ */
+function parseFrenchDate(ddmmyyyy: string): string | null {
+  const m = ddmmyyyy.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  if (!m) return null;
+  return `${m[3]}-${m[2]}-${m[1]}`;
+}
+
+/**
+ * Filtre défensif : vérifie que l'annonce vient bien de MOT'HOME.
+ *
+ * Leboncoin peut inclure des annonces "similaires" ou sponsorisées dans
+ * une page de recherche, qui ne viennent pas du vendeur recherché. On
+ * filtre par mention textuelle "Mot'Home" (case-insensitive, avec ou
+ * sans apostrophe) — présente dans le footer pro et/ou la description
+ * de chaque vraie annonce MOT'HOME (formule récurrente "Mot'Home vous
+ * propose en dépôt vente...").
+ *
+ * SIREN officiel MOT'HOME = 888246212 (fallback futur si l'heuristique
+ * texte devient insuffisante : passer en scrape rawHtml et chercher
+ * "siren":"888246212" dans le JSON Next.js embedded).
+ */
+function isMothomeAd(markdown: string): boolean {
+  return /mot.?home/i.test(markdown);
+}
+
 /** Parse une page d'annonce Leboncoin et extrait les données structurées. */
 function parseAdMarkdown(markdown: string, id: string): Moto | null {
+  // FILTRE VENDEUR : skip si pas une annonce MOT'HOME
+  if (!isMothomeAd(markdown)) return null;
+
   // Titre H1 (marque modèle)
   const titleMatch = markdown.match(/^# (.+)$/m);
   if (!titleMatch) return null;
@@ -274,13 +321,20 @@ function parseAdMarkdown(markdown: string, id: string): Moto | null {
   // Cylindrée (depuis "Finition Constructeur" ou cubic_capacity)
   const cylMatch = markdown.match(/cubic_capacity:(\d+)/);
 
+  // Date de publication : LBC l'affiche au format "DD/MM/YYYY" quelque part
+  // dans le markdown (ex: "29/04/2026 à 13 heures 5019:50"). On prend la
+  // première occurrence trouvée — c'est celle de l'annonce, pas une date
+  // de moto ou autre référence parasite.
+  const dateMatch = markdown.match(/(\d{2}\/\d{2}\/202[0-9])/);
+  const publishedAt = dateMatch ? parseFrenchDate(dateMatch[1]) : null;
+
   // Marque + modèle parse à partir du titre (heuristique simple,
   // fallback = split sur 1er espace)
   const parts = fullTitle.split(/\s+/);
   const marque = parts[0] ?? "";
   const modele = parts.slice(1).join(" ").trim() || fullTitle;
 
-  if (!metaMatch || !priceMatch || !photoMatch) return null;
+  if (!metaMatch || !priceMatch || !photoMatch || !publishedAt) return null;
 
   const candidate = {
     id,
@@ -293,11 +347,26 @@ function parseAdMarkdown(markdown: string, id: string): Moto | null {
     photo: photoMatch[0],
     lbcUrl: `https://www.leboncoin.fr/ad/motos/${id}`,
     ville: metaMatch[1].trim(),
+    publishedAt,
     disponible: true as const,
   };
 
   const parsed = MotoSchema.safeParse(candidate);
   return parsed.success ? parsed.data : null;
+}
+
+/**
+ * Trie les motos par date de publication descendante.
+ * Tri secondaire (en cas d'égalité de date) : ID descendant (plus grand
+ * ID = créé plus récemment côté DB Leboncoin).
+ */
+function sortByPublishedDesc(motos: Moto[]): Moto[] {
+  return [...motos].sort((a, b) => {
+    if (a.publishedAt !== b.publishedAt) {
+      return a.publishedAt < b.publishedAt ? 1 : -1;
+    }
+    return a.id < b.id ? 1 : -1;
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -333,41 +402,50 @@ export async function fetchTopMotos(): Promise<readonly Moto[]> {
     }
 
     const allIds = parseSearchIds(searchMd);
-    const topIds = allIds.slice(0, MAX_MOTOS);
+    const candidateIds = allIds.slice(0, CANDIDATE_POOL);
 
-    if (topIds.length < MIN_MOTOS) {
+    if (candidateIds.length < MIN_MOTOS) {
       console.warn(
-        `[leboncoin-stock] only ${topIds.length} IDs in search, fallback`,
+        `[leboncoin-stock] only ${candidateIds.length} candidate IDs, fallback`,
       );
       return FALLBACK_MOTOS;
     }
 
-    // Diff sur set d'IDs : si identique au cache, skip re-scrape des détails
+    // Diff sur set d'IDs candidats : si identique au cache, skip re-scrape
     if (
       cachedIds &&
       cachedMotos &&
-      arraysEqual(cachedIds, topIds) &&
-      cachedMotos.length === topIds.length
+      arraysEqual(cachedIds, candidateIds)
     ) {
       return cachedMotos;
     }
 
-    // Re-scrape les détails (en parallèle)
+    // Fetch détails de tous les candidats (en parallèle)
     const adMds = await Promise.all(
-      topIds.map((id) =>
+      candidateIds.map((id) =>
         firecrawlScrape(`https://www.leboncoin.fr/ad/motos/${id}`),
       ),
     );
 
+    // Parse + filtre MOT'HOME via parseAdMarkdown (return null si pas MOT'HOME)
     const motos: Moto[] = [];
-    for (let i = 0; i < topIds.length; i++) {
+    for (let i = 0; i < candidateIds.length; i++) {
       const md = adMds[i];
       if (!md) continue;
-      const moto = parseAdMarkdown(md, topIds[i]);
+      const moto = parseAdMarkdown(md, candidateIds[i]);
       if (moto) motos.push(moto);
     }
 
-    const validated = MotosSchema.safeParse(motos);
+    if (motos.length < MIN_MOTOS) {
+      console.warn(
+        `[leboncoin-stock] only ${motos.length} MOT'HOME ads in pool, fallback`,
+      );
+      return FALLBACK_MOTOS;
+    }
+
+    // Tri par date desc puis cap à MAX_MOTOS
+    const sorted = sortByPublishedDesc(motos).slice(0, MAX_MOTOS);
+    const validated = MotosSchema.safeParse(sorted);
     if (!validated.success) {
       console.warn(
         "[leboncoin-stock] validation failed, fallback:",
@@ -376,7 +454,7 @@ export async function fetchTopMotos(): Promise<readonly Moto[]> {
       return FALLBACK_MOTOS;
     }
 
-    cachedIds = topIds;
+    cachedIds = candidateIds;
     cachedMotos = validated.data;
     return validated.data;
   } catch (error) {
