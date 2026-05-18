@@ -66,13 +66,10 @@ test.describe("Legal Pages — Mentions Légales", () => {
     }
   });
 
-  test("axe-core scan : 0 violation WCAG 2.1 AA hors known systemic", async ({
-    page,
-  }) => {
+  test("axe-core scan : 0 violation WCAG 2.1 AA", async ({ page }) => {
     await page.goto("/mentions-legales");
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
-      .disableRules(["color-contrast", "link-in-text-block"])
       .analyze();
     expect(results.violations).toEqual([]);
   });
@@ -132,17 +129,10 @@ test.describe("Legal Pages — Politique de Confidentialité", () => {
     }
   });
 
-  test("axe-core scan : 0 violation WCAG 2.1 AA hors known systemic", async ({
-    page,
-  }) => {
+  test("axe-core scan : 0 violation WCAG 2.1 AA", async ({ page }) => {
     await page.goto("/politique-confidentialite");
-    // Les règles désactivées ci-dessous concernent un bug systémique du
-    // design system (liens bleus sans underline, contraste insuffisant avec
-    // le texte muted-foreground). À corriger globalement plus tard, hors
-    // scope de la feature cookie-policy.
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
-      .disableRules(["color-contrast", "link-in-text-block"])
       .analyze();
     expect(results.violations).toEqual([]);
   });
