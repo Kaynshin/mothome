@@ -3,12 +3,16 @@
 import { useEffect, useState } from "react";
 import { Star, ExternalLink, User } from "lucide-react";
 
-export interface GoogleReview {
-  authorName: string;
-  rating: number;
-  text: string;
-  relativeTimeDescription: string;
-  profilePhotoUrl?: string;
+import type { GoogleReview } from "@/lib/google-places";
+
+export type { GoogleReview };
+
+interface ApiResponse {
+  success: boolean;
+  rating?: number;
+  userRatingCount?: number;
+  reviews?: GoogleReview[];
+  source?: "google" | "fallback";
 }
 
 const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/uJ7b7csbF7pAE3gE9";
@@ -73,10 +77,15 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
-  if (reviews.length === 0) return null;
-  const avg =
-    reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+function AverageRating({
+  rating,
+  count,
+}: {
+  rating: number;
+  count: number;
+}) {
+  if (rating <= 0) return null;
+  const countLabel = count > 0 ? `${count} avis` : "avis vérifiés";
 
   return (
     <a
@@ -84,7 +93,7 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-3 mb-10 px-5 py-3 border border-[var(--color-border)] rounded-lg hover:border-[var(--color-muted-foreground)] transition-colors duration-200 group"
-      aria-label={`Note Google : ${avg.toFixed(1)} sur 5 — ${reviews.length} avis. Voir sur Google Maps`}
+      aria-label={`Note Google : ${rating.toFixed(1)} sur 5 — ${countLabel}. Voir sur Google Maps`}
     >
       {/* Google G logo (SVG inline, minimal) */}
       <svg
@@ -114,7 +123,7 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
 
       <div className="flex items-baseline gap-1.5">
         <span className="font-heading text-lg font-semibold text-[var(--color-bleu-livery)]">
-          {avg.toFixed(1)}
+          {rating.toFixed(1)}
         </span>
         <div className="flex gap-0.5">
           {Array.from({ length: 5 }).map((_, i) => (
@@ -122,7 +131,7 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
               key={i}
               size={12}
               className={
-                i < Math.round(avg)
+                i < Math.round(rating)
                   ? "fill-[var(--color-bleu-logo)] text-[var(--color-bleu-logo)]"
                   : "text-[var(--color-muted-foreground)]"
               }
@@ -131,7 +140,7 @@ function AverageRating({ reviews }: { reviews: GoogleReview[] }) {
           ))}
         </div>
         <span className="font-sans text-sm text-[var(--color-muted-foreground)]">
-          ({reviews.length} avis)
+          ({countLabel})
         </span>
       </div>
 
@@ -234,19 +243,40 @@ function SkeletonCard() {
 
 export default function GoogleReviews() {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
+  const [rating, setRating] = useState(0);
+  const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/google-reviews")
       .then((res) => {
         if (!res.ok) throw new Error("API error");
-        return res.json() as Promise<GoogleReview[]>;
+        return res.json() as Promise<ApiResponse>;
       })
       .then((data) => {
-        setReviews(data.length > 0 ? data : FALLBACK_REVIEWS);
+        const nextReviews =
+          data.reviews && data.reviews.length > 0
+            ? data.reviews
+            : FALLBACK_REVIEWS;
+        setReviews(nextReviews);
+        if (typeof data.rating === "number" && data.rating > 0) {
+          setRating(data.rating);
+        } else {
+          const avg =
+            nextReviews.reduce((sum, r) => sum + r.rating, 0) /
+            nextReviews.length;
+          setRating(avg);
+        }
+        if (typeof data.userRatingCount === "number") {
+          setCount(data.userRatingCount);
+        }
       })
       .catch(() => {
         setReviews(FALLBACK_REVIEWS);
+        const avg =
+          FALLBACK_REVIEWS.reduce((sum, r) => sum + r.rating, 0) /
+          FALLBACK_REVIEWS.length;
+        setRating(avg);
       })
       .finally(() => setLoading(false));
   }, []);
@@ -258,7 +288,7 @@ export default function GoogleReviews() {
         {loading ? (
           <div className="mb-10 h-12 w-56 rounded-lg bg-[var(--color-muted)] border border-[var(--color-border)] animate-pulse" />
         ) : (
-          <AverageRating reviews={reviews} />
+          <AverageRating rating={rating} count={count} />
         )}
       </div>
 

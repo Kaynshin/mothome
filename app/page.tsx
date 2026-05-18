@@ -14,6 +14,10 @@ import { PhoneCta } from "@/components/ui/phone-cta";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Stagger } from "@/components/motion/Stagger";
 import { CountUp } from "@/components/stats/CountUp";
+import {
+  fetchGooglePlaceData,
+  ratingToSatisfactionPercent,
+} from "@/lib/google-places";
 
 export const metadata: Metadata = {
   title: "Mothome — Garage Moto & Bar Motards à Thonon-les-Bains (74)",
@@ -95,7 +99,10 @@ const SERVICES = [
 // Page
 // ---------------------------------------------------------------------------
 
-export default function HomePage() {
+export default async function HomePage() {
+  const googlePlace = await fetchGooglePlaceData();
+  const googleRating = googlePlace.rating;
+  const satisfactionPercent = ratingToSatisfactionPercent(googleRating);
   return (
     <>
       {/* ================================================================
@@ -365,11 +372,26 @@ export default function HomePage() {
             stagger={120}
           >
             {[
-              { value: 16, suffix: "+", label: "Ans de passion" },
-              { value: 40, suffix: "+", label: "Marques travaillées" },
-              { value: 5, suffix: "/5", label: "Note Google" },
-              { value: 100, suffix: "%", label: "Satisfaction client" },
-            ].map(({ value, suffix, label }) => (
+              { value: 16, suffix: "+", label: "Ans de passion", decimals: 0 },
+              {
+                value: 40,
+                suffix: "+",
+                label: "Marques travaillées",
+                decimals: 0,
+              },
+              {
+                value: googleRating,
+                suffix: "/5",
+                label: "Note Google",
+                decimals: 1,
+              },
+              {
+                value: satisfactionPercent,
+                suffix: "%",
+                label: "Satisfaction client",
+                decimals: 0,
+              },
+            ].map(({ value, suffix, label, decimals }) => (
               <div
                 key={label}
                 className="flex flex-col items-center text-center"
@@ -377,6 +399,7 @@ export default function HomePage() {
                 <CountUp
                   end={value}
                   suffix={suffix}
+                  decimals={decimals}
                   className="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-[var(--color-bleu-livery)] leading-none mb-3 tabular-nums"
                 />
                 <span className="font-accent text-xs md:text-sm text-[var(--color-muted-foreground)] uppercase tracking-[0.18em]">
