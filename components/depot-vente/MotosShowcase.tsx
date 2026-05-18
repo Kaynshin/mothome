@@ -17,9 +17,15 @@ type Props = {
 
 export function MotosShowcase({ motos, leboncoinUrl }: Props) {
   const [visible, setVisible] = useState(INITIAL);
+  const [animatingFrom, setAnimatingFrom] = useState(INITIAL);
   const canExpand = visible < motos.length;
   const remaining = motos.length - visible;
   const nextBatch = Math.min(BATCH, remaining);
+
+  const handleExpand = () => {
+    setAnimatingFrom(visible);
+    setVisible((c) => Math.min(c + BATCH, motos.length));
+  };
 
   return (
     <>
@@ -27,14 +33,18 @@ export function MotosShowcase({ motos, leboncoinUrl }: Props) {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
         stagger={90}
       >
-        {motos.map((moto, i) => (
+        {motos.map((moto, i) => {
+          const isHidden = i >= visible;
+          const isJustRevealed = i >= animatingFrom && i < visible;
+          return (
           <article
             key={moto.id}
-            className={`${i >= visible ? "hidden sm:flex" : "flex"} relative bg-[var(--color-card)] border rounded-lg overflow-hidden flex-col ${
+            className={`${isHidden ? "hidden sm:flex" : "flex"} ${isJustRevealed ? "mh-fade-up-mount" : ""} relative bg-[var(--color-card)] border rounded-lg overflow-hidden flex-col ${
               moto.disponible
                 ? "border-[var(--color-border)]"
                 : "border-[var(--color-border)] opacity-50"
             }`}
+            style={isJustRevealed ? { animationDelay: `${(i - animatingFrom) * 100}ms` } : undefined}
           >
             <div className="relative aspect-[4/3] bg-[var(--color-muted)]">
               <Image
@@ -98,14 +108,15 @@ export function MotosShowcase({ motos, leboncoinUrl }: Props) {
               </div>
             </div>
           </article>
-        ))}
+          );
+        })}
       </Stagger>
 
       {canExpand && (
         <div className="sm:hidden text-center mb-6">
           <button
             type="button"
-            onClick={() => setVisible((c) => Math.min(c + BATCH, motos.length))}
+            onClick={handleExpand}
             className="inline-flex items-center gap-2 px-6 py-3 border border-[var(--color-border)] hover:border-[var(--color-bleu-logo)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] font-heading font-semibold uppercase tracking-widest text-sm rounded transition-colors"
             aria-label={`Afficher ${nextBatch} motos supplémentaires`}
           >
