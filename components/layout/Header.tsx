@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,16 +16,55 @@ import {
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, CTA } from "./nav-config";
 
+interface IndicatorState {
+  left: number;
+  width: number;
+  visible: boolean;
+}
+
 export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
+  const linkRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+  const [indicator, setIndicator] = useState<IndicatorState>({
+    left: 0,
+    width: 0,
+    visible: false,
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const moveIndicatorTo = useCallback((href: string | null) => {
+    if (!navRef.current) return;
+    if (!href) {
+      setIndicator((prev) => ({ ...prev, visible: false }));
+      return;
+    }
+    const linkEl = linkRefs.current.get(href);
+    if (!linkEl) {
+      setIndicator((prev) => ({ ...prev, visible: false }));
+      return;
+    }
+    const navRect = navRef.current.getBoundingClientRect();
+    const linkRect = linkEl.getBoundingClientRect();
+    setIndicator({
+      left: linkRect.left - navRect.left,
+      width: linkRect.width,
+      visible: true,
+    });
+  }, []);
+
+  useEffect(() => {
+    moveIndicatorTo(pathname);
+  }, [pathname, moveIndicatorTo]);
+
+  const handleNavLeave = () => moveIndicatorTo(pathname);
 
   return (
     <header
@@ -55,22 +94,46 @@ export default function Header() {
         </Link>
 
         {/* Navigation desktop */}
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Navigation principale">
+        <nav
+          ref={navRef}
+          className="hidden lg:flex items-center gap-1 relative self-stretch"
+          aria-label="Navigation principale"
+          onMouseLeave={handleNavLeave}
+        >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
+              ref={(el) => {
+                if (el) linkRefs.current.set(link.href, el);
+                else linkRefs.current.delete(link.href);
+              }}
+              onMouseEnter={() => moveIndicatorTo(link.href)}
+              onFocus={() => moveIndicatorTo(link.href)}
               className={cn(
-                "px-3 py-2 text-sm font-sans font-medium rounded transition-colors duration-200 uppercase tracking-wide whitespace-nowrap",
+                "relative px-3 py-2 text-sm font-sans font-medium rounded transition-colors duration-200 uppercase tracking-wide whitespace-nowrap",
                 pathname === link.href
-                  ? "text-[var(--color-bleu-logo)] bg-[var(--color-bleu-logo)]/10"
-                  : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/5"
+                  ? "text-[var(--color-bleu-logo)]"
+                  : "text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)]"
               )}
               aria-current={pathname === link.href ? "page" : undefined}
             >
               {link.label}
             </Link>
           ))}
+
+          {/* Underline voyageur */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 left-0 h-[2px] bg-[var(--color-bleu-logo)] motion-reduce:transition-none"
+            style={{
+              transform: `translateX(${indicator.left}px)`,
+              width: `${indicator.width}px`,
+              opacity: indicator.visible ? 1 : 0,
+              transition:
+                "transform 300ms var(--ease-out-quart), width 300ms var(--ease-out-quart), opacity 200ms var(--ease-out-quart)",
+            }}
+          />
         </nav>
 
         {/* CTA desktop + burger mobile */}
