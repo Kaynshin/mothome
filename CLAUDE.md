@@ -1,3 +1,13 @@
+# Git workflow — MANDATORY
+
+**Branche principale de ce projet : `refonte`** (pas `main`). `main` reste figé sur l'ancienne version jusqu'au cutover final.
+
+Avant toute opération Git (commit, branche, PR, merge), invoquer le skill `git-workflow-refonte`. Règles dures :
+
+- Jamais de commit direct sur `refonte` — toujours créer une feature branch (`feat/<slug>`, `fix/<slug>`, `chore/<slug>`).
+- Toute PR cible `refonte` (`--base refonte`), jamais `main`.
+- Intégration via **Rebase and merge** uniquement — pas de merge commit dans `refonte`.
+
 # gstack
 
 Use the `/browse` skill from gstack for all web browsing. Never use `mcp__claude-in-chrome__*` tools directly.
