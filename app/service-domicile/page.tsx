@@ -5,8 +5,10 @@ import ReservationForm from "./ReservationForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildServiceDomicileSchema, buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
+import { FormsDisabledCTA } from "@/components/contact/FormsDisabledCTA";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Stagger } from "@/components/motion/Stagger";
+import { formsEnabled } from "@/lib/features";
 
 export const metadata: Metadata = {
   title: "Service à Domicile — Entretien & Dépannage Moto Thonon, Chablais",
@@ -355,12 +357,16 @@ export default function ServiceDomicilePage() {
               <div className="p-6 bg-[var(--color-bleu-logo)]/5 border border-[var(--color-bleu-logo)]/20 rounded-lg">
                 <p className="font-sans text-sm text-[var(--color-muted-foreground)] leading-relaxed">
                   <strong className="font-heading text-[var(--color-foreground)]">Hors zone ?</strong>{" "}
-                  Appelez directement l&apos;atelier — pour les cas particuliers ou les longues
-                  distances, on trouve toujours une solution.
+                  Appelez directement l&apos;atelier au{" "}
+                  <a
+                    href="tel:+33450733808"
+                    className="font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+                  >
+                    04 50 73 38 08
+                  </a>
+                  {" "}— pour les cas particuliers ou les longues distances, on trouve
+                  toujours une solution.
                 </p>
-                <div className="mt-3">
-                  <PhoneCta variant="ghost" label="Appeler l'atelier" />
-                </div>
               </div>
             </div>
             </FadeIn>
@@ -390,17 +396,24 @@ export default function ServiceDomicilePage() {
                 <br />intervention
               </h2>
               <p className="font-sans text-[var(--color-muted-foreground)] leading-relaxed mb-8">
-                Remplis le formulaire avec tes disponibilités et une description du
-                besoin. L&apos;équipe vous rappelle sous 24h pour confirmer la date et
-                établir un devis gratuit.
+                {formsEnabled
+                  ? "Remplis le formulaire avec tes disponibilités et une description du besoin. On revient vers toi pour confirmer la date et établir un devis gratuit."
+                  : "Un coup de fil suffit : décrivez votre besoin, on convient ensemble d'une date et on vous donne un devis gratuit."}
               </p>
 
               <div className="space-y-4">
-                {[
-                  { num: "01", text: "Remplis le formulaire" },
-                  { num: "02", text: "L'atelier confirme la date et le devis sous 24h" },
-                  { num: "03", text: "Intervention sur place à l'heure convenue" },
-                ].map(({ num, text }) => (
+                {(formsEnabled
+                  ? [
+                      { num: "01", text: "Remplis le formulaire" },
+                      { num: "02", text: "L'atelier confirme la date et le devis" },
+                      { num: "03", text: "Intervention sur place à l'heure convenue" },
+                    ]
+                  : [
+                      { num: "01", text: "Appelez l'atelier" },
+                      { num: "02", text: "On convient ensemble de la date et du devis" },
+                      { num: "03", text: "Intervention sur place à l'heure convenue" },
+                    ]
+                ).map(({ num, text }) => (
                   <div key={num} className="flex items-center gap-4">
                     <span className="font-heading text-2xl text-[var(--color-bleu-logo)]/40 w-8 shrink-0">
                       {num}
@@ -412,9 +425,17 @@ export default function ServiceDomicilePage() {
             </FadeIn>
 
             <FadeIn direction="left" delay={150}>
-              <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-6 md:p-8">
-                <ReservationForm />
-              </div>
+              {formsEnabled ? (
+                <div className="bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg p-6 md:p-8">
+                  <ReservationForm />
+                </div>
+              ) : (
+                <FormsDisabledCTA
+                  title="Appelez pour réserver"
+                  intro="Le plus simple : un appel à l'atelier. On regarde ensemble disponibilités, zone et devis — pas besoin de formulaire."
+                  ctaLabel="Appeler pour réserver"
+                />
+              )}
             </FadeIn>
           </div>
         </div>
