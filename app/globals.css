@@ -90,6 +90,14 @@
   --color-or-mat: #0050a0;
   --color-or-chaud: #1060b0;
   --color-or-clair: #2070b0;
+
+  /* --- Hero LiveryStripes — opacités calibrées light mode (fond #f8f7f5) --- */
+  /* Future dark mode override : valeurs 0.05 / 0.08 / 0.12 / 0.15 / 0.18 */
+  --stripe-op-1: 0.04;
+  --stripe-op-2: 0.06;
+  --stripe-op-3: 0.08;
+  --stripe-op-4: 0.10;
+  --stripe-op-5: 0.14;
 }
 
 /* ============================================================
@@ -187,6 +195,28 @@
   }
 }
 
+@keyframes stripe-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-30%, 30%, 0);
+  }
+}
+
+.moto-stripe {
+  animation: stripe-drift 30s linear infinite;
+  will-change: transform;
+}
+
+/* Mobile : densité réduite, on cache les 3 stripes intermédiaires
+   pour ne garder que 1 fine + 1 accent (DESIGN.md mobile-first). */
+@media (max-width: 767px) {
+  .moto-stripe[data-mobile-hide="true"] {
+    display: none;
+  }
+}
+
 .mh-fade-up-mount {
   animation: mh-fade-up var(--duration-slow) var(--ease-out-quart) both;
 }
@@ -250,5 +280,10 @@
 
   .mh-card-lift:hover {
     transform: none;
+  }
+
+  .moto-stripe {
+    animation: none;
+    opacity: calc(var(--stripe-op, 0.08) * 0.5);
   }
 }
