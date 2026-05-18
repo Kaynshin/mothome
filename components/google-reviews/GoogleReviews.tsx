@@ -292,14 +292,18 @@ export default function GoogleReviews() {
         )}
       </div>
 
-      {/* Grid */}
+      {/* Grid — 3 reviews max pour équilibre visuel.
+          Google Places API (New) plafonne à 5 reviews retournés.
+          Sur grid 3 cols, 5 reviews → ligne incomplète (3+2). On affiche
+          les 3 plus récents/pertinents ; le count total reste visible dans
+          le badge Google + lien "Laisser un avis" pour voir tout sur Maps. */}
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         aria-label="Avis clients Google"
       >
         {loading
-          ? Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)
-          : reviews.map((review) => (
+          ? Array.from({ length: 3 }).map((_, i) => <SkeletonCard key={i} />)
+          : reviews.slice(0, 3).map((review) => (
               <ReviewCard key={review.authorName} review={review} />
             ))}
       </div>
