@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Politique de confidentialité du site Mothome, garage moto à Thonon-les-Bains.",
   alternates: { canonical: "/politique-confidentialite" },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 export default function PolitiqueConfidentialitePage() {
@@ -75,9 +75,12 @@ export default function PolitiqueConfidentialitePage() {
               Vos droits
             </h2>
             <p>
-              Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès,
-              de rectification, de suppression et de portabilité de vos données.
-              Pour exercer ces droits, contactez-nous à{" "}
+              Conformément au RGPD (articles 15 à 22), vous disposez d&apos;un
+              droit d&apos;accès, de rectification, de suppression, de
+              limitation, d&apos;opposition et de portabilité de vos données,
+              ainsi que du droit de définir des directives relatives au sort de
+              vos données après votre décès. Pour exercer ces droits,
+              contactez-nous à{" "}
               <a
                 href="mailto:contact@mothome.fr"
                 className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
@@ -86,17 +89,68 @@ export default function PolitiqueConfidentialitePage() {
               </a>
               .
             </p>
+            <p className="mt-3">
+              Vous disposez également du droit d&apos;introduire une
+              réclamation auprès de la CNIL (Commission Nationale de
+              l&apos;Informatique et des Libertés) si vous estimez que le
+              traitement de vos données ne respecte pas la réglementation :{" "}
+              <a
+                href="https://www.cnil.fr/fr/plaintes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+              >
+                cnil.fr/fr/plaintes
+              </a>
+              .
+            </p>
           </div>
 
           <div>
             <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
-              Cookies
+              Cookies et mesure d&apos;audience
             </h2>
             <p>
-              Ce site utilise des cookies techniques nécessaires à son
-              fonctionnement et des outils d&apos;analyse (Vercel Analytics) pour
-              mesurer l&apos;audience de manière anonyme. Aucun cookie
-              publicitaire n&apos;est utilisé.
+              Ce site n&apos;utilise <strong>aucun cookie de traçage publicitaire
+              ni de profilage</strong>. Aucune bannière de consentement n&apos;est
+              affichée car aucun traceur soumis à consentement n&apos;est déposé
+              sur votre terminal.
+            </p>
+            <p className="mt-3">
+              Pour mesurer l&apos;audience du site de manière anonyme, nous
+              utilisons <strong>Vercel Analytics</strong>. Cet outil n&apos;utilise
+              pas de cookie : il identifie les visiteurs de manière éphémère via
+              un hachage anonyme combinant l&apos;adresse IP, l&apos;agent
+              utilisateur et un sel quotidien (technique conforme aux
+              exigences d&apos;anonymisation de la CNIL).
+            </p>
+            <p className="mt-3">
+              <strong>Base légale :</strong> intérêt légitime (mesure d&apos;audience
+              anonyme nécessaire au bon fonctionnement et à l&apos;amélioration du
+              site).
+              <br />
+              <strong>Destinataire :</strong> Vercel Inc. (États-Unis), prestataire
+              technique. Le transfert hors Union Européenne est encadré par
+              la certification de Vercel Inc. au{" "}
+              <a
+                href="https://www.dataprivacyframework.gov/list"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+              >
+                Data Privacy Framework (DPF)
+              </a>{" "}
+              UE-USA, mécanisme reconnu par la Commission européenne (décision
+              d&apos;adéquation du 10 juillet 2023).
+              <br />
+              <strong>Durée de conservation :</strong> agrégats anonymes
+              uniquement, aucune donnée individuelle conservée.
+            </p>
+            <p className="mt-3">
+              Le site peut par ailleurs déposer des cookies strictement
+              nécessaires à son fonctionnement (préférences d&apos;affichage,
+              session de formulaire). Ces cookies sont exemptés de consentement
+              selon l&apos;article 82 de la loi Informatique et Libertés.
             </p>
           </div>
 
