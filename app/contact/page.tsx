@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Mail, Clock, Calendar } from "lucide-react";
 import { PhoneCta } from "@/components/ui/phone-cta";
+import { FormsDisabledCTA } from "@/components/contact/FormsDisabledCTA";
 import ContactForm from "./ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildContactPageSchema, buildBreadcrumbSchema } from "@/lib/schema";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { formsEnabled } from "@/lib/features";
 
 export const metadata: Metadata = {
   title: "Contact & Rendez-vous — Garage Moto Mothome à Thonon-les-Bains",
@@ -99,8 +101,8 @@ export default function ContactPage() {
               className="mh-fade-up-mount font-sans text-lg text-[var(--color-muted-foreground)] leading-relaxed"
               style={{ animationDelay: "280ms" }}
             >
-              Rendez-vous, devis, question — plusieurs façons de joindre l&apos;atelier.
-              Réponse sous 24h garantie.
+              Rendez-vous, devis, question — le plus rapide reste un coup
+              de fil. On décroche pendant les horaires d&apos;ouverture.
             </p>
           </div>
         </div>
@@ -113,15 +115,22 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-[var(--spacing-container)]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-            {/* ---- Form ---- */}
+            {/* ---- Form (ou fallback si formsEnabled=false) ---- */}
             <FadeIn direction="right">
               <h2
                 id="rdv"
                 className="font-heading text-3xl text-[var(--color-foreground)] uppercase mb-8"
               >
-                Prendre rendez-vous
+                {formsEnabled ? "Prendre rendez-vous" : "Joindre l'atelier"}
               </h2>
-              <ContactForm />
+              {formsEnabled ? (
+                <ContactForm />
+              ) : (
+                <FormsDisabledCTA
+                  title="Un coup de fil, et on s'organise"
+                  intro="Rendez-vous, devis, question technique — décrochez votre téléphone. C'est le canal le plus direct pour joindre Mot'Home."
+                />
+              )}
             </FadeIn>
 
             {/* ---- Info ---- */}
@@ -157,9 +166,10 @@ export default function ContactPage() {
                     </div>
                   </a>
 
-                  {/* Phone */}
+                  {/* Phone — variant ghost car le primary est porté par
+                      le form (bouton submit) ou le fallback FormsDisabledCTA */}
                   <div className="flex items-center gap-4">
-                    <PhoneCta variant="primary" label="Appeler l'atelier" />
+                    <PhoneCta variant="ghost" label="Appeler l'atelier" />
                   </div>
 
                   {/* Email */}
@@ -213,25 +223,27 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              {/* RDV en ligne */}
-              <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
-                <div className="flex items-center gap-3 mb-3">
-                  <Calendar size={18} className="text-[var(--color-bleu-livery)]" aria-hidden="true" />
-                  <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest">
-                    RDV en ligne
-                  </h3>
+              {/* RDV en ligne — uniquement quand le formulaire est actif */}
+              {formsEnabled && (
+                <div className="p-6 bg-[var(--color-card)] border border-[var(--color-border)] rounded-lg">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Calendar size={18} className="text-[var(--color-bleu-livery)]" aria-hidden="true" />
+                    <h3 className="font-heading text-sm font-semibold text-[var(--color-bleu-livery)] uppercase tracking-widest">
+                      RDV en ligne
+                    </h3>
+                  </div>
+                  <p className="font-sans text-sm text-[var(--color-muted-foreground)] mb-4 leading-relaxed">
+                    Remplis le formulaire ci-contre avec tes disponibilités et le
+                    type d&apos;intervention souhaitée.
+                  </p>
+                  <a
+                    href="#rdv"
+                    className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
+                  >
+                    Accéder au formulaire →
+                  </a>
                 </div>
-                <p className="font-sans text-sm text-[var(--color-muted-foreground)] mb-4 leading-relaxed">
-                  Remplis le formulaire ci-contre avec tes disponibilités et le
-                  type d&apos;intervention souhaitée. L&apos;atelier confirme sous 24h.
-                </p>
-                <a
-                  href="#rdv"
-                  className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] uppercase tracking-wide transition-colors"
-                >
-                  Accéder au formulaire →
-                </a>
-              </div>
+              )}
             </FadeIn>
           </div>
         </div>

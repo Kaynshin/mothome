@@ -1,6 +1,19 @@
 import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+/**
+ * Règle de hiérarchie visuelle des CTAs téléphone :
+ *
+ * - Une page = **un seul** `variant="primary"` (bleu plein, texte blanc).
+ *   C'est le CTA dominant de la page : hero, ou bloc d'action principal
+ *   (ex. FormsDisabledCTA quand les formulaires sont masqués).
+ * - Tous les autres PhoneCta de la page = `variant="ghost"` (bordure bleue
+ *   transparente). CTAs secondaires en bas de section, rappels contextuels.
+ * - Le StickyPhoneCta mobile est exempté de la règle (canal visuel séparé).
+ *
+ * Objectif : éviter le mur de boutons bleus pleins tout en gardant un point
+ * d'ancrage visuel fort par page.
+ */
 interface PhoneCtaProps {
   phone?: string;
   tel?: string;

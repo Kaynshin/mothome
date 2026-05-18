@@ -5,7 +5,9 @@ import DevisForm from "./DevisForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildAtelierSchema, buildBreadcrumbSchema } from "@/lib/schema";
 import { PhoneCta } from "@/components/ui/phone-cta";
+import { FormsDisabledCTA } from "@/components/contact/FormsDisabledCTA";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { formsEnabled } from "@/lib/features";
 
 export const metadata: Metadata = {
   title:
@@ -292,7 +294,7 @@ export default function AtelierPage() {
       </section>
 
       {/* ================================================================
-          DEVIS FORM
+          DEVIS FORM (ou fallback PhoneCta si formsEnabled=false)
           ================================================================ */}
       <section
         id="devis"
@@ -311,12 +313,22 @@ export default function AtelierPage() {
               Demander un devis
             </h2>
             <p className="font-sans text-base text-[var(--color-muted-foreground)]">
-              Décris ton problème ou ton projet — l&apos;équipe vous répond sous 24h.
+              {formsEnabled
+                ? "Décris ton problème ou ton projet — on revient vers toi."
+                : "Décris ton besoin par téléphone — devis donné rapidement."}
             </p>
           </FadeIn>
 
           <FadeIn direction="up" delay={120}>
-            <DevisForm />
+            {formsEnabled ? (
+              <DevisForm />
+            ) : (
+              <FormsDisabledCTA
+                title="Appelez pour un devis"
+                intro="Pas de formulaire à remplir. Appelez l'atelier, expliquez votre besoin, on vous donne un devis directement."
+                ctaLabel="Appeler pour un devis"
+              />
+            )}
           </FadeIn>
         </div>
       </section>
