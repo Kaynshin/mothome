@@ -94,12 +94,32 @@ export default function MentionsLegalesPage() {
             <h2 className="font-heading text-lg text-[var(--color-foreground)] uppercase mb-3">
               Hébergement
             </h2>
-            {/* TODO LCEN: confirmer hébergeur final (France ou autre). Mettre à jour dénomination + adresse + téléphone. */}
             <p>
-              <em>[à confirmer — hébergeur du site]</em>
+              Vercel Inc.
               <br />
-              Dénomination, adresse complète et téléphone de l&apos;hébergeur seront
-              renseignés ici dès la finalisation du déploiement.
+              440 N Barranca Avenue #4133
+              <br />
+              Covina, CA 91723
+              <br />
+              États-Unis
+              <br />
+              Site :{" "}
+              <a
+                href="https://vercel.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
+              >
+                vercel.com
+              </a>
+              <br />
+              Contact :{" "}
+              <a
+                href="mailto:privacy@vercel.com"
+                className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
+              >
+                privacy@vercel.com
+              </a>
             </p>
           </div>
 
