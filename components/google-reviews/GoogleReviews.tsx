@@ -204,7 +204,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
         {isLong && (
           <button
             onClick={() => setExpanded((v) => !v)}
-            className="mt-2 font-sans text-xs text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors underline-offset-2 hover:underline"
+            className="mt-2 font-sans text-xs text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
             aria-expanded={expanded}
           >
             {expanded ? "Réduire" : "Lire plus"}

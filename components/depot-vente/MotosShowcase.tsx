@@ -141,7 +141,7 @@ export function MotosShowcase({ motos, leboncoinUrl }: Props) {
           Stock mis à jour automatiquement.{" "}
           <Link
             href="/contact"
-            className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] transition-colors"
+            className="text-[var(--color-bleu-logo)] hover:text-[var(--color-bleu-vif)] underline underline-offset-2 transition-colors"
           >
             Contactez-nous
           </Link>{" "}
