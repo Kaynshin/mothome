@@ -84,7 +84,7 @@ test.describe("Button Contrast Validation (WCAG AA)", () => {
   test("should have sufficient contrast on primary buttons", async ({ page }) => {
     const primaryButton = page
       .locator("button")
-      .filter({ has: page.locator("text=Prendre rendez-vous") })
+      .filter({ has: page.locator("text=Joindre l'atelier") })
       .first();
 
     if (await primaryButton.isVisible()) {

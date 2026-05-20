@@ -69,7 +69,7 @@ export default function HeroParticlesLabPage() {
             href="/contact#rdv"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-livery)] hover:bg-[var(--color-bleu-rapide)] hover:-translate-y-px text-white font-accent uppercase tracking-[0.12em] text-sm rounded transition-[colors,transform] duration-150 ease-[cubic-bezier(0.25,1,0.5,1)] shadow-[var(--shadow-bleu)]"
           >
-            Prendre rendez-vous
+            Joindre l&apos;atelier
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link

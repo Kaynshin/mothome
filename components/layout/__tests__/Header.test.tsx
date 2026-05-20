@@ -28,14 +28,14 @@ describe("Header", () => {
     render(<Header />);
     const nav = screen.getByRole("navigation", { name: "Navigation principale" });
     expect(nav).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /L'Atelier/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^L'Atelier$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Service à domicile/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Le Bar/i })).toBeInTheDocument();
   });
 
   it("renders the CTA link with correct href", () => {
     render(<Header />);
-    const ctaLinks = screen.getAllByRole("link", { name: /Prendre RDV/i });
+    const ctaLinks = screen.getAllByRole("link", { name: /Joindre l'atelier/i });
     expect(ctaLinks.length).toBeGreaterThan(0);
     expect(ctaLinks[0]).toHaveAttribute("href", "/contact#rdv");
   });

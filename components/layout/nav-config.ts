@@ -9,6 +9,6 @@ export const NAV_LINKS = [
 ] as const;
 
 export const CTA = {
-  label: "Prendre RDV",
+  label: "Joindre l'atelier",
   href: "/contact#rdv",
 } as const;
