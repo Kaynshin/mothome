@@ -433,7 +433,7 @@ export default function HeroParallax3D() {
             href="/contact#rdv"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200 shadow-[var(--shadow-bleu)]"
           >
-            Prendre rendez-vous
+            Joindre l&apos;atelier
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link
@@ -506,7 +506,7 @@ function HeroFallback() {
             href="/contact#rdv"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-bleu-logo)] hover:bg-[var(--color-bleu-vif)] text-white font-heading font-semibold uppercase tracking-widest text-sm rounded-md transition-colors duration-200"
           >
-            Prendre rendez-vous
+            Joindre l&apos;atelier
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link

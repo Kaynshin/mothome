@@ -48,7 +48,7 @@ describe("Footer", () => {
 
   it("renders the CTA link pointing to contact RDV", () => {
     render(<Footer />);
-    const ctaLinks = screen.getAllByRole("link", { name: /Prendre RDV/i });
+    const ctaLinks = screen.getAllByRole("link", { name: /Joindre l'atelier/i });
     expect(ctaLinks.length).toBeGreaterThan(0);
     expect(ctaLinks[0]).toHaveAttribute("href", "/contact#rdv");
   });

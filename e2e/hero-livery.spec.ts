@@ -23,7 +23,7 @@ test.describe("Hero LiveryStripes — lab page", () => {
     await expect(page.getByText(/passion/i).first()).toBeVisible();
 
     await expect(
-      page.getByRole("link", { name: /prendre rendez-vous/i }),
+      page.getByRole("link", { name: /joindre l['']atelier/i }),
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: /découvrir l['']atelier/i }),
@@ -114,7 +114,7 @@ test.describe("Hero LiveryStripes — lab page", () => {
       const focusedText = await page.evaluate(
         () => (document.activeElement as HTMLElement | null)?.textContent ?? "",
       );
-      if (/prendre rendez-vous/i.test(focusedText)) {
+      if (/joindre l['']atelier/i.test(focusedText)) {
         primaryFocused = true;
         break;
       }
